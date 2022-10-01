@@ -1,0 +1,137 @@
+* {
+    border: none;
+    border-radius: 0;
+    font-family: "FiraCode Nerd Font";
+    font-size: 13px;
+    min-height: 0;
+}
+
+window#waybar {
+    /*background: transparent;*/
+    background: #282a36;
+    color: #f8f8f2;
+}
+
+#window {
+    font-weight: normal;
+    font-family: "FiraCode Nerd Font";
+}
+
+#workspaces {
+    padding: 0 5px;
+}
+
+#workspaces button {
+    padding: 0 5px;
+    color: #f8f8f2;
+}
+
+#workspaces button.visible {
+  color: inherit;
+  background-color: #d79921;
+}
+
+#workspaces button.active{
+  color: inherit;
+  background-color: #d79921;
+}
+
+#workspaces button.focused {
+    color: #f8f8f2;
+    background-color: #fabd2f;
+}
+
+#workspaces button.urgent {
+  color: #ea6962;
+}
+#workspaces button.hidden {
+  color: #ea6962;
+}
+
+#tags button {
+    padding: 0 5px;
+    color: #f8f8f2;
+}
+
+#tags button.occupied {
+  color: inherit;
+  background-color: #d79921;
+}
+
+
+
+#tags button.focused {
+    color: #f8f8f2;
+    background-color: #fabd2f;
+}
+
+#tags button.urgent {
+  color: #ea6962;
+}
+
+#mode {
+    background: #64727D;
+    border-bottom: 3px solid #f8f8f2;
+}
+
+#clock, #battery, #cpu, #memory, #network, #pulseaudio, #custom-spotify, #tray, #mode, #custom-wofi-power {
+    padding: 0 10px;
+    margin: 0 2px;
+}
+
+#clock {
+    font-weight: normal;
+}
+
+#battery {
+}
+
+#battery icon {
+    color: #ff5555;
+}
+
+#battery.charging {
+}
+
+@keyframes blink {
+    to {
+        background-color: #f8f8f2;
+        color: black;
+    }
+}
+
+#battery.warning:not(.charging) {
+    color: #f8f8f2;
+    animation-name: blink;
+    animation-duration: 0.5s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+#cpu {
+}
+
+#memory {
+}
+
+#network {
+}
+
+#network.disconnected {
+    background: #ff5555;
+}
+
+#pulseaudio {
+}
+
+#pulseaudio.muted {
+}
+
+#custom-spotify {
+    color: #bd93f9;
+    /*color: #6272a4;*/
+}
+
+#tray {
+}

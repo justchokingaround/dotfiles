@@ -1,2 +1,2 @@
 # dotfiles
-stow time
+sike, dotter is better

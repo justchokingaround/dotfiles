@@ -1,0 +1,60 @@
+[wayland]
+[wayland.files]
+"hypr" = "~/.config/hypr/"
+"waybar" = "~/.config/waybar/"
+
+[xorg]
+[xorg.files]
+"bspwm" = "~/.config/bspwm/"
+"polybar" = "~/.config/polybar/"
+"picom" = "~/.config/picom/"
+"sxhkd" = "~/.config/sxhkd/"
+
+[terminal]
+[terminal.files]
+"alacritty" = "~/.config/alacritty/"
+"kitty" = "~/.config/kitty/"
+"foot" = "~/.config/foot/"
+"starship" = "~/.config/starship"
+
+[dev]
+[dev.files]
+"nvim" = "~/.config/nvim/"
+
+[keyboard]
+[keyboard.files]
+"kmonad" = "~/.config/kmonad/"
+
+[media]
+depends = ["mpv"]
+[media.files]
+"ncspot" = "~/.config/ncspot/"
+
+[filemanager]
+[filemanager.files]
+"pcmanfm" = "~/.config/pcmanfm/"
+"ranger" = "~/.config/ranger/"
+
+[launchers]
+[launchers.files]
+"rofi" = "~/.config/rofi/"
+"wofi" = "~/.config/wofi/"
+
+[notifications]
+[notifications.files]
+"dunst" = "~/.config/dunst/"
+
+[weeb]
+[weeb.files]
+"mangal" = "~/.config/mangal/"
+
+[other]
+[other.files]
+"neofetch" = "~/.config/neofetch/"
+"gtk" = "~/.config/gtk-3.0/"
+
+[mpv.files]
+"mpv/input.conf" = "~/.config/mpv/input.conf"
+"mpv/mpv.conf" = "~/.config/mpv/mpv.conf"
+"mpv/scripts" = "~/.config/mpv/scripts/"
+"mpv/script-opts" = "~/.config/mpv/script-opts/"
