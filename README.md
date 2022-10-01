@@ -1,1 +1,4 @@
 # dotfiles
+```sh
+./dotter deploy
+```
