@@ -1,5 +1,24 @@
-import:
-  - ~/.config/alacritty/colorschemes/gruvbox.yml
+colors:
+  # Default colors
+  primary:
+    foreground: "0xff007c"
+  cursor:
+    text:   "0x03d8f3"
+    cursor: "0xff007c"
+  normal:
+    black:   "0x000000"
+    red:     "0xff007c"
+    green:   "0x00ffc8"
+    yellow:  "0xFCEE0C"
+    blue:    "0x03d8f3"
+    magenta: "0xff0055"
+    cyan:    "0x4EC9B0"
+    white:   "0xD8DEE9"
+
+cursor:
+  style:
+    shape: Underline
+    blinking: Always
 
 window:
   padding:
@@ -9,10 +28,13 @@ window:
 
 font: 
   normal:
-    family: "FiraCode Nerd Font"
+    # family: "FiraCode Nerd Font"
     # family: "ComicCodeLigatures"
-    
-  size: 12
+    family: "PxPlus IBM VGA8"
+    # family: "Share Tech Mono"
+    # family: "Tomorrow"
+
+  size: 16
   offset:
     x: 0
     y: 0

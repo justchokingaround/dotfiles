@@ -1,0 +1,11 @@
+width = 100%
+height = 100%
+hide-cursor = true
+border-width = 0
+outline-width = 0
+padding-left = 35%
+padding-top = 25%
+result-spacing = 25
+num-results = 10
+font = /usr/share/fonts/TTF/PxPlus_IBM_VGA8.ttf
+background-color = #000A

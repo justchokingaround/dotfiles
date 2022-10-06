@@ -7,9 +7,9 @@
 }
 
 window#waybar {
-    /*background: transparent;*/
-    background: #282a36;
-    color: #f8f8f2;
+    background: transparent;
+    /* background: #282a36; */
+    color: #BBBBBB;
 }
 
 #window {
@@ -23,55 +23,55 @@ window#waybar {
 
 #workspaces button {
     padding: 0 5px;
-    color: #f8f8f2;
+    color: #BBBBBB;
 }
 
 #workspaces button.visible {
   color: inherit;
-  background-color: #d79921;
+  background-color: #ff007c;
 }
 
 #workspaces button.active{
   color: inherit;
-  background-color: #d79921;
+  background-color: #ff007c;
 }
 
 #workspaces button.focused {
-    color: #f8f8f2;
-    background-color: #fabd2f;
+    color: #BBBBBB;
+    background-color: #ff007c;
 }
 
 #workspaces button.urgent {
-  color: #ea6962;
+  color: #F44747;
 }
 #workspaces button.hidden {
-  color: #ea6962;
+  color: #F44747;
 }
 
 #tags button {
     padding: 0 5px;
-    color: #f8f8f2;
+    color: #BBBBBB;
 }
 
 #tags button.occupied {
   color: inherit;
-  background-color: #d79921;
+  background-color: #ff007c;
 }
 
 
 
 #tags button.focused {
-    color: #f8f8f2;
-    background-color: #fabd2f;
+    color: #BBBBBB;
+    background-color: #ff007c;
 }
 
 #tags button.urgent {
-  color: #ea6962;
+  color: #F44747;
 }
 
 #mode {
-    background: #64727D;
-    border-bottom: 3px solid #f8f8f2;
+    background: #ff007c;
+    border-bottom: 3px solid #BBBBBB;
 }
 
 #clock, #battery, #cpu, #memory, #network, #pulseaudio, #custom-spotify, #tray, #mode, #custom-wofi-power {
@@ -87,7 +87,7 @@ window#waybar {
 }
 
 #battery icon {
-    color: #ff5555;
+    color: #F44747;
 }
 
 #battery.charging {
@@ -95,13 +95,13 @@ window#waybar {
 
 @keyframes blink {
     to {
-        background-color: #f8f8f2;
+        background-color: #ff007c;
         color: black;
     }
 }
 
 #battery.warning:not(.charging) {
-    color: #f8f8f2;
+    color: #F44747;
     animation-name: blink;
     animation-duration: 0.5s;
     animation-timing-function: linear;
@@ -119,18 +119,13 @@ window#waybar {
 }
 
 #network.disconnected {
-    background: #ff5555;
+    background: #F44747;
 }
 
 #pulseaudio {
 }
 
 #pulseaudio.muted {
-}
-
-#custom-spotify {
-    color: #bd93f9;
-    /*color: #6272a4;*/
 }
 
 #tray {

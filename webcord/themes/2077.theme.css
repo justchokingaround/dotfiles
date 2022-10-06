@@ -1,0 +1,38 @@
+/**
+ * @name Dark Neon
+ * @author Bates#7075
+ * @version 1.0.0
+ * @source https://gitlab.com/CommandCrafterHD/bates-discord-theme
+ * @website https://commandcrafterhd.gitlab.io/bates-discord-theme/
+ * @donate https://www.paypal.com/paypalme/floriancegledi
+ * @patreon https://patreon.com/bates
+ * @description A dark theme with bright neon-y colors!
+ * @authorId 137259132305539072
+ * @invite 6qd3SkP6Ch
+*/
+
+@import url('https://commandcrafterhd.gitlab.io/bates-discord-theme/css/main.css');
+/* ^ This is the main Import ^ DO NOT TOUCH. Without this, the theme won't load!!! */
+
+@import url('https://commandcrafterhd.gitlab.io/bates-discord-theme/css/hideUsers.css');
+/* ^ This import ^ Collapses the userlist in Servers and Groups, comment it out if you don't want that! */
+/* Also a big thank you to rmkx for letting me use some of their code for this, check out their "Boreal" theme! */
+
+/* CUSTOMIZE COLORS IN HERE! */
+:root {
+  --rgb-highlight: 244, 71, 71 !important; /* The main highlight color in RGB values (RGB instead of hex is needed for faded effects) */
+  --background: #1E1E1E !important; /* The main background color */
+  --close-button: var(--dnd-color) !important; /* The main "close this" or "deny" color */
+  --online-color: #14C50B !important; /* The color used in the "online" user status symbol */
+  --afk-color: #FFCC66 !important; /* The color used in the "idle" user status symbol */
+  --dnd-color: #F44747 !important; /* The color used in the "do not disturb" user status symbol */
+  --streaming-color: #6287f8 !important; /* The color used in the "streaming X" user status symbol */
+
+  /* --== Radial Status support ==-- */
+  --rs-online-color: var(--online-color) !important;
+  --rs-idle-color: var(--afk-color) !important;
+  --rs-dnd-color: var(--dnd-color) !important;
+  --rs-offline-color: #d7d8d8 !important;
+  --rs-invisible-color: #d7d8d8 !important;
+  --rs-streaming-color: var(--stream-color) !important;
+}

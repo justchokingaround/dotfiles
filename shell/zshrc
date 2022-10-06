@@ -1,0 +1,16 @@
+bindkey -v
+export KEYTIMEOUT=1
+# echo '\e[5 q'
+
+autoload -U colors && colors
+HISTSIZE=3000
+SAVEHIST=3000
+HISTFILE=~/.cache/zsh/history
+
+eval "$(starship init zsh)"
+autoload -U compinit && compinit -u
+
+# pnpm
+export PNPM_HOME="/home/chokerman/.local/share/pnpm"
+export PATH="$PNPM_HOME:$PATH"
+# pnpm end

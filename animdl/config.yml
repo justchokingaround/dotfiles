@@ -1,0 +1,7 @@
+default_provider: 9anime
+default_player: mpv
+discord_presence: false
+fzf:
+    executable: fzf
+    opts: [--reverse, --height=35%]
+    state: true
