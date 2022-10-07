@@ -34,13 +34,6 @@ vim.api.nvim_create_autocmd({ "TextYankPost" }, {
 	end,
 })
 
--- Remap <C-f> to do the same as /
-vim.api.nvim_create_autocmd({ "VimEnter" }, {
-  callback = function ()
-    vim.cmd "nnoremap <C-f> /"
-  end
-})
-
 -- Set ray settings
 
 -- let g:ray_options =

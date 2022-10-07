@@ -1,46 +1,68 @@
 local M = {}
 
 function M.setup()
-  -- Indicate first time installation
-  local packer_bootstrap = false
+	-- Indicate first time installation
+	local packer_bootstrap = false
 
-  -- packer.nvim configuration
-  local conf = {
+	-- packer.nvim configuration
+	local conf = {
 		profile = {
 			enable = true,
 			threshold = 0, -- the amount in ms that a plugins load time must be over for it to be included in the profile
 		},
 
-    display = {
-      open_fn = function()
-        return require("packer.util").float { border = "rounded" }
-      end,
-    },
-  }
+		display = {
+			open_fn = function()
+				return require("packer.util").float { border = "rounded" }
+			end,
+		},
+	}
 
-  -- Check if packer.nvim is installed
-  -- Run PackerCompile if there are changes in this file
-  local function packer_init()
-    local fn = vim.fn
-    local install_path = fn.stdpath "data" .. "/site/pack/packer/start/packer.nvim"
-    if fn.empty(fn.glob(install_path)) > 0 then
-      packer_bootstrap = fn.system {
-        "git",
-        "clone",
-        "--depth",
-        "1",
-        "https://github.com/wbthomason/packer.nvim",
-        install_path,
-      }
-      vim.cmd [[packadd packer.nvim]]
-    end
-    vim.cmd "autocmd BufWritePost plugins.lua source <afile> | PackerCompile"
-  end
+	-- Check if packer.nvim is installed
+	-- Run PackerCompile if there are changes in this file
+	local function packer_init()
+		local fn = vim.fn
+		local install_path = fn.stdpath "data" .. "/site/pack/packer/start/packer.nvim"
+		if fn.empty(fn.glob(install_path)) > 0 then
+			packer_bootstrap = fn.system {
+				"git",
+				"clone",
+				"--depth",
+				"1",
+				"https://github.com/wbthomason/packer.nvim",
+				install_path,
+			}
+			vim.cmd [[packadd packer.nvim]]
+		end
+		vim.cmd "autocmd BufWritePost plugins.lua source <afile> | PackerCompile"
+	end
 
-  -- Plugins
-  local function plugins(use)
-    use { "wbthomason/packer.nvim" }
-    use { "nvim-lua/plenary.nvim", module = "plenary" }
+	-- Plugins
+	local function plugins(use)
+		use { "wbthomason/packer.nvim" }
+		use { "nvim-lua/plenary.nvim", module = "plenary" }
+		use { "lewis6991/impatient.nvim" }
+
+		-- Autocompletion
+		use {
+			"hrsh7th/cmp-buffer",
+		}
+		use {
+			"hrsh7th/cmp-nvim-lsp",
+		}
+		use {
+			"hrsh7th/nvim-cmp",
+			config = function()
+				require("config.cmp").setup()
+			end,
+		}
+		use {
+			"danymat/neogen",
+			config = function()
+				require('neogen').setup {}
+			end,
+			requires = "nvim-treesitter/nvim-treesitter",
+		}
 
 		-- Autopair
 		use {
@@ -51,23 +73,23 @@ function M.setup()
 		}
 
 		-- Better Comment
-    use {
-      "numToStr/Comment.nvim",
-      opt = true,
-      keys = { "gc", "gcc", "gbc" },
-      config = function()
-        require("Comment").setup {}
-      end,
-    }
+		use {
+			"numToStr/Comment.nvim",
+			opt = true,
+			keys = { "gc", "gcc", "gbc" },
+			config = function()
+				require("Comment").setup {}
+			end,
+		}
 
-    -- Better icons
-    use {
-      "kyazdani42/nvim-web-devicons",
-      module = "nvim-web-devicons",
-      config = function()
-        require("nvim-web-devicons").setup { default = true }
-      end,
-    }
+		-- Better icons
+		use {
+			"kyazdani42/nvim-web-devicons",
+			module = "nvim-web-devicons",
+			config = function()
+				require("nvim-web-devicons").setup { default = true }
+			end,
+		}
 
 		-- Bufferline
 		use {
@@ -79,10 +101,10 @@ function M.setup()
 			end,
 		}
 
-    -- Colorscheme
-    use {
-      "lunarvim/synthwave84.nvim",
-    }
+		-- Colorscheme
+		use {
+			"lunarvim/synthwave84.nvim",
+		}
 		use {
 			"akai54/2077.nvim",
 			config = function()
@@ -100,7 +122,10 @@ function M.setup()
 
 		-- Cockpilot
 		use {
-			"github/copilot.vim"
+			"github/copilot.vim",
+			config = function()
+				require("config.cockpilot").setup()
+			end
 		}
 
 		-- Discord Presence
@@ -110,33 +135,33 @@ function M.setup()
 				require("config.presence").setup()
 			end,
 		}
-		
-    -- Easy hopping
-    use {
-      "phaazon/hop.nvim",
-      cmd = { "HopWord", "HopChar1" },
-      config = function()
-        require("hop").setup {}
-      end,
-    }
 
-    -- Easy motion
-    use {
-      "ggandor/lightspeed.nvim",
-      keys = { "f", "F", "t", "T" },
-      config = function()
-        require("lightspeed").setup {}
-      end,
-    }
+		-- Easy hopping
+		use {
+			"phaazon/hop.nvim",
+			cmd = { "HopWord", "HopChar1" },
+			config = function()
+				require("hop").setup {}
+			end,
+		}
 
-    -- IndentLine
-    use {
-      "lukas-reineke/indent-blankline.nvim",
-      event = "BufReadPre",
-      config = function()
-        require("config.indentblankline").setup()
-      end,
-    }
+		-- Easy motion
+		use {
+			"ggandor/lightspeed.nvim",
+			keys = { "f", "F", "t", "T" },
+			config = function()
+				require("lightspeed").setup {}
+			end,
+		}
+
+		-- IndentLine
+		use {
+			"lukas-reineke/indent-blankline.nvim",
+			event = "BufReadPre",
+			config = function()
+				require("config.indentblankline").setup()
+			end,
+		}
 
 		-- Lualine
 		use {
@@ -147,24 +172,44 @@ function M.setup()
 			end,
 		}
 
-		-- Mason and LSP
+		-- Lsp stuff
+		use {
+			"neovim/nvim-lspconfig",
+		}
+		use {
+			"williamboman/nvim-lsp-installer",
+		}
+		use {
+			"jose-elias-alvarez/null-ls.nvim",
+		}
+		use {
+			"RRethy/vim-illuminate",
+		}
 
 		--- nnn
 		use {
 			"luukvbaal/nnn.nvim",
-			config = function() 
+			config = function()
 				require("nnn").setup()
 			end
 		}
 
-    -- Startup screen
-    use {
-      "goolord/alpha-nvim",
+		-- Snippets
+		use {
+			"L3MON4D3/LuaSnip",
+		}
+		use {
+			"rafamadriz/friendly-snippets",
+		}
+
+		-- Startup screen
+		use {
+			"goolord/alpha-nvim",
 			on = "VimEnter",
-      config = function()
-        require("config.alpha").setup()
-      end,
-    }
+			config = function()
+				require("config.alpha").setup()
+			end,
+		}
 
 		-- Telescope
 		use {
@@ -194,23 +239,23 @@ function M.setup()
 		-- WhichKey
 		use {
 			"folke/which-key.nvim",
-			 -- event = "VimEnter",
-			 config = function()
+			-- event = "VimEnter",
+			config = function()
 				require("config.whichkey").setup()
-			 end,
+			end,
 		}
 
-    if packer_bootstrap then
-      print "Restart Neovim required after installation!"
-      require("packer").sync()
-    end
-  end
+		if packer_bootstrap then
+			print "Restart Neovim required after installation!"
+			require("packer").sync()
+		end
+	end
 
-  packer_init()
+	packer_init()
 
-  local packer = require "packer"
-  packer.init(conf)
-  packer.startup(plugins)
+	local packer = require "packer"
+	packer.init(conf)
+	packer.startup(plugins)
 end
 
 return M
