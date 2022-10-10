@@ -95,6 +95,11 @@
 
 (map! :leader
       :desc "Save file" "w" #'save-buffer)
+
+(map! :map evil-normal-state-map
+      "C-a" #'evil-numbers/inc-at-pt
+      "C-x" #'evil-numbers/dec-at-pt)
+
 ;;
 ;; Here are some additional functions/macros that will help you configure Doom.
 ;;
