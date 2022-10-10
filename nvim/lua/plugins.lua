@@ -149,17 +149,17 @@ function M.setup()
 				require("config.dap").setup()
 			end,
 		}
-		-- use {
-		-- 	"rcarriga/nvim-dap-ui",
-		-- 	requires = "mfussenegger/nvim-dap",
-		-- }
-		-- use {
-		-- 	"theHamsta/nvim-dap-virtual-text",
-		-- 	requires = "mfussenegger/nvim-dap",
-		-- }
-		-- use {
-		-- 	"nvim-telescope/telescope-dap.nvim",
-		-- }
+		use{
+			"rcarriga/nvim-dap-ui",
+			requires = "mfussenegger/nvim-dap",
+		}
+		use {
+			"theHamsta/nvim-dap-virtual-text",
+			requires = "mfussenegger/nvim-dap",
+		}
+		use {
+			"nvim-telescope/telescope-dap.nvim",
+		}
 
 		-- Discord Presence
 		use {

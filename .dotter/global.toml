@@ -26,6 +26,7 @@ depends = ["shell"]
 [dev]
 [dev.files]
 "nvim" = "~/.config/nvim/"
+"doom-emacs" = "~/.doom.d/"
 
 [keyboard]
 [keyboard.files]

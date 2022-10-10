@@ -1,7 +1,11 @@
 source "/usr/share/fzf/key-bindings.zsh"
 source "/usr/share/fzf/completion.zsh"
 source "$HOME/dotfiles/shell/plugins/forgit/forgit.plugin.zsh"
+source "$HOME/dotfiles/shell/plugins/fzf-tab/fzf-tab.plugin.zsh"
 source "$HOME/dotfiles/shell/fzf.zsh"
+source "$HOME/dotfiles/shell/git.zsh"
+source "$HOME/dotfiles/shell/aliases.zsh"
+source "$HOME/dotfiles/shell/functions.zsh"
 
 PATH="$HOME/.cargo/bin:$HOME/.local/bin:$HOME/scripts/:$HOME/dotfiles/shell/plugins/fzf-zsh-plugin/bin:$HOME/.luarocks/bin:${PATH}"
 export PATH
@@ -14,6 +18,4 @@ export XDG_DOWNLOAD_DIR="$HOME/dl"
 
 export MANPAGER="sh -c 'col -bx | bat -l man -p'"
 
-source "$HOME/dotfiles/shell/git.zsh"
-source "$HOME/dotfiles/shell/plugins/fzf-tab/fzf-tab.plugin.zsh"
 . "$HOME/.cargo/env"
