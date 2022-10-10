@@ -102,13 +102,19 @@ function M.setup()
 		}
 
 		-- Colorscheme
+		-- use {
+		-- 	"lunarvim/synthwave84.nvim",
+		-- }
+		-- use {
+		-- 	"akai54/2077.nvim",
+		-- 	config = function()
+		-- 		vim.cmd "colorscheme 2077"
+		-- 	end,
+		-- }
 		use {
-			"lunarvim/synthwave84.nvim",
-		}
-		use {
-			"akai54/2077.nvim",
+			"projekt0n/github-nvim-theme",
 			config = function()
-				vim.cmd "colorscheme 2077"
+				vim.cmd "colorscheme github_dark"
 			end,
 		}
 
@@ -127,6 +133,33 @@ function M.setup()
 				require("config.cockpilot").setup()
 			end
 		}
+
+		-- Code runner
+		use {
+			"CRAG666/code_runner.nvim",
+			config = function()
+				require("config.code_runner").setup()
+			end,
+		}
+
+		-- Dap
+		use {
+			"mfussenegger/nvim-dap",
+			config = function()
+				require("config.dap").setup()
+			end,
+		}
+		-- use {
+		-- 	"rcarriga/nvim-dap-ui",
+		-- 	requires = "mfussenegger/nvim-dap",
+		-- }
+		-- use {
+		-- 	"theHamsta/nvim-dap-virtual-text",
+		-- 	requires = "mfussenegger/nvim-dap",
+		-- }
+		-- use {
+		-- 	"nvim-telescope/telescope-dap.nvim",
+		-- }
 
 		-- Discord Presence
 		use {
@@ -154,6 +187,19 @@ function M.setup()
 			end,
 		}
 
+		-- Git
+		use {
+			"kdheepak/lazygit.nvim"
+		}
+		use {
+			"lewis6991/gitsigns.nvim",
+			requires = { "nvim-lua/plenary.nvim" },
+			config = function()
+				require("config.gitsigns").setup()
+			end,
+		}
+
+
 		-- IndentLine
 		use {
 			"lukas-reineke/indent-blankline.nvim",
@@ -175,15 +221,24 @@ function M.setup()
 		-- Lsp stuff
 		use {
 			"neovim/nvim-lspconfig",
-		}
-		use {
-			"williamboman/nvim-lsp-installer",
+			config = function()
+				require("config.lsp")
+			end,
 		}
 		use {
 			"jose-elias-alvarez/null-ls.nvim",
 		}
 		use {
 			"RRethy/vim-illuminate",
+		}
+		use {
+			"williamboman/mason.nvim",
+			config = function()
+				require("config.lsp.mason").setup()
+			end,
+		}
+		use {
+			"williamboman/mason-lspconfig.nvim",
 		}
 
 		--- nnn
@@ -239,7 +294,7 @@ function M.setup()
 		-- WhichKey
 		use {
 			"folke/which-key.nvim",
-			-- event = "VimEnter",
+			event = "VimEnter",
 			config = function()
 				require("config.whichkey").setup()
 			end,

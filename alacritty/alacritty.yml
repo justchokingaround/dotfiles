@@ -30,12 +30,12 @@ font:
   normal:
     # family: "FiraCode Nerd Font"
     # family: "ComicCodeLigatures"
-    family: "PxPlus IBM VGA8"
+    # family: "PxPlus IBM VGA8"
     # family: "Audiowide"
-    # family: "Share Tech Mono"
+    family: "Share Tech Mono"
     # family: "Tomorrow"
 
-  size: 16
+  size: 18
   offset:
     x: 0
     y: 0

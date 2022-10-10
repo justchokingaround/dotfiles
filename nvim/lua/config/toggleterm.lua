@@ -2,15 +2,18 @@ local M = {}
 
 function M.setup()
   require("toggleterm").setup {
-    size = 20,
-    hide_numbers = true,
-    open_mapping = [[<C-t>]],
-    shade_filetypes = {},
-    shade_terminals = false,
-    shading_factor = 0.3,
-    start_in_insert = true,
-    persist_size = true,
-    direction = "float",
+		size = 20,
+		open_mapping = [[<C-t>]],
+		hide_numbers = true,
+		start_in_insert = true,
+		insert_mappings = true,
+		persist_size = true,
+		direction = "float",
+		close_on_exit = true,
+		shell = "zsh",
+		float_opts = {
+			border = "curved",
+		},
   }
 end
 

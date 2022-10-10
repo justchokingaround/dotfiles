@@ -17,29 +17,8 @@ function M.setup()
 		[[ ███████████ ███    ███ █████████ █████ █████ ████ █████ ]],
 		[[██████  █████████████████████ ████ █████ █████ ████ ██████]],
 
-		-- [[⢀⣠⣾⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠀⠀⠀⠀⣠⣤⣶⣶]],
-		-- [[⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠀⠀⠀⢰⣿⣿⣿⣿]],
-		-- [[⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣧⣀⣀⣾⣿⣿⣿⣿]],
-		-- [[⣿⣿⣿⣿⣿⡏⠉⠛⢿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡿⣿]],
-		-- [[⣿⣿⣿⣿⣿⣿⠀⠀⠀⠈⠛⢿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠿⠛⠉⠁⠀⣿]],
-		-- [[⣿⣿⣿⣿⣿⣿⣧⡀⠀⠀⠀⠀⠙⠿⠿⠿⠻⠿⠿⠟⠿⠛⠉⠀⠀⠀⠀⠀⣸⣿]],
-		-- [[⣿⣿⣿⣿⣿⣿⣿⣷⣄⠀⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣴⣿⣿]],
-		-- [[⣿⣿⣿⣿⣿⣿⣿⣿⣿⠏⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠠⣴⣿⣿⣿⣿]],
-		-- [[⣿⣿⣿⣿⣿⣿⣿⣿⡟⠀⠀⢰⣹⡆⠀⠀⠀⠀⠀⠀⣭⣷⠀⠀⠀⠸⣿⣿⣿⣿]],
-		-- [[⣿⣿⣿⣿⣿⣿⣿⣿⠃⠀⠀⠈⠉⠀⠀⠤⠄⠀⠀⠀⠉⠁⠀⠀⠀⠀⢿⣿⣿⣿]],
-		-- [[⣿⣿⣿⣿⣿⣿⣿⣿⢾⣿⣷⠀⠀⠀⠀⡠⠤⢄⠀⠀⠀⠠⣿⣿⣷⠀⢸⣿⣿⣿]],
-		-- [[⣿⣿⣿⣿⣿⣿⣿⣿⡀⠉⠀⠀⠀⠀⠀⢄⠀⢀⠀⠀⠀⠀⠉⠉⠁⠀⠀⣿⣿⣿]],
-		-- [[⣿⣿⣿⣿⣿⣿⣿⣿⣧⠀⠀⠀⠀⠀⠀⠀⠈⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢹⣿⣿]],
-		-- [[⣿⣿⣿⣿⣿⣿⣿⣿⣿⠃⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⣿⣿]],
 	}
 
-
-	local function footer()
-		local nvim_version = vim.fn.system("nvim --version|head -n1|cut -d'-' -f1")
-		return nvim_version
-	end
-
-	dashboard.section.footer.val = footer()
 
 	dashboard.section.footer.opts.hl = "Type"
 	dashboard.section.header.opts.hl = "Include"
@@ -50,13 +29,11 @@ function M.setup()
 
 
 	dashboard.section.buttons.val = {
-		dashboard.button("p", " " .. " find project", ":lua require('telescope').extensions.projects.projects()<CR>"),
 		dashboard.button("r", " " .. " recent files", ":Telescope oldfiles <CR>"),
 		dashboard.button("g", " " .. " git status", ":Telescope git_status<CR>"),
 		dashboard.button("c", " " .. " config", ":e ~/.config/nvim/init.lua <CR>"),
-		dashboard.button("q", " " .. " quit", ":qa<CR>"),
+		dashboard.button("q", "q " .. " quit", ":qa<CR>"),
 	}
 end
 
 return M
-

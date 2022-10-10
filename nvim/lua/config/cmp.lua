@@ -136,7 +136,7 @@ function M.setup()
 			ghost_text = true,
 		},
 	})
-	
+
 end
 
 return M

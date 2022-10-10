@@ -3,7 +3,8 @@ source "/usr/share/fzf/completion.zsh"
 source "$HOME/dotfiles/shell/plugins/forgit/forgit.plugin.zsh"
 source "$HOME/dotfiles/shell/fzf.zsh"
 
-export PATH="$HOME/.cargo/bin:$PATH:$HOME/.local/bin:$PATH:$HOME/scripts/:$PATH:$HOME/dotfiles/shell/plugins/fzf-zsh-plugin/bin:$PATH:$HOME/.luarocks/bin:$PATH"
+PATH="$HOME/.cargo/bin:$HOME/.local/bin:$HOME/scripts/:$HOME/dotfiles/shell/plugins/fzf-zsh-plugin/bin:$HOME/.luarocks/bin:${PATH}"
+export PATH
 
 export XDG_CONFIG_HOME="$HOME/.config"
 export XDG_DATA_HOME="$HOME/.local/share"
@@ -11,9 +12,8 @@ export XDG_STATE_HOME="$HOME/.local/state"
 export XDG_CACHE_HOME="$HOME/.cache"
 export XDG_DOWNLOAD_DIR="$HOME/dl"
 
-export STARSHIP_CONFIG=~/.config/starship/starship.toml
-
 export MANPAGER="sh -c 'col -bx | bat -l man -p'"
 
 source "$HOME/dotfiles/shell/git.zsh"
 source "$HOME/dotfiles/shell/plugins/fzf-tab/fzf-tab.plugin.zsh"
+. "$HOME/.cargo/env"

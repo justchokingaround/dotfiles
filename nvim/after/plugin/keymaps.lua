@@ -37,23 +37,11 @@ map("n", "<Right>", ":vertical resize -1<CR>", default_opts)
 map("n", "<Up>", ":resize -1<CR>", default_opts)
 map("n", "<Down>", ":resize +1<CR>", default_opts)
 
--- Save and exit using leader
-map("n", "<Leader>w", ":w<CR>", default_opts)
-map("n", "<Leader>q", ":delmarks! | q<CR>", default_opts)
-
--- Alpha
-map("n", "<Leader>a", ":Alpha<CR>", default_opts)
+-- Hop
+map("n", "s", ":HopWord<CR>", default_opts)
 
 -- nnn
 map("t", "<Leader>e", "<C-\\><C-n>:NnnExplorer<CR>", default_opts)
 map("n", "<Leader>e", ":NnnExplorer %:p:h<CR>", default_opts)
 map("n", "<Leader>n", ":NnnPicker %:p:h<CR>", default_opts)
 map("n", "<Leader>n", ":NnnPicker %:p:h<CR>", default_opts)
-
--- Telescope
-map("n", "<Leader>F", ":Telescope live_grep<CR>", default_opts)
-map("n", "<Leader>f", ":Telescope find_files<CR>", default_opts)
-map("n", "<Leader>b", ":Telescope buffers<CR>", default_opts)
-
--- Hop
-map("n", "s", ":HopWord<CR>", default_opts)

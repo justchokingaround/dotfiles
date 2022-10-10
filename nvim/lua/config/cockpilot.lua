@@ -7,6 +7,7 @@ function M.setup()
 	vim.g.copilot_filetypes = {
 		["*"] = true,
 		["lua"] = true,
+		[ "go" ] = false,
 		["rust"] = false,
 		["c"] = false,
 		["python"] = false,
