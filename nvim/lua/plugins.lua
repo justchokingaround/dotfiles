@@ -105,12 +105,12 @@ function M.setup()
 		-- use {
 		-- 	"lunarvim/synthwave84.nvim",
 		-- }
-		-- use {
-		-- 	"akai54/2077.nvim",
-		-- 	config = function()
-		-- 		vim.cmd "colorscheme 2077"
-		-- 	end,
-		-- }
+		use {
+			"akai54/2077.nvim",
+			config = function()
+				vim.cmd "colorscheme 2077"
+			end,
+		}
 		use {
 			"projekt0n/github-nvim-theme",
 			config = function()

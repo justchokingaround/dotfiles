@@ -12,6 +12,7 @@ function M.setup()
 		"yamlls",
 		"jdtls",
 		"gopls",
+		"rust_analyzer",
 	}
 
 	local settings = {

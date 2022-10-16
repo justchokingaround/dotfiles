@@ -1,0 +1,5 @@
+[Desktop Entry]
+Name=startw
+Comment=Startx but for wayland
+Exec=startw
+Type=Application

@@ -8,10 +8,10 @@ function M.setup()
 		["*"] = true,
 		["lua"] = true,
 		[ "go" ] = false,
-		["rust"] = false,
+		["rust"] = true,
 		["c"] = false,
 		["python"] = false,
-		["java"] = false,
+		["java"] = true,
 	}
 
 end
