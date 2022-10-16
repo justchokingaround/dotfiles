@@ -54,7 +54,7 @@ depends = ["mpv"]
 
 [weeb]
 [weeb.files]
-"mangal" = "~/.config/mangal/"
+# "mangal" = "~/.config/mangal/"
 "animdl" = "~/.config/animdl/"
 
 [other]
