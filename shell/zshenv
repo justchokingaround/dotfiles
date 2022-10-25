@@ -19,3 +19,5 @@ export XDG_DOWNLOAD_DIR="$HOME/dl"
 export MANPAGER="sh -c 'col -bx | bat -l man -p'"
 
 . "$HOME/.cargo/env"
+
+export GTK2_RC_FILES="$XDG_CONFIG_HOME"/gtk-2.0/gtkrc

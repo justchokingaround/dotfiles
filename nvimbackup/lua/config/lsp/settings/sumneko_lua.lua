@@ -1,0 +1,1 @@
+/home/chokerman/dotfiles/nvim/lua/config/lsp/settings/sumneko_lua.lua

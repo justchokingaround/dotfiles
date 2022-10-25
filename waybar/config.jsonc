@@ -1,11 +1,18 @@
 {
-  "position": "top", 
+  "position": "top",
   "height": 25,
-  
-  "modules-left":   ["wlr/workspaces"],
-  "modules-center": ["custom/media"],
-  "modules-right":  ["network", "pulseaudio", "clock", "tray"],
-
+  "modules-left": [
+    "wlr/workspaces"
+  ],
+  "modules-center": [
+    "custom/media"
+  ],
+  "modules-right": [
+    "network",
+    "pulseaudio",
+    "clock",
+    "tray"
+  ],
   "wlr/workspaces": {
     "disable-scroll": true,
     "all-outputs": true,
@@ -39,7 +46,7 @@
     }*/
   },
   "clock": {
-   "format": "{: %R   %d/%m}",
+    "format": "{: %R   %d/%m}",
     "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
   },
   "network": {
@@ -61,21 +68,26 @@
       "phone": "",
       "portable": "",
       "car": "",
-      "default": ["", "", "墳", ""]
+      "default": [
+        "",
+        "",
+        "墳",
+        ""
+      ]
     }
   },
   "custom/media": {
-        "format": "{icon} {}",
-        "return-type": "json",
-        "max-length": 40,
-        "format-icons": {
-            "spotify": "",
-            "default": "🎜"
-        },
-        "escape": true,
-        // "exec": "$HOME/.config/waybar/mediaplayer.py 2> /dev/null" // Script in resources folder
-        "exec": "$HOME/.config/waybar/mediaplayer.py --player spotify 2> /dev/null" // Filter player based on name
+    "format": "{icon} {}",
+    "return-type": "json",
+    "max-length": 40,
+    "format-icons": {
+      "spotify": "",
+      "default": "🎜"
     },
+    "escape": true,
+    // "exec": "$HOME/.config/waybar/mediaplayer.py 2> /dev/null" // Script in resources folder
+    "exec": "$HOME/.config/waybar/mediaplayer.py --player spotify 2> /dev/null" // Filter player based on name
+  },
   "tray": {
     "icon-size": 13,
     "spacing": 10

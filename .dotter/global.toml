@@ -21,11 +21,10 @@ depends = ["shell"]
 [shell.files]
 "shell/zshrc" = "~/.zshrc"
 "shell/zshenv" = "~/.zshenv"
-"scripts" = "~/scripts"
+"scripts" = "~/scripts/"
 
 [dev]
 [dev.files]
-"nvim" = "~/.config/nvim/"
 "doom-emacs" = "~/.doom.d/"
 
 [keyboard]
@@ -39,7 +38,6 @@ depends = ["mpv"]
 
 [filemanager]
 [filemanager.files]
-"pcmanfm" = "~/.config/pcmanfm/"
 "ranger" = "~/.config/ranger/"
 
 [launchers]
@@ -61,7 +59,9 @@ depends = ["mpv"]
 [other.files]
 "neofetch" = "~/.config/neofetch/"
 "macchina" = "~/.config/macchina/"
-"gtk" = "~/.config/gtk-3.0/"
+"gtk/gtk-2.0" = "~/.config/gtk-2.0/"
+"gtk/gtk-3.0" = "~/.config/gtk-3.0/"
+"gtk/gtk-4.0" = "~/.config/gtk-4.0/"
 
 [mpv.files]
 "mpv/input.conf" = "~/.config/mpv/input.conf"

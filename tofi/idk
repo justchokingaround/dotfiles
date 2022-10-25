@@ -1,0 +1,14 @@
+# font-name =
+anchor = center
+
+background-color = #2e2634
+border-color = #ffba6d
+border-width = 4
+corner-radius = 10
+
+font-size = 16
+
+selection-color = #ffba6d
+text-color = #ffffff
+outline-width = 0
+outline-color = #ffba6d
