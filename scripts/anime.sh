@@ -1,14 +1,24 @@
 #!/bin/sh
 
-[ ! -d ~/dox/credentials ] && mkdir -p ~/dox/credentials
-access_token=$(cat ~/dox/credentials/anilist_token.txt)
+[ ! -d ~/.config/jerry ] && mkdir -p ~/.config/jerry
+access_token=$(cat ~/.config/jerry/anilist_token.txt)
 [ -z "$access_token" ] && printf "Paste your access token from this page:
 https://anilist.co/api/v2/oauth/authorize?client_id=9857&response_type=token: " && read -r access_token &&
-	echo "$access_token" > ~/dox/credentials/anilist_token.txt && access_token=$(cat ~/dox/credentials/anilist_token.txt)
+	echo "$access_token" > ~/.config/jerry/anilist_token.txt && access_token=$(cat ~/.config/jerry/anilist_token.txt)
+  user_id=$(cat ~/.config/jerry/anilist_user_id.txt)
+[ -z "$user_id" ] && 
+  user_id=$(curl -s -X POST "https://graphql.anilist.co" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json" \
+    -H "Authorization: Bearer $access_token" \
+    -d "{\"query\":\"query { Viewer { id } }\"}"|sed -nE "s@.*\"id\":([0-9]*).*@\1@p") &&
+  echo "$user_id" > ~/.config/jerry/anilist_user_id.txt && user_id=$(cat ~/.config/jerry/anilist_user_id.txt)
 
-launcher="tofi --require-match false --fuzzy-match true --prompt-text > "
-# launcher="fzf"
-# launcher="wofi -d -i -L5 -W 20%"
+history_file="$HOME/.cache/anime_history"
+
+# launcher="tofi --require-match false --fuzzy-match true --prompt-text > "
+launcher="fzf"
+# launcher="wofi -d -i -W 20%"
 
 choice=$(printf "Watch\nUpdate\nInfo\nWatch New"|$launcher)
 
@@ -18,20 +28,18 @@ nth() {
   [ -n "$line" ] && echo "$stdin"|sed "${line}q;d" || exit 1
 }
 
-list() {
+get_anime_from_list() {
   anime_list=$(curl -s -X POST "https://graphql.anilist.co" \
     -H 'Content-Type: application/json' \
     -H "Authorization: Bearer $access_token" \
-    -d "{\"query\":\"query(\$userId:Int,\$userName:String,\$type:MediaType){MediaListCollection(userId:\$userId,userName:\$userName,type:\$type){lists{name isCustomList isCompletedList:isSplitCompletedList entries{...mediaListEntry}}user{id name avatar{large}mediaListOptions{scoreFormat rowOrder animeList{sectionOrder customLists splitCompletedSectionByFormat theme}mangaList{sectionOrder customLists splitCompletedSectionByFormat theme}}}}}fragment mediaListEntry on MediaList{id mediaId status score progress progressVolumes repeat priority private hiddenFromStatusLists customLists advancedScores notes updatedAt startedAt{year month day}completedAt{year month day}media{id title{userPreferred romaji english native}coverImage{extraLarge large}type format status(version:2)episodes volumes chapters averageScore popularity isAdult countryOfOrigin genres bannerImage startDate{year month day}}}\",\"variables\":{\"userId\":5710094,\"type\":\"ANIME\"}}")
-}
-
-get_anime_from_list() {
-  list
-  anime_choice=$(printf "%s" "$anime_list"|tr "\[|\]" "\n"|sed -nE "s@.*\"mediaId\":([0-9]*),\"status\":\"$1\".*\"progress\":([0-9]*),.*\"userPreferred\":\"([^\"]*)\".*\"status\":\"([^\"]*)\",\"episodes\":([0-9]*).*@\3 (\2/\5) \4\t{\1}@p"|nth "\$1"|sed -nE "s@^(.*) \(([0-9]*)/([0-9]*)\) .*\{([0-9]*)\}@\1\t\2\t\3\t\4@p")
-  anime_title=$(printf "%s" "$anime_choice"|cut -f1)
-  progress=$(printf "%s" "$anime_choice"|cut -f2)
-  episodes_total=$(printf "%s" "$anime_choice"|cut -f3)
-  media_id=$(printf "%s" "$anime_choice"|cut -f4)
+    -d "{\"query\":\"query(\$userId:Int,\$userName:String,\$type:MediaType){MediaListCollection(userId:\$userId,userName:\$userName,type:\$type){lists{name isCustomList isCompletedList:isSplitCompletedList entries{...mediaListEntry}}user{id name avatar{large}mediaListOptions{scoreFormat rowOrder animeList{sectionOrder customLists splitCompletedSectionByFormat theme}mangaList{sectionOrder customLists splitCompletedSectionByFormat theme}}}}}fragment mediaListEntry on MediaList{id mediaId status score progress progressVolumes repeat priority private hiddenFromStatusLists customLists advancedScores notes updatedAt startedAt{year month day}completedAt{year month day}media{id title{userPreferred romaji english native}coverImage{extraLarge large}type format status(version:2)episodes volumes chapters averageScore popularity isAdult countryOfOrigin genres bannerImage startDate{year month day}}}\",\"variables\":{\"userId\":$user_id,\"type\":\"ANIME\"}}")
+  anime_choice=$(printf "%s" "$anime_list"|tr "\[|\]" "\n"|sed -nE "s@.*\"mediaId\":([0-9]*),\"status\":\"$1\",\"score\":(.*),\"progress\":([0-9]*),.*\"userPreferred\":\"([^\"]*)\".*\"status\":\"([^\"]*)\",\"episodes\":([0-9]*).*@\4 (\3/\6) \t[\2]\t[\1]@p"|
+    nth "\$1,\$2")
+  anime_title=$(printf "%s" "$anime_choice"|sed -E "s@(.*) \([0-9]*/[0-9]*\) \t.*@\1@")
+  progress=$(printf "%s" "$anime_choice"|sed -nE "s@^([^\(]*)\(([0-9]*)\/([0-9]*)\).*@\2@p")
+  episodes_total=$(printf "%s" "$anime_choice"|sed -nE "s@^([^\(]*)\(([0-9]*)\/([0-9]*)\).*@\3@p")
+  score=$(printf "%s" "$anime_choice"|sed -nE "s@$anime_title \([0-9]*/[0-9]*\) \t\[([0-9]*)\].*@\1@p")
+  media_id=$(printf "%s" "$anime_choice"|sed -nE "s@.*\[([0-9]*)\]@\1@p")
   [ -z "$anime_title" ] && exit 0
 }
 
@@ -53,15 +61,19 @@ update_episode() {
     -H 'Content-Type: application/json' \
     -H "Authorization: Bearer $access_token" \
     -d "{\"query\":\"mutation(\$id:Int \$mediaId:Int \$status:MediaListStatus \$score:Float \$progress:Int \$progressVolumes:Int \$repeat:Int \$private:Boolean \$notes:String \$customLists:[String]\$hiddenFromStatusLists:Boolean \$advancedScores:[Float]\$startedAt:FuzzyDateInput \$completedAt:FuzzyDateInput){SaveMediaListEntry(id:\$id mediaId:\$mediaId status:\$status score:\$score progress:\$progress progressVolumes:\$progressVolumes repeat:\$repeat private:\$private notes:\$notes customLists:\$customLists hiddenFromStatusLists:\$hiddenFromStatusLists advancedScores:\$advancedScores startedAt:\$startedAt completedAt:\$completedAt){id mediaId status score advancedScores progress progressVolumes repeat priority private hiddenFromStatusLists customLists notes updatedAt startedAt{year month day}completedAt{year month day}user{id name}media{id title{userPreferred}coverImage{large}type format status episodes volumes chapters averageScore popularity isAdult startDate{year}}}}\",\"variables\":{\"status\":\"$3\",\"progress\":$(( $1 + 1 )),\"mediaId\":$2}}"
+  [ "$3" = "COMPLETED" ] && notify-send -t 5000 "Completed $anime_title" && sed -i "/$media_id/d" "$history_file" && exit
 }
 
 update_episode_from_list() {
-  # status_choice=$(printf "CURRENT\nCOMPLETED\nPAUSED\nDROPPED\nPLANNING"|$launcher)
-  status_choice="CURRENT"
+  status_choice=$(printf "CURRENT\nCOMPLETED\nPAUSED\nDROPPED\nPLANNING"|$launcher)
+  # status_choice="CURRENT"
   get_anime_from_list "$status_choice"
-  notify-send -t 5000 "Enter new progress for $anime_title"
+  notify-send -t 5000 "Enter new progress for: $anime_title"
   notify-send -t 5000 "Current progress: $progress/$episodes_total episodes watched"
-  new_episode_number=$(printf ""|$launcher)
+  case $launcher in
+    fzf) printf "> " && read -r new_episode_number ;;
+    *) new_episode_number=$(printf ""|$launcher)
+  esac
   [ -z "$new_episode_number" ] && exit 0
   notify-send -t 3000 "Updating progress for $anime_title..."
   [ "$new_episode_number" -eq "$episodes_total" ] && status="COMPLETED" || status="CURRENT"
@@ -85,6 +97,28 @@ update_status() {
   fi
 }
 
+update_score() {
+  status_choice=$(printf "CURRENT\nCOMPLETED\nPAUSED\nDROPPED\nPLANNING"|$launcher)
+  get_anime_from_list "$status_choice"
+  notify-send -t 5000 "Enter new score for: \"$anime_title\""
+  notify-send -t 5000 "Current score: $score"
+  case $launcher in
+    fzf) printf "> " && read -r new_score ;;
+    *) new_score=$(printf ""|$launcher)
+  esac
+  [ -z "$new_score" ] && exit 0
+  notify-send -t 3000 "Updating score for $anime_title..."
+  response=$(curl -s -X POST "https://graphql.anilist.co" \
+    -H 'Content-Type: application/json' \
+    -H "Authorization: Bearer $access_token" \
+    -d "{\"query\":\"mutation(\$id:Int \$mediaId:Int \$status:MediaListStatus \$score:Float \$progress:Int \$progressVolumes:Int \$repeat:Int \$private:Boolean \$notes:String \$customLists:[String]\$hiddenFromStatusLists:Boolean \$advancedScores:[Float]\$startedAt:FuzzyDateInput \$completedAt:FuzzyDateInput){SaveMediaListEntry(id:\$id mediaId:\$mediaId status:\$status score:\$score progress:\$progress progressVolumes:\$progressVolumes repeat:\$repeat private:\$private notes:\$notes customLists:\$customLists hiddenFromStatusLists:\$hiddenFromStatusLists advancedScores:\$advancedScores startedAt:\$startedAt completedAt:\$completedAt){id mediaId status score advancedScores progress progressVolumes repeat priority private hiddenFromStatusLists customLists notes updatedAt startedAt{year month day}completedAt{year month day}user{id name}media{id title{userPreferred}coverImage{large}type format status episodes volumes chapters averageScore popularity isAdult startDate{year}}}}\",\"variables\":{\"score\":$new_score,\"mediaId\":$media_id}}")
+  if printf "%s" "$response"|grep -q "errors"; then
+    notify-send -t 3000 "Failed to update score for $anime_title"
+  else
+    notify-send -t 3000 "New score: $new_score"
+  fi
+}
+
 watch_anime() {
     anime_json=$(curl -s "https://api.consumet.org/meta/anilist/info/${media_id}"|tr "{|}" "\n"|
       sed -nE "s@.*\"id\":\"([^\"]*)\",\"title\":\"(.*)\",\"description\".*\"number\":$((progress + 1)),.*@\1\t\2@p")
@@ -95,23 +129,35 @@ watch_anime() {
     episode_links=$(curl -s "https://api.consumet.org/meta/anilist/watch/${episode_id}")
     [ -z "$episode_links" ] && notify-send -t 1000 "Error: no links found for $anime_title episode $((progress + 1))/$episodes_total" && exit 1
 
+    [ "$((progress + 1))" -eq "$episodes_total" ] && status="COMPLETED" || status="CURRENT"
     notify-send -t 3000 "Watching $anime_title - Ep: $((progress + 1)) $episode_title"
 
     referrer=$(printf "%s" "$episode_links"|tr "{|}" "\n"|sed -nE "s@\"Referer\":\"([^\"]*)\"\$@\1@p")
     video_link=$(printf "%s" "$episode_links"|tr "{|}" "\n"|sed -nE "s@\"url\":\"([^\"]*)\".*\"quality\":\"1080p\"\$@\1@p")
 
-    stopped_at=$(mpv --fs --referrer="$referrer" --force-media-title="$anime_title - Ep: $((progress + 1)) $episode_title" "$video_link" 2>&1|grep AV|
+    [ -f "$history_file" ] && history=$(grep -E "^$media_id" "$history_file")
+    [ -n "$history" ] && resume_from=$(printf "%s" "$history"|cut -f2)
+    [ -n "$resume_from" ] && notify-send -t 3000 "Resuming from saved progress: $resume_from%"
+
+    [ -z "$resume_from" ] && opts="" || opts="--start=${resume_from}%"
+    stopped_at=$(mpv --fs --referrer="$referrer" --force-media-title="$anime_title - Ep: $((progress + 1)) $episode_title" "$opts" "$video_link" 2>&1|grep AV|
                 tail -n1|sed -nE 's_.*AV: ([^ ]*) / ([^ ]*) \(([0-9]*)%\).*_\3_p' &)
 
     if [ "$stopped_at" -gt 85 ]; then
-      response=$(update_episode "$progress" "$media_id" "CURRENT")
+      response=$(update_episode "$progress" "$media_id" "$status")
       if printf "%s" "$response"|grep -q "errors"; then
         notify-send "Error updating progress"
       else
         notify-send -t 3000 "Updated progress to $((progress + 1))/$episodes_total episodes watched"
+        [ -n "$history" ] && sed -i "/^$media_id/d" "$history_file"
       fi
     else
       notify-send -t 3000 "Current progress: $progress/$episodes_total episodes watched"
+      notify-send -t 3000 "Your progress has not been updated"
+      grep -sv "$media_id" "$history_file" > "$history_file.tmp"
+      printf "%s\t%s" "$media_id" "$stopped_at" >> "$history_file.tmp"
+      mv "$history_file.tmp" "$history_file"
+      notify-send -t 5000 "Stopped at: $stopped_at%"
     fi
 }
 

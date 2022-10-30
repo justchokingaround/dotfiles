@@ -59,7 +59,7 @@ alias fzf-preview='printf "fzf --with-nth 2.. --cycle --preview=\"kitty +kitten 
 alias weather="curl -s wttr.in/Heilbronn"
 alias pf='pfetch'
 alias nft='neofetch --kitty ~/.config/neofetch/neofetch.jpeg --size 30%'
-alias nf='neofetch'
+alias nf='macchina'
 alias py='python3'
 alias pip='pip3'
 alias u="zsh &&    echo -ne '\e[5 q'"
