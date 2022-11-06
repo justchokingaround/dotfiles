@@ -44,9 +44,9 @@
 
 (set-fontset-font "fontset-default" nil (font-spec :size 15 :name "Meterial Icons"))
 
-(setq doom-font (font-spec :family "Iosevka" :size 18)
-      doom-variable-pitch-font (font-spec :family "Iosevka" :size 18)
-      doom-big-font (font-spec :family "Iosevka" :size 24))
+(setq doom-font (font-spec :family "Illusion Z" :size 18)
+      doom-variable-pitch-font (font-spec :family "Illusion Z" :size 18)
+      doom-big-font (font-spec :family "Illusion Z" :size 24))
 
 ;; Whenever you reconfigure a package, make sure to wrap your config in an
 ;; `after!' block, otherwise Doom's defaults may override your settings. E.g.

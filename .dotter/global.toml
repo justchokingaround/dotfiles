@@ -35,6 +35,7 @@ depends = ["shell"]
 depends = ["mpv"]
 [media.files]
 "ncspot" = "~/.config/ncspot/"
+"newsboat" = "~/.config/newsboat/"
 
 [filemanager]
 [filemanager.files]
