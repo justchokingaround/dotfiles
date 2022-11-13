@@ -14,17 +14,17 @@ set drawbox
 # cmds/functions
 cmd open ${{
     case $(file --mime-type "$(readlink -f $f)" -b) in
-	image/*) rotdir $f | grep -i "\.\(png\|jpg\|jpeg\|gif\|webp\|tif\|ico\)\(_large\)*$" |
-		setsid -f nsxiv -aio 2>/dev/null | while read -r file; do
-			[ -z "$file" ] && continue
-			lf -remote "send select \"$file\""
-			lf -remote "send toggle"
-		done &
-		;;
-	audio/*|application/octet-stream) mpv --audio-display=no $f ;;
-	video/*) setsid -f mpv $f -quiet >/dev/null 2>&1 ;;
-    text/*) $EDITOR "$f";;
-          *) xdg-open "$f" 2>/dev/null ;;
+	    image/*) rotdir $f | grep -i "\.\(png\|jpg\|jpeg\|gif\|webp\|tif\|ico\)\(_large\)*$" |
+		    setsid -f nsxiv -aio 2>/dev/null | while read -r file; do
+			    [ -z "$file" ] && continue
+			    lf -remote "send select \"$file\""
+			    lf -remote "send toggle"
+		    done &
+		    ;;
+	    audio/*|application/octet-stream) mpv --audio-display=no $f ;;
+	    video/*) setsid -f mpv $f -quiet >/dev/null 2>&1 ;;
+         text/*) $EDITOR "$f";;
+              *) xdg-open "$f" 2>/dev/null ;;
     esac
 }}
 

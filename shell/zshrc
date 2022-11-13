@@ -15,3 +15,5 @@ autoload -U compinit && compinit -u
 export PNPM_HOME="/home/chokerman/.local/share/pnpm"
 export PATH="$PNPM_HOME:$PATH"
 # pnpm end
+
+export PATH="$PATH:/home/chokerman/.bin"
