@@ -36,6 +36,10 @@ depends = ["shell"]
 [keyboard.files]
 "kmonad" = "~/.config/kmonad/"
 
+[keyboard-laptop]
+[keyboard-laptop.files]
+"kmonad-laptop" = "~/.config/kmonad/"
+
 [media]
 depends = ["mpv"]
 [media.files]
