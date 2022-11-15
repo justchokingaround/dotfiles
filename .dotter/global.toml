@@ -3,6 +3,11 @@
 "hypr" = "~/.config/hypr/"
 "waybar" = "~/.config/waybar/"
 
+[wayland-laptop]
+[wayland-laptop.files]
+"hypr-laptop" = "~/.config/hypr/"
+"waybar-laptop" = "~/.config/waybar/"
+
 [xorg]
 [xorg.files]
 "bspwm" = "~/.config/bspwm/"

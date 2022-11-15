@@ -1,0 +1,132 @@
+* {
+    border: none;
+    border-radius: 0;
+    font-family: "FiraCode Nerd Font";
+    font-size: 13px;
+    min-height: 0;
+}
+
+window#waybar {
+    background: transparent;
+    /* background: #282a36; */
+    color: #BBBBBB;
+}
+
+#window {
+    font-weight: normal;
+    font-family: "FiraCode Nerd Font";
+}
+
+#workspaces {
+    padding: 0 5px;
+}
+
+#workspaces button {
+    padding: 0 5px;
+    color: #BBBBBB;
+}
+
+#workspaces button.visible {
+  color: inherit;
+  background-color: #ff007c;
+}
+
+#workspaces button.active{
+  color: inherit;
+  background-color: #ff007c;
+}
+
+#workspaces button.focused {
+    color: #BBBBBB;
+    background-color: #ff007c;
+}
+
+#workspaces button.urgent {
+  color: #F44747;
+}
+#workspaces button.hidden {
+  color: #F44747;
+}
+
+#tags button {
+    padding: 0 5px;
+    color: #BBBBBB;
+}
+
+#tags button.occupied {
+  color: inherit;
+  background-color: #ff007c;
+}
+
+
+
+#tags button.focused {
+    color: #BBBBBB;
+    background-color: #ff007c;
+}
+
+#tags button.urgent {
+  color: #F44747;
+}
+
+#mode {
+    background: #ff007c;
+    border-bottom: 3px solid #BBBBBB;
+}
+
+#clock, #battery, #cpu, #memory, #network, #pulseaudio, #custom-spotify, #tray, #mode, #custom-wofi-power {
+    padding: 0 10px;
+    margin: 0 2px;
+}
+
+#clock {
+    font-weight: normal;
+}
+
+#battery {
+}
+
+#battery icon {
+    color: #F44747;
+}
+
+#battery.charging {
+}
+
+@keyframes blink {
+    to {
+        background-color: #ff007c;
+        color: black;
+    }
+}
+
+#battery.warning:not(.charging) {
+    color: #F44747;
+    animation-name: blink;
+    animation-duration: 0.5s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+#cpu {
+}
+
+#memory {
+}
+
+#network {
+}
+
+#network.disconnected {
+    background: #F44747;
+}
+
+#pulseaudio {
+}
+
+#pulseaudio.muted {
+}
+
+#tray {
+}
