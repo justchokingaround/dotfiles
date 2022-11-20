@@ -64,12 +64,16 @@ alias py='python3'
 alias pip='pip3'
 alias u="zsh &&    echo -ne '\e[5 q'"
 alias myip="curl ipinfo.io/ip"
-alias ytfzf="ytfzf -t --thumb-viewer=kitty"
+alias ytfzf="ytfzf --thumb-viewer=kitty --thumbnail-quality=maxres -t --notify-playing"
 alias ytm="ytfzf -m"
 alias nvf="open_with_nvim nvim"
 alias nvff="open_with_nvim_filetype nvim"
 alias nif="open_with_nvim env WINIT_UNIX_BACKEND=x11 neovide"
 alias niff="open_with_nvim_filetype env WINIT_UNIX_BACKEND=x11 neovide"
+alias sudo="doas"
+alias sudoedit="doas rnano"
+alias hx="helix"
+alias epy="py ~/dev/epy/epy.py"
 
 alias mpf="open_with_mpv"
 alias nb="newsboat"

@@ -2,7 +2,7 @@ export FZF_DEFAULT_COMMAND="rg ~ --files --hidden"
 export FZF_DEFAULT_OPTS="
   --color=fg:#ff007c,bg:-1,hl:#03d8f3 --color=fg+:#00ffc8,bg+:,hl+:#03d8f3 
   --color=info:#ff0055,prompt:#fcee0c,pointer:#ffb800 --color=marker:#00ffc8,spinner:#ffb800,header:#fcee0c
-  --reverse --border=rounded --height=30%
+  --reverse --border=rounded
 "
 export FZF_ALT_C_COMMAND="fd -t d -d 1"
 export FZF_ALT_C_OPTS="--preview 'tree -C {}|head -200' --height=60%"

@@ -22,5 +22,5 @@ channel_id=$(printf "%s" "$channel_choice"|cut -f2)
 content=$(wl-paste)
 [ -z "$content" ] && exit 1 && notify-send "No content to send"
 
-curl -H "Authorization: $token" -F 'payload_json={"content":"'"${content}"'"}' "https://discord.com/api/v9/channels/$channel_id/messages"
+curl -H "Authorization: $token" -F 'payload_json={"content":"'"${content}"'"}' "${base}/channels/$channel_id/messages"
 notify-send "Discord message" "\"$content\" has been sent to \#$channel_name in $server_name"
