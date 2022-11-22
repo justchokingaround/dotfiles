@@ -17,8 +17,9 @@ colors:
 
 cursor:
   style:
-    shape: Underline
-    blinking: Always
+    # shape: Underline
+    # blinking: Always
+    shape: Block
 
 window:
   padding:

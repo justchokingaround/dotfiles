@@ -62,7 +62,8 @@ alias nft='neofetch --kitty ~/.config/neofetch/neofetch.jpeg --size 30%'
 alias nf='macchina'
 alias py='python3'
 alias pip='pip3'
-alias u="zsh &&    echo -ne '\e[5 q'"
+# alias u="zsh &&    echo -ne '\e[5 q'"
+alias u="zsh"
 alias myip="curl ipinfo.io/ip"
 alias ytfzf="ytfzf --thumb-viewer=kitty --thumbnail-quality=maxres -t --notify-playing"
 alias ytm="ytfzf -m"

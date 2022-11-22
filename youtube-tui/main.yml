@@ -1,0 +1,14 @@
+invidious_instance: https://vid.puffyan.us
+max_watch_history: 50
+allow_unicode: true
+message_bar_default: All good :)
+images: Sixels
+refresh_after_modifying_search_filters: true
+image_index: 4
+provider: YouTube
+env:
+  terminal-emulator: footclient
+  browser: brave
+  video-player: mpv
+  download-path: '''~/videos/youtube/%(title)s-%(id)s.%(ext)s'''
+  youtube-downloader: yt-dlp
