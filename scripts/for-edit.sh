@@ -21,6 +21,7 @@ channel_name=$(printf "%s" "$channel_choice"|cut -f1)
 channel_id=$(printf "%s" "$channel_choice"|cut -f2)
 content=$(wl-paste)
 [ -z "$content" ] && exit 1 && notify-send "No content to send"
+title=$(curl -sL "$content"|sed -nE "s@.*meta name=\"title\" content=\"([^\"]*)\".*@\1@p")
 
 curl -H "Authorization: $token" -F 'payload_json={"content":"'"${content}"'"}' "${base}/channels/$channel_id/messages"
-notify-send "Discord message" "\"$content\" has been sent to \#$channel_name in $server_name"
+notify-send "Discord message" "\"$title\" has been sent to \#$channel_name in for-edit"
