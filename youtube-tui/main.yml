@@ -7,8 +7,8 @@ refresh_after_modifying_search_filters: true
 image_index: 4
 provider: YouTube
 env:
-  video-player: mpv
   youtube-downloader: yt-dlp
-  download-path: '''~/videos/youtube/%(title)s-%(id)s.%(ext)s'''
-  browser: brave
   terminal-emulator: footclient
+  browser: brave
+  download-path: '''~/videos/youtube/%(title)s-%(id)s.%(ext)s'''
+  video-player: mpv

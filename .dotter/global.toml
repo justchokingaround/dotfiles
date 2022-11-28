@@ -80,3 +80,4 @@ depends = ["mpv"]
 "mpv/mpv.conf" = "~/.config/mpv/mpv.conf"
 "mpv/scripts" = "~/.config/mpv/scripts/"
 "mpv/script-opts" = "~/.config/mpv/script-opts/"
+"mpv/shaders" = "~/.config/mpv/shaders/"

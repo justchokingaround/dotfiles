@@ -1,6 +1,6 @@
 #!/bin/sh
 
-token=$(cat ~/.config/jerry/anilist_token.txt)
+token=$(cat ~/.cache/jerry/anilist_token.txt)
 
 content=$(curl -s 'https://graphql.anilist.co' \
   -X POST -H 'User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:106.0) Gecko/20100101 Firefox/106.0' \
