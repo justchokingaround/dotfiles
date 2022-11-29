@@ -28,6 +28,7 @@ alias f="fzf"
 alias ra="ranger"
 alias j=z
 alias jj="cd -"
+alias zj="zellij -s"
 
 ### Suffix aliases
 alias -s md=nvim

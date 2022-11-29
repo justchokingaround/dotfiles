@@ -53,5 +53,6 @@
 (package! rainbow-mode)
 (package! poly-org)
 (package! ein)
+(package! org-ref)
 (package! copilot
   :recipe (:host github :repo "zerolfx/copilot.el" :files ("*.el" "dist")))

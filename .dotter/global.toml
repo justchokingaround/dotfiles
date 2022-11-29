@@ -22,6 +22,7 @@ depends = ["shell"]
 "kitty" = "~/.config/kitty/"
 "foot" = "~/.config/foot/"
 "starship" = "~/.config/starship"
+"zellij" = "~/.config/zellij"
 [shell]
 [shell.files]
 "shell/zshrc" = "~/.zshrc"

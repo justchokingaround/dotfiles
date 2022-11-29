@@ -64,6 +64,15 @@
 (require 'elcord)
 (elcord-mode)
 
+;; (require 'org-ref)
+;; (setq org-latex-pdf-process
+;;       '("pdflatex -shell-escape -interaction nonstopmode -output-directory %o %f"
+;;          "bibtex %b"
+;;          "pdflatex -shell-escape -interaction nonstopmode -output-directory %o %f"
+;;          "pdflatex -shell-escape -interaction nonstopmode -output-directory %o %f"
+;;         ))
+;; (setq org-latex-logfiles-extensions (quote ("lof" "lot" "tex" "aux" "idx" "log" "out" "toc" "nav" "snm" "vrb" "dvi" "fdb_latexmk" "blg" "brf" "fls" "entoc" "ps" "spl" "bbl" "pygtex" "pygstyle")))
+
 (require 'whitespace)
 (setq whitespace-line-column 99)
 (setq whitespace-style '(face lines-tail))

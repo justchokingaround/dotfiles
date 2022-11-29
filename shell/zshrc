@@ -11,6 +11,9 @@ export STARSHIP_CONFIG=~/.config/starship/starship.toml
 eval "$(starship init zsh)"
 autoload -U compinit && compinit -u
 
+# autostart zellij on shell creation
+# eval "$(zellij setup --generate-auto-start zsh)"
+
 # pnpm
 export PNPM_HOME="/home/chokerman/.local/share/pnpm"
 export PATH="$PNPM_HOME:$PATH"

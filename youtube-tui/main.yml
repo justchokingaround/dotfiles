@@ -9,6 +9,6 @@ provider: YouTube
 env:
   youtube-downloader: yt-dlp
   terminal-emulator: footclient
-  browser: brave
   download-path: '''~/videos/youtube/%(title)s-%(id)s.%(ext)s'''
   video-player: mpv
+  browser: brave
