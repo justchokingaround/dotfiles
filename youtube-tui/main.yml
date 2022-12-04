@@ -8,7 +8,7 @@ image_index: 4
 provider: YouTube
 env:
   youtube-downloader: yt-dlp
-  terminal-emulator: footclient
-  download-path: '''~/videos/youtube/%(title)s-%(id)s.%(ext)s'''
   video-player: mpv
   browser: brave
+  terminal-emulator: footclient
+  download-path: '''~/videos/youtube/%(title)s-%(id)s.%(ext)s'''

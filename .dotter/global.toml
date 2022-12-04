@@ -21,6 +21,7 @@ depends = ["shell"]
 "alacritty" = "~/.config/alacritty/"
 "kitty" = "~/.config/kitty/"
 "foot" = "~/.config/foot/"
+"wezterm" = "~/.config/wezterm/"
 "starship" = "~/.config/starship"
 "zellij" = "~/.config/zellij"
 [shell]

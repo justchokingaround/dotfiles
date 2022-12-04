@@ -1,4 +1,4 @@
-default_provider: 9anime
+default_provider: animixplay
 default_player: mpv
 discord_presence: false
 fzf:
