@@ -8,8 +8,8 @@ if [ -d "$1" ]; then
 elif [ "$category" = image ]; then
 	# chafa "$1"
 	kitty +kitten icat --clear --transfer-mode file
-	kitty +kitten icat --place "200x20@80x20" --transfer-mode file "$1"
-	exiftool "$1"
+	kitty +kitten icat --place "100x20@80x20" --transfer-mode file "$1"
+	# exiftool "$1"
 elif [ "$kind" = vnd.openxmlformats-officedocument.spreadsheetml.sheet ] || \
 	[ "$kind" = vnd.ms-excel ]; then
 	in2csv "$1" | xsv table | bat -ltsv --color=always
