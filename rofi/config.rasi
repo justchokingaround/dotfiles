@@ -1,1 +1,24 @@
-@theme "/usr/share/rofi/themes/android_notification.rasi"
+configuration {
+	modi: "run,ssh,drun";
+	font: "Liga SFMono Nerd Font 12";
+    show-icons: true;
+	terminal: "footclient";
+	kb-remove-char-back: "BackSpace";
+	kb-remove-to-eol: "Control+Shift+e";
+	kb-accept-entry: "Control+m,Return,KP_Enter";
+	kb-mode-next: "Shift+Right,Control+Tab,Control+l";
+	kb-mode-previous: "Shift+Left,Control+Shift+Tab,Control+h";
+	kb-mode-complete: "Control+p";
+	kb-row-up: "Up,Control+k,Shift+Tab,Shift+ISO_Left_Tab";
+	kb-row-down: "Down,Control+j";
+  timeout {
+      action: "kb-cancel";
+      delay:  0;
+  }
+  filebrowser {
+      directories-first: true;
+      sorting-method:    "name";
+  }
+}
+
+@theme "~/.config/rofi/material.rasi"

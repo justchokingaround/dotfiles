@@ -13,8 +13,7 @@
 	# characters not in the chosen font will fail to render.
 	#
 	# Otherwise, fonts are interpreted in Pango format.
-	font = "JetBrains"
-
+	font = "Liga SFMono Nerd Font"
 	# Point size of text.
 	font-size = 24
 

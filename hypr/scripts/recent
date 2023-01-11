@@ -1,0 +1,10 @@
+#!/bin/sh
+
+socat - "UNIX-CONNECT:/tmp/hypr/$HYPRLAND_INSTANCE_SIGNATURE/.socket2.sock" | while read -r line; do
+	#recent workspace switcher
+	current=$(printf "%s" "$line" | sed -nE 's_^(workspace)>>([^ ]*)_\1 \2_p')
+	if [ -n "$current" ]; then
+		cat /tmp/workcurr >/tmp/workprev
+		printf "%s" "$current" >/tmp/workcurr
+	fi
+done

@@ -23,6 +23,6 @@ export MANPAGER="sh -c 'col -bx | bat -l man -p'"
 
 export GTK2_RC_FILES="$XDG_CONFIG_HOME"/gtk-2.0/gtkrc
 export EDITOR="nvim"
-# export TERMINAL="foot"
-export TERMINAL="wezterm"
+export TERMINAL="foot"
+# export TERMINAL="wezterm"
 export BROWSER="brave"
