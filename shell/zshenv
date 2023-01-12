@@ -1,6 +1,6 @@
 source "/usr/share/fzf/key-bindings.zsh"
 source "/usr/share/fzf/completion.zsh"
-source "$HOME/.secret_env"
+# source "$HOME/.secret_env"
 source "$HOME/dotfiles/shell/plugins/forgit/forgit.plugin.zsh"
 source "$HOME/dotfiles/shell/plugins/fzf-tab/fzf-tab.plugin.zsh"
 source "$HOME/dotfiles/shell/fzf.zsh"
