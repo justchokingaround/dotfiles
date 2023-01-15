@@ -1,0 +1,57 @@
+"$schema" = 'https://starship.rs/config-schema.json'
+add_newline = false
+command_timeout = 10000
+
+[character]
+success_symbol = " [╰─🢒](bold cyan)"
+error_symbol = " [╰─×](bold red)"
+
+[directory]
+home_symbol = " "
+truncation_length = 8
+truncate_to_repo = false
+read_only = "🔒"
+read_only_style	= "red"
+
+[package]
+disabled = true
+[git_branch]
+format = "on [$symbol$branch]($style) "
+symbol = "🍣 "
+style = "bold yellow"
+
+[git_commit]
+commit_hash_length = 8
+style = "bold white"
+
+[git_state]
+format = '[\($state( $progress_current of $progress_total)\)]($style) '
+
+[git_status]
+conflicted = "⚔️ "
+ahead = "🏎️ 💨×${count} "
+behind = "🐢×${count} "
+diverged = "🔱 🏎️ 💨×{ahead_count} 🐢×${behind_count} "
+untracked = "🛤️ ×${count} "
+stashed = "📦 "
+modified = "📝×${count} "
+staged = "🗃️ ×${count} "
+renamed = "📛×${count} "
+deleted = "🗑️ ×${count} "
+style = "brightwhite"
+format = "$all_status$ahead_behind"
+
+[python]
+format = "[$symbol$version]($style) "
+style = "bold green"
+
+[nodejs]
+disabled = true
+
+[rust]
+format = "[$symbol$version]($style) "
+style = "bold green"
+
+[golang]
+format = "[$symbol$version]($style) "
+style = "bold green"

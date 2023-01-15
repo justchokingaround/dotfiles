@@ -1,20 +1,20 @@
 * {
     border: none;
     border-radius: 0;
-    font-family: "FiraCode Nerd Font";
+    font-family: "Liga SFMono Nerd Font";
     font-size: 13px;
     min-height: 0;
 }
 
 window#waybar {
-    background: transparent;
+    /* background: transparent; */
     /* background: #282a36; */
-    color: #BBBBBB;
+    background: #161616;
 }
 
 #window {
     font-weight: normal;
-    font-family: "FiraCode Nerd Font";
+    font-family: "Liga SFMono Nerd Font";
 }
 
 #workspaces {
@@ -23,55 +23,54 @@ window#waybar {
 
 #workspaces button {
     padding: 0 5px;
-    color: #BBBBBB;
+    color: #ffffff;
 }
 
 #workspaces button.visible {
   color: inherit;
-  background-color: #ff007c;
+  background-color: #ffffff;
 }
 
 #workspaces button.active{
   color: inherit;
-  background-color: #ff007c;
+  background-color: #ffffff;
 }
 
 #workspaces button.focused {
-    color: #BBBBBB;
-    background-color: #ff007c;
+    color: #ffffff;
+    background-color: #161616;
 }
 
 #workspaces button.urgent {
-  color: #F44747;
+  color: #be95ff;
 }
 #workspaces button.hidden {
-  color: #F44747;
+  color: #be95ff;
 }
 
 #tags button {
     padding: 0 5px;
-    color: #BBBBBB;
+    color: #ffffff;
 }
 
 #tags button.occupied {
   color: inherit;
-  background-color: #ff007c;
+  background-color: #161616;
 }
-
 
 
 #tags button.focused {
-    color: #BBBBBB;
-    background-color: #ff007c;
+    color: #ffffff;
+    background-color: #161616;
 }
 
 #tags button.urgent {
-  color: #F44747;
+  color: #be95ff;
 }
 
 #mode {
-    background: #ff007c;
-    border-bottom: 3px solid #BBBBBB;
+    background: #161616;
+    border-bottom: 3px solid #ffffff;
 }
 
 #clock, #battery, #cpu, #memory, #network, #pulseaudio, #custom-spotify, #tray, #mode, #custom-wofi-power {
@@ -87,7 +86,7 @@ window#waybar {
 }
 
 #battery icon {
-    color: #F44747;
+    color: #be95ff;
 }
 
 #battery.charging {
@@ -95,13 +94,13 @@ window#waybar {
 
 @keyframes blink {
     to {
-        background-color: #ff007c;
+        background-color: #161616;
         color: black;
     }
 }
 
 #battery.warning:not(.charging) {
-    color: #F44747;
+    color: #be95ff;
     animation-name: blink;
     animation-duration: 0.5s;
     animation-timing-function: linear;
@@ -119,7 +118,7 @@ window#waybar {
 }
 
 #network.disconnected {
-    background: #F44747;
+    background: #be95ff;
 }
 
 #pulseaudio {
@@ -129,4 +128,11 @@ window#waybar {
 }
 
 #tray {
+}
+
+.modules-center {
+  color: #ffffff;
+}
+.modules-right {
+  color: #ffffff;
 }

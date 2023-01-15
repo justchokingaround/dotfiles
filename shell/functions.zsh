@@ -33,6 +33,7 @@ nvc() {
   [ -z "$file" ] || $EDITOR $file
 }
 
+
 # quickly edit config files
 vc() {
   file=$(fd . "$HOME/.config/" -t f|fzf -d"/" --with-nth -1.. --height=95%)
@@ -138,6 +139,37 @@ is() {
   image=$(fd -t f -d 1|fzf --cycle --preview="kitty +kitten icat --clear --transfer-mode file; \
   kitty +kitten icat --place "256x17@10x10" --scale-up --transfer-mode file {}")
   [ -z "$image" ] || printf $(curl -# "https://0x0.st" -F "file=@${image}")|pbcopy
+}
+
+#nnn -c to activate disables -e
+
+n () {
+    # Block nesting of nnn in subshells
+    if [ -n $NNNLVL ] && [ "${NNNLVL:-0}" -ge 1 ]; then
+        echo "nnn is already running"
+        return
+    fi
+
+    # The behaviour is set to cd on quit (nnn checks if NNN_TMPFILE is set)
+    # To cd on quit only on ^G, either remove the "export" as in:
+    #    NNN_TMPFILE="${XDG_CONFIG_HOME:-/home/daru/.config}/nnn/.lastd"
+    #    (or, to a custom path: NNN_TMPFILE=/tmp/.lastd)
+    # or, export NNN_TMPFILE after nnn invocation
+    export NNN_TMPFILE="${XDG_CONFIG_HOME:-/home/chokerman/.config}/nnn/.lastd"
+
+    # Unmask ^Q (, ^V etc.) (if required, see stty -a) to Quit nnn
+    # stty start undef
+    # stty stop undef
+    # stty lwrap undef
+    # stty lnext undef
+
+    nnn -cda "$@"
+    #nnn -cdHa "$@" -P v
+
+    if [ -f "$NNN_TMPFILE" ]; then
+            . "$NNN_TMPFILE"
+            rm -f "$NNN_TMPFILE" > /dev/null
+    fi
 }
 
 # Update all Wallpapers

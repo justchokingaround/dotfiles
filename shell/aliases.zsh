@@ -19,7 +19,6 @@ alias rd='rm -rI "$(exa -D| fzf --height=20% --preview="exa -l {}")"'
 alias cx='chmod +x "$(rg --files -g "*.sh"|fzf -1 --height=20% --preview-window=hidden)"'
 alias v='nvim'
 alias nv='nvim'
-alias n='nnn -a'
 alias neovide="env WINIT_UNIX_BACKEND=x11 neovide"
 alias ni="env WINIT_UNIX_BACKEND=x11 neovide"
 alias vg='nvim $(gum filter)'

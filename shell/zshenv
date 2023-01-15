@@ -17,7 +17,20 @@ export XDG_STATE_HOME="$HOME/.local/state"
 export XDG_CACHE_HOME="$HOME/.cache"
 export XDG_DOWNLOAD_DIR="$HOME/dl"
 
-export MANPAGER="sh -c 'col -bx | bat -l man -p'"
+# nnn shit
+BLK="04" CHR="04" DIR="04" EXE="00" REG="00" HARDLINK="00" SYMLINK="06" MISSING="00" ORPHAN="01" FIFO="0F" SOCK="0F" OTHER="02"
+export NNN_FCOLORS="$BLK$CHR$DIR$EXE$REG$HARDLINK$SYMLINK$MISSING$ORPHAN$FIFO$SOCK$OTHER"
+export NNN_FIFO=/tmp/nnn.fifo
+export NNN_OPENER="/home/chokerman/.config/nnn/plugins/nuke"
+export NNN_PLUG='o:fzopen;j:autojump;c:cdpath;u:getplugs;i:imgview;p:preview-tui;w:wallpaper;z:preview-tabbed'
+#;j:autojump
+#;f:fzopen
+
+#not working under kitty xembed missing
+#v:preview-tabbed;'
+
+export NNN_BMS="D:/home/chokerman/dl/;n:/home/chokerman/.config/nnn"
+
 
 . "$HOME/.cargo/env"
 
@@ -26,3 +39,5 @@ export EDITOR="nvim"
 export TERMINAL="foot"
 # export TERMINAL="wezterm"
 export BROWSER="brave"
+export MANPAGER="sh -c 'col -bx| bat -p -l man -f'"
+export PAGER="bat"
