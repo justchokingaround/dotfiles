@@ -32,7 +32,7 @@ window#waybar {
 }
 
 #workspaces button.active{
-  color: inherit;
+  color: #161616;
   background-color: #ffffff;
 }
 

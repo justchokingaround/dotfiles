@@ -1,1 +1,0 @@
-/home/chokerman/dotfiles/nvim/after/plugin/autocmds.lua
