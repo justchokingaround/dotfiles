@@ -1,5 +1,5 @@
 configuration {
-	modi: "run,ssh,drun";
+	modi: "run,ssh,drun,window";
 	font: "Liga SFMono Nerd Font 12";
     show-icons: true;
 	terminal: "footclient";
