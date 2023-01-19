@@ -1,7 +1,8 @@
 [wayland]
 [wayland.files]
 "hypr" = "~/.config/hypr/"
-"waybar" = "~/.config/waybar/"
+# "waybar" = "~/.config/waybar/"
+"eww" = "~/.config/eww/"
 
 [wayland-laptop]
 [wayland-laptop.files]
