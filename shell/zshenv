@@ -8,7 +8,7 @@ source "$HOME/dotfiles/shell/git.zsh"
 source "$HOME/dotfiles/shell/aliases.zsh"
 source "$HOME/dotfiles/shell/functions.zsh"
 
-PATH="$HOME/.cargo/bin:$HOME/.local/bin:$HOME/scripts/:$HOME/dotfiles/shell/plugins/fzf-zsh-plugin/bin:$HOME/.luarocks/bin:${PATH}"
+PATH="$HOME/.cargo/bin:$HOME/.local/bin:$HOME/scripts/:$HOME/dotfiles/shell/plugins/fzf-zsh-plugin/bin:$HOME/.luarocks/bin:${PATH}:$HOME/go/bin"
 export PATH
 
 export XDG_CONFIG_HOME="$HOME/.config"
@@ -41,3 +41,6 @@ export TERMINAL="foot"
 export BROWSER="brave"
 export MANPAGER="sh -c 'col -bx| bat -p -l man -f'"
 export PAGER="bat"
+
+# ani-cli shit
+export ANI_CLI_EXTERNAL_MENU=0

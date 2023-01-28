@@ -17,6 +17,8 @@ alias tree='exa -T'
 alias grep="grep --color=auto --exclude-dir={.bzr,CVS,.git,.hg,.svn}"
 alias rd='rm -rI "$(exa -D| fzf --height=20% --preview="exa -l {}")"'
 alias cx='chmod +x "$(rg --files -g "*.sh"|fzf -1 --height=20% --preview-window=hidden)"'
+# alias v='neovide'
+# alias nv='neovide'
 alias v='nvim'
 alias nv='nvim'
 alias neovide="env WINIT_UNIX_BACKEND=x11 neovide"
@@ -65,7 +67,7 @@ alias pip='pip3'
 # alias u="zsh &&    echo -ne '\e[5 q'"
 alias u="zsh"
 alias myip="curl ipinfo.io/ip"
-alias ytfzf="ytfzf --thumb-viewer=kitty --thumbnail-quality=maxres -t --notify-playing"
+alias ytfzf="ytfzf -T swayimg-hyprland -t"
 alias ytm="ytfzf -m"
 alias nvf="open_with_nvim nvim"
 alias nvff="open_with_nvim_filetype nvim"

@@ -1,3 +1,4 @@
+mouse_support: true
 invidious_instance: https://vid.puffyan.us
 max_watch_history: 50
 allow_unicode: true
@@ -7,8 +8,8 @@ refresh_after_modifying_search_filters: true
 image_index: 4
 provider: YouTube
 env:
+  terminal-emulator: footclient
   youtube-downloader: yt-dlp
   video-player: mpv
-  browser: brave
-  terminal-emulator: footclient
   download-path: '''~/videos/youtube/%(title)s-%(id)s.%(ext)s'''
+  browser: brave

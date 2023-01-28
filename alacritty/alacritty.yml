@@ -1,25 +1,43 @@
 colors:
-  # Default colors
   primary:
-    foreground: "0xff007c"
-  cursor:
-    text:   "0x03d8f3"
-    cursor: "0xff007c"
+    background: "#161616"
+    foreground: "#f2f4f8"
+
+  # selection:
+    # background: "#525252"
+    # text: "#f2f4f8"
+    # text: "#000000"
+
   normal:
-    black:   "0x000000"
-    red:     "0xff007c"
-    green:   "0x00ffc8"
-    yellow:  "0xFCEE0C"
-    blue:    "0x03d8f3"
-    magenta: "0xff0055"
-    cyan:    "0x4EC9B0"
-    white:   "0xD8DEE9"
+    black: "#262626"
+    # color8 #393939
+
+    red: "#ff7eb6"
+    # color9 #ff7eb6
+
+    green: "#42be65"
+    # color10 #42be65
+
+    # color3 "#82cfff"
+    # color11 #82cfff
+
+    blue: "#33b1ff"
+    # color12 #33b1ff
+
+    magenta: "#ee5396"
+    # color13 #ee5396
+
+    cyan: "#3ddbd9"
+    # color14 #3ddbd9
+
+    white: "#dde1e6"
+    # color15 #ffffff
 
 cursor:
   style:
-    # shape: Underline
+    shape: Underline
     # blinking: Always
-    shape: Block
+    # shape: Block
 
 window:
   padding:
@@ -29,15 +47,16 @@ window:
 
 font: 
   normal:
+    family: "Liga SFMono Nerd Font"
     # family: "FiraCode Nerd Font"
     # family: "ComicCodeLigatures"
     # family: "PxPlus IBM VGA8"
     # family: "Audiowide"
     # family: "Tomorrow"
     # family: "Share Tech Mono"
-    family: "Illusion Z"
+    # family: "Illusion Z"
 
-  size: 18
+  size: 16
   offset:
     x: 0
     y: 0

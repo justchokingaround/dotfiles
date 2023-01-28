@@ -11,6 +11,7 @@ colors:
   message_outline: '#FF7F00'
   message_error_outline: Red
   message_success_outline: Green
+  command_capture: '#64FF64'
   item_info:
     tag: Gray
     title: Blue

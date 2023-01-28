@@ -1,33 +1,33 @@
-Right:
+End:
+  0: ClearHistory
+'k':
+  0: MoveUp
+'r':
+  2: Reload
+'l':
   0: MoveRight
 Backspace:
   0: Back
-'h':
-  0: MoveLeft
-End:
-  0: ClearHistory
 'j':
+  0: MoveDown
+Down:
   0: MoveDown
 Home:
   0: FirstHistory
-F5:
-  0: Reload
-Down:
-  0: MoveDown
-Esc:
-  0: Deselect
-'r':
-  2: Reload
+Right:
+  0: MoveRight
 'q':
   0: Exit
-Up:
-  0: MoveUp
-'k':
-  0: MoveUp
+Left:
+  4: Back
+  0: MoveLeft
+'h':
+  0: MoveLeft
 Enter:
   0: Select
-'l':
-  0: MoveRight
-Left:
-  0: MoveLeft
-  4: Back
+Up:
+  0: MoveUp
+F5:
+  0: Reload
+Esc:
+  0: Deselect
