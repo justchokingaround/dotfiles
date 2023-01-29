@@ -2,6 +2,10 @@ bindkey -v
 export KEYTIMEOUT=1
 # echo '\e[5 q'
 
+function precmd {
+    print -Pn "\e[ q"
+}
+
 autoload -U colors && colors
 HISTSIZE=3000
 SAVEHIST=3000

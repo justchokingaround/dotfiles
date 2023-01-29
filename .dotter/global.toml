@@ -33,6 +33,7 @@ depends = ["shell"]
 
 [dev]
 [dev.files]
+"doom-emacs" = "~/.doom.d/"
 
 [keyboard]
 [keyboard.files]

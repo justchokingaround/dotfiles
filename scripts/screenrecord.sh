@@ -2,6 +2,7 @@
 
 VIDEO_RECORDINGS_DIR="$HOME/videos/screen-recordings"
 TMP_VIDEO_FILE="/tmp/recording.mp4"
+FPS="60"
 
 launcher() {
 	rofi -dmenu -i -p "$1" -theme ~/.config/rofi/material.rasi
@@ -26,8 +27,8 @@ start_recording() {
 	rm $TMP_VIDEO_FILE
 	monitor_number=$(printf "1. (DP-2)\n2. (HDMI-a-1)" | launcher "Choose a monitor")
 	[ -z "$monitor_number" ] && exit 1
+	notify-send "Recording started" -t 1000 && sleep 1.5
 	wf-recorder -f "$TMP_VIDEO_FILE" &
-	notify-send "Recording started"
 
 	pgrep wf-recorder >/tmp/recordingpid &&
 		# sleep 3 && (kill -0 "$(cat /tmp/recordingpid)" || notify-send -t 1000 "Recording failed")
@@ -35,7 +36,7 @@ start_recording() {
 		wf-recorder -c libx264rgb \
 			--audio="alsa_output.pci-0000_11_00.4.analog-stereo.monitor" \
 			-m mp4 \
-			-F fps=120 \
+			-F fps="$FPS" \
 			-f "$TMP_VIDEO_FILE" &
 }
 
@@ -58,7 +59,12 @@ convert_recording() {
 	1440p) mv "$TMP_VIDEO_FILE" "$VIDEO_RECORDINGS_DIR/$name.mp4" ;;
 	1080p) ffmpeg -i "$TMP_VIDEO_FILE" -vf scale=1920:1080 "$VIDEO_RECORDINGS_DIR/$name.mp4" ;;
 	720p) ffmpeg -i "$TMP_VIDEO_FILE" -vf scale=1280:720 "$VIDEO_RECORDINGS_DIR/$name.mp4" ;;
-	"Discord (under 8mb)") ffmpeg -i "$TMP_VIDEO_FILE" -vf scale=1280:720 -b:v 8M "$VIDEO_RECORDINGS_DIR/$name.mp4" ;;
+	"Discord (under 8mb)")
+		notify-send "Compressing video..." -t 2000
+		notify-send "This may take a while..." -t 2000
+		ffmpeg -i "$TMP_VIDEO_FILE" -vf scale=1920:1080 -c:v libx264 -crf 18 -preset veryslow -c:a "$VIDEO_RECORDINGS_DIR/$name.mp4"
+		notify-send "Compression complete" -t 1000
+		;;
 	"Discord share (upload to oshi.at and copy to clipboard)")
 		notify-send "Converting to 1080..." -t 1000
 		ffmpeg -i "$TMP_VIDEO_FILE" -vf scale=1920:1080 "/tmp/$name.mp4"

@@ -54,5 +54,6 @@
 (package! poly-org)
 (package! ein)
 (package! org-ref)
+(package! autothemer)
 (package! copilot
   :recipe (:host github :repo "zerolfx/copilot.el" :files ("*.el" "dist")))
