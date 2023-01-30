@@ -285,8 +285,8 @@
     # where there are multiple screens with very different dpi values.
     per_monitor_dpi = false
 
-[log_notifs]
-    script = ~/.config/dunst/scripts/dunst_logger.sh
+# [log_notifs]
+#     script = ~/.config/dunst/scripts/dunst_logger.sh
 
 [urgency_low]
     # IMPORTANT: colors have to be defined in quotation marks.
