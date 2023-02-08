@@ -1,4 +1,3 @@
-launch_command: loadpage popular ;; flush ;; history clear
 video:
 - Play video: ${video-player} ${embed-url}
 - Play audio: ${terminal-emulator} ${video-player} ${embed-url} --no-video

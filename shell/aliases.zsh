@@ -30,6 +30,7 @@ alias ra="ranger"
 alias j=z
 alias jj="cd -"
 alias zj="zellij -s"
+# alias time="hyperfine"
 
 ### Suffix aliases
 alias -s md=nvim

@@ -1,0 +1,9 @@
+#!/usr/bin/bash
+
+while true; do
+	[ -d ~/.config/hypr/store ] || mkdir -p ~/.config/hypr/store
+	[ -f ~/.config/hypr/store/dynamic_out.txt ] || touch ~/.config/hypr/store/dynamic_out.txt
+	out=$(cat ~/.config/hypr/store/dynamic_out.txt)
+	echo "$out" | jq --unbuffered --compact-output
+	sleep 0.5
+done

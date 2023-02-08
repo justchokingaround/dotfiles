@@ -1,14 +1,14 @@
 #!/bin/sh
 
 token=$(cat ~/dox/credentials/discord_token.txt)
-launcher="rofi -dmenu -i -p > "
+launcher="rofi -dmenu -i -p"
 # launcher="tofi --require-match false --fuzzy-match true --prompt-text > "
 # launcher="fzf"
 base="https://discord.com/api/v10"
 
 nth() {
 	stdin=$(cat)
-	line=$(echo "$stdin" | awk -F '\t' "{ print NR, $1 }" | $launcher | cut -d\  -f1)
+	line=$(echo "$stdin" | awk -F '\t' "{ print NR, $1 }" | $launcher "" | cut -d\  -f1)
 	[ -n "$line" ] && echo "$stdin" | sed "${line}q;d" || exit 1
 }
 

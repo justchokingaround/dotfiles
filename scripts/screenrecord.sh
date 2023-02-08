@@ -27,7 +27,7 @@ start_recording() {
 	rm $TMP_VIDEO_FILE
 	monitor_number=$(printf "1. (DP-2)\n2. (HDMI-a-1)" | launcher "Choose a monitor")
 	[ -z "$monitor_number" ] && exit 1
-	notify-send "Recording started" -t 1000 && sleep 1.5
+	notify-send "Recording started" -t 1000 && sleep 2
 	wf-recorder -f "$TMP_VIDEO_FILE" &
 
 	pgrep wf-recorder >/tmp/recordingpid &&
