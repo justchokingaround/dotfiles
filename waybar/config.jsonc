@@ -64,8 +64,7 @@
         "spacing": 10
     },
     "clock": {
-        // "format": "🕓 {:%H:%M}",
-        "format": "{:%Y-%m-%d %H:%M}",
+        "format": "{:%A, %B %d, %Y}",
         "tooltip-format": "{calendar}",
         "interval": 30,
         "on-click": "dunstctl history-pop",
