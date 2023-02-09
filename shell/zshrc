@@ -15,6 +15,8 @@ export STARSHIP_CONFIG=~/.config/starship/starship.toml
 eval "$(starship init zsh)"
 autoload -U compinit && compinit -u
 
+eval "$(zoxide init zsh)"
+
 # autostart zellij on shell creation
 # eval "$(zellij setup --generate-auto-start zsh)"
 
