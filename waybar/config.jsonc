@@ -124,8 +124,8 @@
         "on-click" : "playerctl -p spotify_player play-pause",
         "on-click-right" : "playerctl -p spotify_player next",
         "format-icons": {
-            "spotify": "",
-            "default": ""
+            "spotify": " ",
+            "default": " "
         },
         "escape": true,
         "exec": "python $HOME/.config/waybar/custom_modules/mediaplayer.py 2> /dev/null" // Script in resources folder

@@ -1,3 +1,7 @@
+[default-applications]
+[default-applications.files]
+"mimeapps.list" = "~/.config/mimeapps.list"
+
 [wayland]
 [wayland.files]
 "hypr" = "~/.config/hypr/"
@@ -54,7 +58,8 @@ depends = ["mpv"]
 
 [filemanager]
 [filemanager.files]
-"ranger" = "~/.config/ranger/"
+# "ranger" = "~/.config/ranger/"
+"xplr" = "~/.config/xplr/"
 
 [launchers]
 [launchers.files]

@@ -1,0 +1,36 @@
+[Default Applications]
+application/x-shellscript=nvim.deskop
+text/x-python=nvim.desktop
+text/english=nvim.deskop
+text/plain=nvim.desktop
+text/x-makefile=nvim.deskop
+text/x-c++hdr=nvim.deskop
+text/x-c++src=nvim.deskop
+text/x-chdr=nvim.deskop
+text/x-csrc=nvim.deskop
+text/x-java=nvim.deskop
+text/x-moc=nvim.deskop
+text/x-pascal=nvim.deskop
+text/x-tcl=nvim.deskop
+text/x-tex=nvim.deskop
+text/x-c=nvim.deskop
+text/x-c++=nvim.deskop
+text/html=nvim.desktop
+
+inode/directory=pcmanfm.desktop
+
+application/pdf=zathura.desktop
+
+image/png=nsxiv.desktop
+image/jpeg=nsxiv.desktop
+image/jpg=nsxiv.desktop
+
+x-scheme-handler/http=brave-browser.desktop
+x-scheme-handler/https=brave-browser.desktop
+x-scheme-handler/about=brave-browser.desktop
+x-scheme-handler/unknown=brave-browser.desktop
+x-scheme-handler/hyperbeam=hyperbeam.desktop
+x-scheme-handler/tg=userapp-Telegram Desktop-P0UGW1.desktop
+x-scheme-handler/postman=Postman.desktop
+x-scheme-handler/jetbrains=jetbrains-toolbox.desktop
+x-scheme-handler/fleet=jetbrains-fleet.desktop

@@ -9,6 +9,10 @@ alias ../../../..='cd ../../../..'
 alias ../../../../..='cd ../../../../..'
 alias cd..="cd .."
 alias mv="mv -i"
+alias rm="gio trash"
+alias rst="trash-restore"
+alias trash="gio trash --list"
+alias trash-empty="gio trash --empty"
 alias ls='exa'
 alias ll='exa -Fal'
 alias l='exa --long --grid'
@@ -24,9 +28,10 @@ alias nv='nvim'
 alias neovide="env WINIT_UNIX_BACKEND=x11 neovide"
 alias ni="env WINIT_UNIX_BACKEND=x11 neovide"
 alias vg='nvim $(gum filter)'
-alias lv='lvim'
 alias f="fzf"
 alias ra="ranger"
+alias x="xplr"
+alias gpt="sgpt"
 alias j=z
 alias jj="cd -"
 alias zj="zellij -s"
