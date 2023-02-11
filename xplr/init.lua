@@ -9,31 +9,8 @@ xplr.config.general.show_hidden = false
 
 xplr.config.general.enable_recover_mode = true
 
--- xplr.config.layouts.builtin.default = "Table"
+xplr.config.layouts.builtin.default = "Table"
 
--- previuwu
-key.P = {
-	help = "previuwu",
-	messages = {
-		"PopMode",
-		{
-			BashExecSilently0 = [===[
-        fifo="/tmp/xplr.fifo"
-        if [ -e "$fifo" ]; then
-          "$XPLR" -m StopFifo
-          rm -f -- "$fifo"
-        else
-          win="$(xdotool getactivewindow)"
-          mkfifo "$fifo"
-          previuwu --pipe "$fifo" &
-          "$XPLR" -m 'StartFifo: %q' "$fifo"
-          "$XPLR" -m 'BashExecSilently: %q' "sleep 0.2 && xdotool windowactivate $win"
-        fi
-      ]===],
-		},
-	},
-}
---
 -- xpm keybind
 key.x = {
 	help = "xpm",
@@ -64,6 +41,7 @@ require("xpm").setup({
 		"Junker/nuke.xplr",
 		"sayanarijit/dual-pane.xplr",
 		"sayanarijit/trash-cli.xplr",
+		"sayanarijit/preview-tabbed.xplr",
 		"sayanarijit/dragon.xplr",
 		-- ui plugins
 		"prncss-xyz/icons.xplr",
@@ -117,6 +95,7 @@ require("nuke").setup({
 			{ extension = "jpg", command = "nsxiv {}" },
 			{ mime = "video/mp4", command = "mpv {}" },
 			{ mime_regex = "^video/.*", command = "mpv {}" },
+			{ mime_regex = "^audio/.*", command = "mpv --audio-display=no {}" },
 			{ mime_regex = ".*", command = "xdg-open {}" },
 		},
 	},
@@ -141,11 +120,10 @@ require("dual-pane").setup({
 	inactive_pane_width = { Percentage = 30 },
 })
 
-require("dragon").setup({
-	mode = "selection_ops",
-	key = "D",
-	drag_args = "",
-	drop_args = "",
-	keep_selection = false,
-	bin = "dragon",
+-- press ; to access "action to"
+require("preview-tabbed").setup({
+	mode = "default",
+	key = "p",
+	fifo_path = "/tmp/xplr.fifo",
+	previewer = os.getenv("HOME") .. "/.config/nnn/plugins/preview-tui",
 })

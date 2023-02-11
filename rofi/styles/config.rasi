@@ -25,4 +25,4 @@ configuration {
   }
 }
 
-@theme "~/.config/rofi/styles/material.rasi"
+@theme "~/.config/rofi/material.rasi"

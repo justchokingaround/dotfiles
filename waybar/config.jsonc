@@ -1,13 +1,13 @@
 {
     "layer": "top", // Waybar at top layer
     "position": "top", // Waybar position (top|bottom|left|right)
-    "height": 60, // Waybar height (to be removed for auto height)
+    "height": 40, // Waybar height (to be removed for auto height)
     // "width": 1280, // Waybar width
     "spacing": 4, // Gaps between modules (4px)
     // Choose the order of the modules
     // "margin-left":25,
     // "margin-right":25,
-    "margin-bottom":-20,
+    "margin-bottom":-5,
     // "margin-top": 10,
     "modules-left": ["wlr/workspaces"],
     "modules-center": ["custom/media"],

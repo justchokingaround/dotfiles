@@ -44,6 +44,7 @@ window:
     x: 25
     y: 25
   dynamic_padding: true
+  opacity: 0.8
 
 font: 
   normal:

@@ -9,7 +9,7 @@ alias ../../../..='cd ../../../..'
 alias ../../../../..='cd ../../../../..'
 alias cd..="cd .."
 alias mv="mv -i"
-alias rm="gio trash"
+alias rf="gio trash"
 alias rst="trash-restore"
 alias trash="gio trash --list"
 alias trash-empty="gio trash --empty"
@@ -35,6 +35,7 @@ alias gpt="sgpt"
 alias j=z
 alias jj="cd -"
 alias zj="zellij -s"
+alias ze="zellij"
 # alias time="hyperfine"
 
 ### Suffix aliases

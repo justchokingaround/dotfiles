@@ -5,7 +5,7 @@ TMP_VIDEO_FILE="/tmp/recording.mp4"
 FPS="60"
 
 launcher() {
-	rofi -dmenu -i -p "$1" -theme ~/.config/rofi/material.rasi
+	rofi -dmenu -i -p "$1"
 	# wofi -d -p "$1"
 	# tofi --require-match false --fuzzy-match true --prompt-text "$1"
 }

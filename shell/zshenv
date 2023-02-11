@@ -8,7 +8,7 @@ source "$HOME/dotfiles/shell/git.zsh"
 source "$HOME/dotfiles/shell/aliases.zsh"
 source "$HOME/dotfiles/shell/functions.zsh"
 
-PATH="$HOME/.cargo/bin:$HOME/.local/bin:$HOME/scripts/:$HOME/dotfiles/shell/plugins/fzf-zsh-plugin/bin:$HOME/.luarocks/bin:${PATH}:$HOME/go/bin"
+PATH="$HOME/.cargo/bin:$HOME/.local/bin:$HOME/scripts/:$HOME/dotfiles/shell/plugins/fzf-zsh-plugin/bin:$HOME/.luarocks/bin:${PATH}:$HOME/go/bin:$HOME/dotfiles/rofi/scripts/"
 export PATH
 
 export XDG_CONFIG_HOME="$HOME/.config"
@@ -22,7 +22,7 @@ BLK="04" CHR="04" DIR="04" EXE="00" REG="00" HARDLINK="00" SYMLINK="06" MISSING=
 export NNN_FCOLORS="$BLK$CHR$DIR$EXE$REG$HARDLINK$SYMLINK$MISSING$ORPHAN$FIFO$SOCK$OTHER"
 export NNN_FIFO=/tmp/nnn.fifo
 export NNN_OPENER="/home/chokerman/.config/nnn/plugins/nuke"
-export NNN_PLUG='o:fzopen;j:autojump;c:cdpath;u:getplugs;i:imgview;p:preview-tui;w:wallpaper;z:preview-tabbed'
+export NNN_PLUG='o:fzopen;j:autojump;c:cdpath;u:getplugs;i:imgview;z:preview-tabbed;w:wallpaper;p:preview-tui'
 #;j:autojump
 #;f:fzopen
 
