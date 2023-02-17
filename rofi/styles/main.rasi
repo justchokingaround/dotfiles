@@ -1,0 +1,60 @@
+@import     "/home/chokerman/dotfiles/rofi/styles/colors.rasi"
+
+configuration {
+    show-icons: false;
+}
+
+* {
+    pink:    @base0C;
+    cyan:    @base0F;
+
+    accent-color:     @base06;
+    urgent-color:     @base0A;
+
+    background-color:   transparent;
+    text-color:         @base06;
+
+}
+
+window {
+    background-color:   @base00;
+    y-offset: -100px;
+    width: 50%;
+    height: 30%;
+}
+
+inputbar {
+    padding:    20px;
+    background-color:   @base01;
+}
+
+prompt, entry, element-icon, element-text {
+    vertical-align: 0.5;
+}
+
+prompt {
+    text-color: @accent-color;
+}
+
+textbox {
+    padding:            8px;
+    background-color:   @base01;
+}
+
+element {
+    padding:    16px;
+}
+
+element-text {
+    highlight: @pink;
+}
+
+element-text selected {
+  text-color: @cyan;
+}
+
+configuration {
+    run,drun {
+      fallback-icon: "application-x-addon";
+    }
+}

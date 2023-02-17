@@ -9,7 +9,7 @@ xplr.config.general.show_hidden = false
 
 xplr.config.general.enable_recover_mode = true
 
-xplr.config.layouts.builtin.default = "Table"
+xplr.config.layouts.builtin.default = xplr.config.layouts.builtin.no_help
 
 -- xpm keybind
 key.x = {

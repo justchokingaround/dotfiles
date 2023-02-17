@@ -57,7 +57,7 @@ inputbar {
     children: [prompt,entry];
 }
 prompt {
-    font: "Liga SFMono Nerd Font 24";
+    font: "Liga SFMono Nerd Font 16";
     padding: 0 16px 0 8px;
     color: @fg;
 }

@@ -5,8 +5,12 @@ return {
 	font_size = 16.0,
 	enable_tab_bar = false,
 	enable_wayland = true,
-	window_background_opacity = 0.7,
+	window_background_opacity = 1,
 	window_close_confirmation = "NeverPrompt",
+	window_padding = {
+		left = 30,
+		top = 30,
+	},
 	-- default_prog = { "nu" },
 	default_prog = { "zsh" },
 	colors = {

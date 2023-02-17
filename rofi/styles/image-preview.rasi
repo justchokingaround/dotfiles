@@ -1,0 +1,79 @@
+@import     "/home/chokerman/dotfiles/rofi/styles/colors.rasi"
+
+configuration {
+    show-icons: true;
+}
+
+* {
+    pink:    @base0C;
+    cyan:    @base0F;
+
+    accent-color:     @base06;
+    urgent-color:     @base0A;
+
+    background-color:   transparent;
+    text-color:         @base06;
+
+}
+
+window {
+    background-color:   @base00;
+    /* background-color:   transparent; */
+    y-offset: -100px;
+    /* fullscreen: true; */
+    width: 50%;
+    height: 70%;
+}
+
+inputbar {
+    padding:    20px;
+    background-color:   @base01;
+}
+
+prompt, entry, element-icon, element-text {
+    vertical-align: 0.5;
+}
+
+prompt {
+    text-color: @accent-color;
+}
+
+textbox {
+    padding:            8px;
+    background-color:   @base01;
+}
+
+element {
+    padding:    16px;
+}
+
+element-text {
+    highlight: @pink;
+}
+
+element-text selected {
+  text-color: @cyan;
+}
+
+@media (min-width: 2400) {
+    listview {
+        rows:                    12;
+    }
+}
+
+@media (min-width: 3440) {
+    listview {
+        rows:                    16;
+    }
+}
+
+element-icon {
+    padding:                        -40px 0px;
+    border:                         4px 4px solid 4px 4px;
+    border-radius:                  10;
+    size:                           180;
+}
+
+element-icon selected {
+    border-color:                   @pink;
+}

@@ -83,8 +83,6 @@ alias niff="open_with_nvim_filetype env WINIT_UNIX_BACKEND=x11 neovide"
 alias sudo="doas"
 alias sudoedit="doas rnano"
 alias hx="helix"
-alias epy="py ~/dev/epy/epy.py"
-
 alias mpf="open_with_mpv"
 alias nb="newsboat"
 alias -g L='| less'

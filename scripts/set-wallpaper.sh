@@ -2,7 +2,8 @@
 
 [ -n "$1" ] && wallpaper_path="$1"
 
-[ -z "$wallpaper_path" ] && wallpaper_path="$HOME/pix/wallpapers/$(ls ~/pix/wallpapers | while read A; do echo -en "$A\x00icon\x1f~/pix/wallpapers/$A\n"; done | rofi -dmenu -p "")"
+[ -z "$wallpaper_path" ] && wallpaper_path="$HOME/pix/wallpapers/$(ls ~/pix/wallpapers |
+	while read A; do echo -en "$A\x00icon\x1f~/pix/wallpapers/$A\n"; done | rofi -dmenu -p "" -theme ~/dotfiles/rofi/styles/image-preview.rasi)"
 [ -z "$wallpaper_path" ] && exit 1
 
 monitor=$(hyprctl monitors | sed -nE "s@.*Monitor (.*) \(ID.*@\1@p" | rofi -dmenu -p "")
