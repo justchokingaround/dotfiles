@@ -20,7 +20,7 @@ window {
     background-color:   @base00;
     y-offset: -100px;
     width: 50%;
-    height: 30%;
+    height: 35%;
 }
 
 inputbar {

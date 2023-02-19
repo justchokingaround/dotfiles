@@ -70,12 +70,14 @@ depends = ["mpv"]
 
 [notifications]
 [notifications.files]
-"dunst" = "~/.config/dunst/"
+# "dunst" = "~/.config/dunst/"
+"mako" = "~/.config/mako/"
 
 [weeb]
 [weeb.files]
 # "mangal" = "~/.config/mangal/"
 "animdl" = "~/.config/animdl/"
+"jerry" = "~/.config/jerry/"
 
 [other]
 [other.files]

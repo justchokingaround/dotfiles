@@ -1,0 +1,27 @@
+sort=+time
+layer=overlay
+default-timeout=5000
+max-visible=5
+max-history=20
+
+width=300
+height=300
+anchor=top-right
+padding=20
+
+# background-color=#00000066
+background-color=#161616
+# border-color=#ffffff
+border-color=#3ddbd9
+border-radius=14
+border-size=3
+
+font=Liga Sf Mono Nerd Font Italic 12
+text-alignment=center
+
+[urgency=high]
+text-color=#C5467E
+
+[urgency=critical]
+text-color=#DF5EB1
+default-timeout=10000

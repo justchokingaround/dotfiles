@@ -11,7 +11,7 @@
     // "margin-top": 10,
     "modules-left": ["wlr/workspaces"],
     "modules-center": ["custom/media"],
-    "modules-right": ["memory","network","battery","pulseaudio","clock","tray","custom/dunst"],
+    "modules-right": ["memory","network","battery","pulseaudio","clock","tray"],
     // Modules configuration
 
 
