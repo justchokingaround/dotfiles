@@ -79,20 +79,17 @@
         "format-icons": ["", "", "", "", "", "", "", "", ""]
     },
     "battery": {
+        "format": "<span font='Liga SFMono Nerd Font'>{icon}</span>  {capacity}% - {time}",
+        "format-icons": ["", "", "", "", ""],
+        "format-time": "{H}h{M}m",
+        "format-charging": "<span font='Liga SFMono Nerd Font'></span>  <span font='Liga SFMono Nerd Font'>{icon}</span>  {capacity}% - {time}",
+        "format-full": "<span font='Liga SFMono Nerd Font'></span>  <span font='Liga SFMono Nerd Font'>{icon}</span>  Charged",
+        "interval": 30,
         "states": {
-            "warning": 50,
+            "warning": 25,
             "critical": 10
         },
-        "format": "{icon}",
-        //"format-charging": "",
-        "format-charging": "",
-        "format-plugged": "",
-        // "format-good": "", // An empty format will hide the module
-        // "format-full": "",
-        "format-icons": ["", "", "", "", ""]
-    },
-    "battery#bat2": {
-        "bat": "BAT2"
+        "tooltip": false,
     },
     "network": {
         "format-wifi": "{essid} ",
