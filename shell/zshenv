@@ -8,7 +8,7 @@ source "$HOME/dotfiles/shell/git.zsh"
 source "$HOME/dotfiles/shell/aliases.zsh"
 source "$HOME/dotfiles/shell/functions.zsh"
 
-PATH="$HOME/.cargo/bin:$HOME/.local/bin:$HOME/scripts/:$HOME/dotfiles/shell/plugins/fzf-zsh-plugin/bin:$HOME/.luarocks/bin:${PATH}:$HOME/go/bin:$HOME/dotfiles/rofi/scripts/"
+PATH="$HOME/.cargo/bin:$HOME/.local/bin:$HOME/scripts/:$HOME/dotfiles/shell/plugins/fzf-zsh-plugin/bin:$HOME/.luarocks/bin:${PATH}:$HOME/go/bin:$HOME/dotfiles/rofi/scripts/:$HOME/.emacs.d/bin/"
 export PATH
 
 export XDG_CONFIG_HOME="$HOME/.config"
