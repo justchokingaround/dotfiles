@@ -12,7 +12,8 @@
 [wayland-laptop.files]
 "laptop/hypr-laptop" = "~/.config/hypr/"
 # "waybar-laptop" = "~/.config/waybar/"
-"laptop/waybar" = "~/.config/waybar/"
+# "laptop/waybar-laptop" = "~/.config/waybar/"
+"waybar" = "~/.config/waybar/"
 
 [xorg]
 [xorg.files]
