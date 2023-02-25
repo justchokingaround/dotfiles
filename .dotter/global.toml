@@ -10,9 +10,9 @@
 
 [wayland-laptop]
 [wayland-laptop.files]
-"hypr-laptop" = "~/.config/hypr/"
+"laptop/hypr-laptop" = "~/.config/hypr/"
 # "waybar-laptop" = "~/.config/waybar/"
-"waybar" = "~/.config/waybar/"
+"laptop/waybar" = "~/.config/waybar/"
 
 [xorg]
 [xorg.files]
@@ -46,7 +46,7 @@ depends = ["shell"]
 
 [keyboard-laptop]
 [keyboard-laptop.files]
-"kmonad-laptop" = "~/.config/kmonad/"
+"laptop/kmonad-laptop" = "~/.config/kmonad/"
 
 [media]
 depends = ["mpv"]
