@@ -1,6 +1,6 @@
 local wezterm = require("wezterm")
 return {
-	default_cursor_style = "SteadyBar",
+	default_cursor_style = "SteadyUnderline",
 	font = wezterm.font("Liga SFMono Nerd Font"),
 	font_size = 16.0,
 	enable_tab_bar = false,
@@ -9,13 +9,14 @@ return {
 	--window_background_opacity = 0.6,
 	window_close_confirmation = "NeverPrompt",
 	window_padding = {
-		left = 30,
-		top = 30,
+		left = 40,
+		top = 40,
 	},
 	-- default_prog = { "nu" },
 	default_prog = { "zsh" },
 	colors = {
-		foreground = "#dde1e6",
+		--foreground = "#dde1e6",
+		foreground = "#ff7eb6",
 		background = "#161616",
 		cursor_bg = "#f2f4f8",
 		cursor_fg = "#393939",

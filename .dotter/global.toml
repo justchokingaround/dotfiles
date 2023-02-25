@@ -25,11 +25,11 @@
 depends = ["shell"]
 [terminal.files]
 "alacritty" = "~/.config/alacritty/"
-"kitty" = "~/.config/kitty/"
+# "kitty" = "~/.config/kitty/"
 "foot" = "~/.config/foot/"
 "wezterm" = "~/.config/wezterm/"
 "starship" = "~/.config/starship"
-"zellij" = "~/.config/zellij"
+# "zellij" = "~/.config/zellij"
 [shell]
 [shell.files]
 "shell/zshrc" = "~/.zshrc"
@@ -51,9 +51,9 @@ depends = ["shell"]
 [media]
 depends = ["mpv"]
 [media.files]
-"ncspot" = "~/.config/ncspot/"
-"newsboat" = "~/.config/newsboat/"
-"youtube-tui" = "~/.config/youtube-tui/"
+# "ncspot" = "~/.config/ncspot/"
+# "newsboat" = "~/.config/newsboat/"
+# "youtube-tui" = "~/.config/youtube-tui/"
 "ytfzf" = "~/.config/ytfzf/"
 "spotify-player" = "~/.config/spotify-player"
 
@@ -65,8 +65,8 @@ depends = ["mpv"]
 [launchers]
 [launchers.files]
 "rofi" = "~/.config/rofi/"
-"wofi" = "~/.config/wofi/"
-"tofi" = "~/.config/tofi/"
+# "wofi" = "~/.config/wofi/"
+# "tofi" = "~/.config/tofi/"
 
 [notifications]
 [notifications.files]
@@ -76,13 +76,13 @@ depends = ["mpv"]
 [weeb]
 [weeb.files]
 # "mangal" = "~/.config/mangal/"
-"animdl" = "~/.config/animdl/"
+# "animdl" = "~/.config/animdl/"
 "jerry" = "~/.config/jerry/"
 
 [other]
 [other.files]
 "neofetch" = "~/.config/neofetch/"
-"macchina" = "~/.config/macchina/"
+# "macchina" = "~/.config/macchina/"
 
 [mpv.files]
 "mpv/input.conf" = "~/.config/mpv/input.conf"

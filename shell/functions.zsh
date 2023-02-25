@@ -172,6 +172,14 @@ n () {
     fi
 }
 
+addpkg(){
+    paru -Ss "$*" | sed -nE 's|^[a-z]*/([^ ]*).*|\1|p' | fzf --preview 'paru -Si {} | bat --language=yaml --color=always -pp' --preview-window right:65%:wrap -m | paru -S -
+}
+
+rmpkg(){
+    paru -Qq | fzf --preview 'paru -Si {} | bat --language=yaml --color=always -pp' --preview-window right:65%:wrap -m | paru -Rcns -
+}
+
 # Update all Wallpapers
 # TODO port to linux
 
