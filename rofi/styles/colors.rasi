@@ -1,6 +1,5 @@
 configuration {
     font:                           "Liga SFMono Nerd Font 13";
-    me-select-entry:                "";
 }
 
 * {
@@ -20,4 +19,9 @@ configuration {
     base0D: #42be65; 
     base0E: #be95ff; 
     base0F: #82cfff;
+
+    background: @base01;
+    prompt:     @base00;
+    text:       @base04;
+    select:     @base00;
 }

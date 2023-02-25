@@ -1,60 +1,86 @@
 @import     "/home/chokerman/dotfiles/rofi/styles/colors.rasi"
 
 configuration {
-    show-icons: false;
+    show-icons:         false;
 }
 
 * {
-    pink:    @base0C;
-    cyan:    @base0F;
+    pink:               @base0C;
+    cyan:               @base0F;
 
-    accent-color:     @base06;
-    urgent-color:     @base0A;
+    accent-color:       @base06;
+    urgent-color:       @base0A;
 
     background-color:   transparent;
-    text-color:         @base06;
-
+    text-color:         @text;
+    margin:             0;
+    padding:            0;
 }
 
 window {
-    background-color:   @base00;
-    y-offset: -100px;
-    width: 50%;
-    height: 35%;
+    location:           center;
+    anchor:             center;
+    fullscreen:         false;
+    y-offset:           -100px;
+
+    enabled:            true;
+    background-color:   @background;
+    cursor:             "default";
 }
 
 inputbar {
-    padding:    20px;
-    background-color:   @base01;
+    enabled:            true;
+    background-color:   @prompt;
+    padding:            10px;
+    children:           ["entry"];
 }
 
-prompt, entry, element-icon, element-text {
-    vertical-align: 0.5;
+entry {
+    enabled:            true;
+    padding:            0.75em 1.25em;
+    cursor:             text;
+}
+
+listview {
+    enabled:            true;
+    columns:            1;
+    lines:              6;
+    cycle:              true;
+    dynamic:            true;
+    scrollbar:          false;
+    layout:             vertical;
+    reverse:            false;
+    fixed-height:       true;
+    fixed-columns:      true;
+    margin:             0.5em 0 0.75em;
+    cursor:             "default";
 }
 
 prompt {
-    text-color: @accent-color;
+    text-color:         @accent-color;
 }
 
 textbox {
-    padding:            8px;
-    background-color:   @base01;
+    padding:            0.5em 1.5em;
+    background-color:   @prompt;
 }
 
 element {
-    padding:    16px;
+    enabled:            true;
+    margin:             0 0.75em;
+    padding:            0.5em 1em;
+    cursor:             pointer;
+    orientation:        vertical;
 }
 
 element-text {
-    highlight: @pink;
+    highlight:          @pink;
+    cursor:             inherit;
+    vertical-align:     0.5;
+    horizontal-align:   0.0;
+    font:               "Liga SFMono Nerd Font 14";
 }
 
 element-text selected {
-  text-color: @cyan;
-}
-
-configuration {
-    run,drun {
-      fallback-icon: "application-x-addon";
-    }
+    text-color:           @cyan;
 }

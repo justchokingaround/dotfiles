@@ -5,52 +5,79 @@ configuration {
 }
 
 * {
-    pink:    @base0C;
-    cyan:    @base0F;
+    pink:             @base0C;
+    cyan:             @base0F;
 
     accent-color:     @base06;
     urgent-color:     @base0A;
 
-    background-color:   transparent;
-    text-color:         @base06;
-
+    background-color: transparent;
+    text-color:       @base06;
+    margin:             0;
+    padding:            0;
 }
 
 window {
-    background-color:   @base00;
-    /* background-color:   transparent; */
-    y-offset: -100px;
-    /* fullscreen: true; */
-    width: 50%;
-    height: 70%;
+    location:           center;
+    anchor:             center;
+    fullscreen:         false;
+    y-offset:           -100px;
+
+    enabled:            true;
+    background-color:   @background;
+    cursor:             "default";
 }
 
 inputbar {
-    padding:    20px;
-    background-color:   @base01;
-    /* background-color:   transparent; */
+    enabled:            true;
+    background-color:   @prompt;
+    padding:            10px;
+    children:           ["entry"];
 }
 
-prompt, entry, element-icon, element-text {
-    vertical-align: 0.5;
+entry {
+    enabled:            true;
+    padding:            0.75em 1.25em;
+    cursor:             text;
+}
+
+listview {
+    enabled:            true;
+    columns:            1;
+    lines:              6;
+    cycle:              true;
+    dynamic:            true;
+    scrollbar:          false;
+    layout:             vertical;
+    reverse:            false;
+    fixed-height:       true;
+    fixed-columns:      true;
+    margin:             0.5em 0 0.75em;
+    cursor:             "default";
 }
 
 prompt {
-    text-color: @accent-color;
+    text-color:         @accent-color;
 }
 
 textbox {
-    padding:            8px;
-    background-color:   @base01;
-    /* background-color:   transparent; */
+    padding:            0.5em 1.5em;
+    background-color:   @prompt;
 }
 
 element {
-    padding:    16px;
+    enabled:            true;
+    padding:            0.75em 1.25em;
+    cursor:             pointer;
+    orientation:        horizontal;
 }
 
 element-text {
     highlight: @pink;
+    cursor:             inherit;
+    vertical-align:     0.5;
+    horizontal-align:   0.0;
+    font:              "Liga SFMono Nerd Font 15";
 }
 
 element-text selected {

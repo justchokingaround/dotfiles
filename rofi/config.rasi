@@ -1,5 +1,5 @@
 configuration {
-	font: "Liga SFMono Nerd Font 12";
+	font: "Liga SFMono Nerd Font 13";
   show-icons: true;
   icon-theme: "Papirus";
   display-drun: "";
