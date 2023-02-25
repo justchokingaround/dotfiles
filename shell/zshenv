@@ -8,7 +8,7 @@ source "$HOME/dotfiles/shell/git.zsh"
 source "$HOME/dotfiles/shell/aliases.zsh"
 source "$HOME/dotfiles/shell/functions.zsh"
 
-PATH="$HOME/.cargo/bin:$HOME/.local/bin:$HOME/scripts/:$HOME/dotfiles/shell/plugins/fzf-zsh-plugin/bin:$HOME/.luarocks/bin:${PATH}:$HOME/go/bin:$HOME/dotfiles/rofi/scripts/:$HOME/.emacs.d/bin/"
+PATH="$HOME/.cargo/bin:$HOME/.local/bin:$HOME/scripts/:$HOME/dotfiles/shell/plugins/fzf-zsh-plugin/bin:$HOME/.luarocks/bin:${PATH}:$HOME/go/bin:$HOME/dotfiles/rofi/scripts/:$HOME/.emacs.d/bin/:$HOME/.config/nvim/bin/"
 export PATH
 
 export XDG_CONFIG_HOME="$HOME/.config"
@@ -38,7 +38,7 @@ export GTK2_RC_FILES="$XDG_CONFIG_HOME"/gtk-2.0/gtkrc
 export EDITOR="nvim"
 export TERMINAL="foot"
 # export TERMINAL="wezterm"
-export BROWSER="brave"
+export BROWSER="firefox"
 export MANPAGER="sh -c 'col -bx| bat -p -l man -f'"
 export PAGER="bat"
 

@@ -32,12 +32,24 @@
 (window-divider-mode 1)
 (global-subword-mode 1)
 
+;; (after! doom-modeline
+;;   (setq doom-modeline-persp-name t))
+(after! doom-modeline
+  (setq display-time-string-forms
+        '((propertize (concat " 🕘 " 24-hours ":" minutes))))
+  (display-time-mode 1) ; Enable time in the mode-line
+
+  (doom-modeline-def-modeline 'main
+   '(bar workspace-name window-number modals matches follow buffer-info remote-host buffer-position word-count parrot selection-info)
+   '(objed-state misc-info persp-name battery grip irc mu4e gnus github debug repl lsp minor-modes input-method indent-info buffer-encoding major-mode process vcs checker "   ")))
+
 (setq global-auto-revert-non-file-buffers t
       auto-save-default t
       x-stretch-cursor t
       hscroll-margin 8
       scroll-margin 8)
 
+;; Org Mode Setup
 (setq org-agenda-files (expand-file-name "agenda.org" org-directory)
       org-ellipsis " ▼ "
       org-src-tab-acts-natively t
@@ -69,8 +81,8 @@
   (consult-buffer))
 
 ;; Completion setup
- (setq which-key-idle-delay 0.4
-      which-key-idle-secondary-delay 0.05)
+(setq which-key-idle-delay 0.4
+     which-key-idle-secondary-delay 0.05)
 
 (after! marginalia
   (setq marginalia-align 'right
