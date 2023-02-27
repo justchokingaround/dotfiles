@@ -28,12 +28,12 @@ start_recording() {
 	monitor_number=$(printf "1. (DP-2)\n2. (HDMI-a-1)" | launcher "Choose a monitor: ")
 	[ -z "$monitor_number" ] && exit 1
 	notify-send "Recording started" -t 1000 && sleep 2
-	wf-recorder -f "$TMP_VIDEO_FILE" &
+	wf-recorder -t -f "$TMP_VIDEO_FILE" &
 
 	pgrep wf-recorder >/tmp/recordingpid &&
 		# sleep 3 && (kill -0 "$(cat /tmp/recordingpid)" || notify-send -t 1000 "Recording failed")
 		printf "%s\n" "$monitor_number" |
-		wf-recorder -c libx264rgb \
+		wf-recorder -t \
 			--audio="alsa_output.pci-0000_11_00.4.analog-stereo.monitor" \
 			-m mp4 \
 			-F fps="$FPS" \

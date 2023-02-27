@@ -102,6 +102,18 @@ cchar() {
     kitty +kitten icat --place "256x17@10x10" --scale-up --transfer-mode file {1}" > /dev/null
 }
 
+configs () {
+  local search_dir=~/dotfiles
+  local preview_cmd="exa -lah --sort=type --icons --no-permissions --no-filesize --no-time --no-user $search_dir/{}"
+
+  local target_dir=$(fd . $search_dir --exact-depth=1 --type d --exec printf '{/}\0' | fzf --preview $preview_cmd --exit-0 --read0)
+
+  if [ -n $target_dir ]; then
+    cd $search_dir/$target_dir
+    exa -lah --group-directories-first --icons
+  fi
+}
+
 ### Fzf functions
 
 # Modified version where you can press
