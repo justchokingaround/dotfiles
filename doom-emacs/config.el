@@ -14,6 +14,17 @@
       doom-variable-pitch-font (font-spec :family "Liga SFMono Nerd Font" :size 18)
       doom-big-font (font-spec :family "Liga SFMono Nerd Font" :size 24))
 
+(setq global-auto-revert-non-file-buffers t
+      x-stretch-cursor t
+      hscroll-margin 8
+      scroll-conservatively 101
+      scroll-up-aggressively 0.01
+      scroll-down-aggressively 0.01
+      scroll-preserve-screen-position 'always
+      auto-window-vscroll nil
+      fast-but-imprecise-scrolling nil
+      scroll-margin 8)
+
 (setq fancy-splash-image (expand-file-name "lain.png" doom-user-dir))
 (remove-hook '+doom-dashboard-functions #'doom-dashboard-widget-footer)
 (assoc-delete-all "Open project" +doom-dashboard-menu-sections)

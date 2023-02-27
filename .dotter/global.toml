@@ -57,6 +57,7 @@ depends = ["mpv"]
 # "youtube-tui" = "~/.config/youtube-tui/"
 "ytfzf" = "~/.config/ytfzf/"
 "spotify-player" = "~/.config/spotify-player"
+"zathura" = "~/.config/zathura/"
 
 [filemanager]
 [filemanager.files]
