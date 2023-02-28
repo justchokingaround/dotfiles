@@ -11,7 +11,7 @@
     // "margin-top": 10,
     "modules-left": ["wlr/workspaces"],
     "modules-center": ["custom/media"],
-    "modules-right": ["memory","network","battery","pulseaudio","clock","tray"],
+    "modules-right": ["memory","battery","clock","tray"],
     // Modules configuration
 
 
@@ -64,10 +64,9 @@
         "spacing": 10
     },
     "clock": {
-        "format": "{:%A, %B %d, %Y - %H:%M}",
+        "format": "{:%a, %b %d - %H:%M}",
         "tooltip-format": "{calendar}",
         "interval": 30,
-        "on-click": "dunstctl history-pop",
     },
     "memory": {
         "interval": 30,
