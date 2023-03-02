@@ -10,20 +10,17 @@
 ;; UI Setup
 (setq default-frame-alist '((internal-border-width . 10)))
 (setq initial-frame-alist default-frame-alist)
-(setq doom-font (font-spec :family "Liga SFMono Nerd Font" :size 18)
-      doom-variable-pitch-font (font-spec :family "Liga SFMono Nerd Font" :size 18)
-      doom-big-font (font-spec :family "Liga SFMono Nerd Font" :size 24))
+(setq doom-font (font-spec :family "IBM Plex Mono" :size 19)
+      doom-big-font (font-spec :family "IBM Plex Mono" :size 19)
+      doom-variable-pitch-font (font-spec :family "IBM Plex Sans" :size 19)
+      doom-unicode-font (font-spec :family "Joypixels")
+      doom-serif-font (font-spec :family "IBM Plex Sans" :size 19 :weight 'medium))
 
-(setq global-auto-revert-non-file-buffers t
-      x-stretch-cursor t
-      hscroll-margin 8
-      scroll-conservatively 101
-      scroll-up-aggressively 0.01
-      scroll-down-aggressively 0.01
-      scroll-preserve-screen-position 'always
-      auto-window-vscroll nil
-      fast-but-imprecise-scrolling nil
-      scroll-margin 8)
+(setq redisplay-dont-pause t
+  scroll-margin 1
+  scroll-step 1
+  scroll-conservatively 10000
+  scroll-preserve-screen-position 1)
 
 (setq fancy-splash-image (expand-file-name "lain.png" doom-user-dir))
 (remove-hook '+doom-dashboard-functions #'doom-dashboard-widget-footer)

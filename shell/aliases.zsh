@@ -25,8 +25,6 @@ alias cx='chmod +x "$(rg --files -g "*.sh"|fzf -1 --height=20% --preview-window=
 # alias nv='neovide'
 alias v='nvim'
 alias nv='nvim'
-alias neovide="env WINIT_UNIX_BACKEND=x11 neovide"
-alias ni="env WINIT_UNIX_BACKEND=x11 neovide"
 alias vg='nvim $(gum filter)'
 alias f="fzf"
 alias ra="ranger"
@@ -79,8 +77,6 @@ alias ytfzf="ytfzf -T swayimg-hyprland -t"
 alias ytm="ytfzf -m"
 alias nvf="open_with_nvim nvim"
 alias nvff="open_with_nvim_filetype nvim"
-alias nif="open_with_nvim env WINIT_UNIX_BACKEND=x11 neovide"
-alias niff="open_with_nvim_filetype env WINIT_UNIX_BACKEND=x11 neovide"
 alias sudo="doas"
 alias sudoedit="doas rnano"
 alias hx="helix"
