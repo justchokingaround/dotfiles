@@ -57,10 +57,6 @@ local M = {
             key = 't',
             mods = 'CTRL',
             action = wezterm.action.SpawnTab 'DefaultDomain'
-        }, {
-            key = 'w',
-            mods = 'CTRL',
-            action = wezterm.action.CloseCurrentTab {confirm = false}
         }
     }
 }
