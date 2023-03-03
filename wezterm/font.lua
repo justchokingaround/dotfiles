@@ -8,7 +8,9 @@ local font_family = ({
     'Iosevka Nerd Font Mono', -- [3]
     'JetBrainsMono Nerd Font', -- [4]
     'FiraCode Nerd Font Mono', -- [5]
-    'ComicCodeLigatures' -- [6]
+    'ComicCodeLigatures', -- [6]
+    'Nouveau IBM', -- [7]
+    'IBM Plex Mono' -- [8]
 })[1]
 
 local options = {}
