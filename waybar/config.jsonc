@@ -7,14 +7,21 @@
     // Choose the order of the modules
     // "margin-left":25,
     // "margin-right":25,
-    "margin-bottom":-5,
+    "margin-bottom": -5,
     // "margin-top": 10,
-    "modules-left": ["wlr/workspaces"],
-    "modules-center": ["custom/media"],
-    "modules-right": ["memory","battery","clock","tray"],
+    "modules-left": [
+        "wlr/workspaces"
+    ],
+    "modules-center": [
+        "custom/media"
+    ],
+    "modules-right": [
+        "memory",
+        "battery",
+        "clock",
+        "tray"
+    ],
     // Modules configuration
-
-
     // custom modules ////////////////
     "custom/dunst": {
         "exec": "~/.config/waybar/scripts/dunst.sh",
@@ -25,24 +32,24 @@
     //////////////////////////////////
     "wlr/workspaces": {
         "format": "{icon}",
-        "format-icons": {
-            "1": "一",
-            "2": "二",
-            "3": "三",
-            "4": "四",
-            "5": "五",
-            "6": "六",
-            "7": "七",
-            "8": "八",
-            "9": "九"
-        },
+        // "format-icons": {
+        //     "1": "一",
+        //     "2": "二",
+        //     "3": "三",
+        //     "4": "四",
+        //     "5": "五",
+        //     "6": "六",
+        //     "7": "七",
+        //     "8": "八",
+        //     "9": "九"
+        // },
         "format-active": " {icon} ",
         "on-click": "activate",
         // "format-icons":{
         //     "10":"10"
         // }
-        "persistent_workspaces" : {
-            "3" : [],
+        "persistent_workspaces": {
+            "3": [],
         }
     },
     "mpd": {
@@ -86,11 +93,27 @@
     "backlight": {
         "device": "amdgpu_bl1",
         "format": "{percent}% {icon}",
-        "format-icons": ["", "", "", "", "", "", "", "", ""]
+        "format-icons": [
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+        ]
     },
     "battery": {
         "format": "<span font='Liga SFMono Nerd Font'>{icon}</span>  {capacity}% - {time}",
-        "format-icons": ["", "", "", "", ""],
+        "format-icons": [
+            "",
+            "",
+            "",
+            "",
+            ""
+        ],
         "format-time": "{H}h{M}m",
         "format-charging": "<span font='Liga SFMono Nerd Font'></span>  <span font='Liga SFMono Nerd Font'>{icon}</span>  {capacity}% - {time}",
         "format-full": "<span font='Liga SFMono Nerd Font'></span>  <span font='Liga SFMono Nerd Font'>{icon}</span>  Charged",
@@ -120,7 +143,11 @@
             "phone": "",
             "portable": "",
             "car": "",
-            "default": ["", "", ""]
+            "default": [
+                "",
+                "",
+                ""
+            ]
         },
         "on-click": "pavucontrol"
     },
@@ -128,8 +155,8 @@
         "format": "{icon} {}",
         "return-type": "json",
         "max-length": 40,
-        "on-click" : "playerctl -p spotify_player play-pause",
-        "on-click-right" : "playerctl -p spotify_player next",
+        "on-click": "playerctl -p spotify_player play-pause",
+        "on-click-right": "playerctl -p spotify_player next",
         "format-icons": {
             "spotify": " ",
             "default": " "
@@ -138,4 +165,3 @@
         "exec": "python $HOME/.config/waybar/custom_modules/mediaplayer.py 2> /dev/null" // Script in resources folder
     }
 }
-

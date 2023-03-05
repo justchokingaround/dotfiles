@@ -1,9 +1,40 @@
 These dotfiles are WIP atm, please do not blindly copy them. If you have any questions, you can ask me anything, I'll be happy to help you.
 
-# dotfiles
+#### Necessary packages
 ```sh
-./dotter deploy
+paru -S hyprland-bin xdg-desktop-portal-hyprland-gitwireplumber pipewire qt5-wayland qt6-wayland polkit-gnome playerctl pamixer ffmpeg waybar-hyprland slurp wl-clipboard
 ```
+
+#### Quality of life packages
+```sh
+paru -S bat bottom doas exa ffmpegthumbnailer fzf hyprpicker-git lazygit mlocate mpDris2 nautilus networkmanager nsxiv pavucontrol swappy starship wev zoxide zsh
+```
+
+#### Personal utilities I use
+```sh
+paru -S cliphist-bin discord webcord-bin firefox  grimblast-git hyprpaper-git mako mpv neovim neovide rofi-lbonn-wayland-git spotify-player tectonic texinfo texlive-bibtexextra texlive-bin texlive-core texlive-fontsextra texlive-formatsextra texlive-latexextra texlive-pictures texlive-science foot wezterm wf-recorder zathura zathura-pdf-mupdf phocus-gtk-theme-git ttf-blex-nerd-font-git
+```
+
+- [Anime and Manga](#Anime-and-Manga)
+- [Clipboard](#Clipboard)
+- [Coding/Text editing (Neovim)](#Coding)
+- [Discord](#Discord)
+- [Fonts](#Fonts)
+- [GTK Theme](#GTK-Theme)
+- [Movies and TV Shows](#Movies-and-TV-Shows)
+- [Notifications](#Notifications)
+- [PDF Viewer](#PDF-Viewer)
+- [Rofi](#Rofi)
+- [Screenshot](#Screenshot)
+- [Screen Recording](#Screen-Recording)
+- [Spotify](#Spotify)
+- [Terminals](#Terminals)
+- [Video Player](#Video-Player)
+- [Wallpaper](#Wallpaper)
+
+<details>
+<summary>Screenshots</summary>
+
 ![image](https://user-images.githubusercontent.com/44473782/221352482-08b77efa-d6c8-474c-9d90-304876323bb0.png)
 
 ![image](https://user-images.githubusercontent.com/44473782/221352931-832e900c-a80f-408f-9963-e6067a45c55e.png)
@@ -33,3 +64,4 @@ These dotfiles are WIP atm, please do not blindly copy them. If you have any que
 ![image](https://user-images.githubusercontent.com/44473782/221352958-e6de120a-ca39-48fe-a617-8874dff85e13.png)
 
 ![image](https://user-images.githubusercontent.com/44473782/221353002-cc2cfe0b-be7b-4e4f-b88e-a1cfcf165502.png)
+</details>
