@@ -1,18 +1,18 @@
-@import     "/home/chokerman/dotfiles/rofi/styles/colors.rasi"
+/* Make sure to change the font, which I have set to "Liga SFMono Nerd Font 15" in this config */
 
 configuration {
     show-icons: true;
 }
 
 * {
-    pink:             @base0C;
-    cyan:             @base0F;
+    pink:             #ff7eb6;
+    cyan:             #82cfff;
 
-    accent-color:     @base06;
-    urgent-color:     @base0A;
+    accent-color:     #ffffff;
+    urgent-color:     #ee5396;
 
     background-color: transparent;
-    text-color:       @base06;
+    text-color:       #ffffff;
     margin:             0;
     padding:            0;
 }
@@ -24,13 +24,13 @@ window {
     y-offset:           -100px;
 
     enabled:            true;
-    background-color:   @background;
+    background-color:   #262626;
     cursor:             "default";
 }
 
 inputbar {
     enabled:            true;
-    background-color:   @prompt;
+    background-color:   #161616;
     padding:            10px;
     children:           ["entry"];
 }
@@ -62,7 +62,7 @@ prompt {
 
 textbox {
     padding:            0.5em 1.5em;
-    background-color:   @prompt;
+    background-color:   #161616;
 }
 
 element {
@@ -73,7 +73,7 @@ element {
 }
 
 element-text {
-    highlight: @pink;
+    highlight:          @pink;
     cursor:             inherit;
     vertical-align:     0.5;
     horizontal-align:   0.0;

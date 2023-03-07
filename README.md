@@ -62,7 +62,7 @@ Optional:
 - [Jerry Configuration](https://github.com/justchokingaround/dotfiles/blob/main/jerry/jerry.conf)
 My jerry configuration has 2 dependenices:
     - [Custom Zathura Configuration for Manga](https://github.com/justchokingaround/dotfiles/blob/main/jerry/zathurarc)
-    - [Custom Rofi Configuration for Image Preview](https://github.com/justchokingaround/dotfiles/blob/main/rofi/styles/image-preview.rasi) (TODO: Remove dependencies in this configuration, ie colors.rasi and font)
+    - [Custom Rofi Configuration for Image Preview](https://github.com/justchokingaround/dotfiles/blob/main/rofi/styles/image-preview.rasi) (TODO: Remove dependencies in this configuration, ie font)
 - [Mpv Configuration](#Video-Player) (See Video Player section)
 - [Zathura Configuration](#PDF-Viewer) (See PDF Viewer section)
 - [Rofi Configuration](#Rofi) (See Rofi section)

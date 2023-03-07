@@ -13,7 +13,7 @@ map [fullscreen] f toggle_fullscreen
 
 set font "Liga SFMono Nerd Font 15"
 # Nord theme
-set default-bg "#242730"
+set default-bg "rgba(0,0,0,0.7)"
 set default-fg "#bbc2cf"
 set inputbar-bg "#242730"
 set inputbar-fg "#bbc2cf"
@@ -43,5 +43,5 @@ set index-fg "#bbc2cf"
 set index-active-bg "#242730"
 set index-active-fg "#bbc2cf"
 
-set recolor-lightcolor "#242730"
+set recolor-lightcolor rgba(255,255,255,0)
 set recolor-darkcolor "#bbc2cf"
