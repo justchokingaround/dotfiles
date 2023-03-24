@@ -12,36 +12,30 @@ map f toggle_fullscreen
 map [fullscreen] f toggle_fullscreen
 
 set font "Liga SFMono Nerd Font 15"
-# Nord theme
-set default-bg "rgba(0,0,0,0.7)"
-set default-fg "#bbc2cf"
-set inputbar-bg "#242730"
-set inputbar-fg "#bbc2cf"
-set statusbar-bg "#242730"
-set statusbar-fg "#bbc2cf"
+# Oxocarbon theme
+set completion-bg    "#393939"
+set completion-fg    "#ff7eb6"
+set completion-highlight-bg    "#ff7eb6"
+set completion-highlight-fg    "#393939"
+set default-fg    "#262626"
+set highlight-active-color    "#42be65"
+set highlight-color    "#ee5396"
+set index-active-bg    "#42be65"
+set inputbar-bg    "#161616"
+set inputbar-fg    "#e5f6ff"
+set notification-bg    "#78a9ff"
+set notification-error-bg    "#3ddbd9"
+set notification-error-fg    "#161616"
+set notification-fg    "#161616"
+set notification-warning-bg    "#3ddbd9"
+set notification-warning-fg    "#161616"
+set recolor    "true"
+set recolor-darkcolor    "#ffffff"
+set recolor-keephue    "true"
+set selection-clipboard    "clipboard"
+set statusbar-bg    "#262626"
 
-set completion-bg "#242730"
-set completion-fg "#bbc2cf"
-set completion-group-bg "#242730"
-set completion-group-fg "#51afef"
-set completion-highlight-bg "#C57BDB"
-set completion-highlight-fg "#bbc2cf"
-
-set highlight-color  "#51afef"
-set highlight-active-color "#C57BDb"
-set highlight-transparency "0.5"
-
-set notification-bg "#242730"
-set notification-fg "#bbc2cf"
-set notification-warning-bg "#242730"
-set notification-warning-fg "#FCCE7B"
-set notification-error-bg "#ff665c"
-set notification-error-fg "#bbc2cf"
-
-set index-bg "#242730"
-set index-fg "#bbc2cf"
-set index-active-bg "#242730"
-set index-active-fg "#bbc2cf"
-
+# set default-bg "#161616"
+# set recolor-lightcolor    "#161616"
+set default-bg rgba(0,0,0,0.7)
 set recolor-lightcolor rgba(255,255,255,0)
-set recolor-darkcolor "#bbc2cf"

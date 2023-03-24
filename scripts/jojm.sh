@@ -2,8 +2,6 @@
 
 token=$(cat ~/dox/credentials/discord_token.txt)
 launcher="rofi -dmenu -i -p"
-# launcher="tofi --require-match false --fuzzy-match true --prompt-text > "
-# launcher="fzf"
 base="https://discord.com/api/v10"
 
 nth() {
@@ -24,8 +22,7 @@ channel_choice=$(printf "%s" "$channel" | nth "\$1")
 [ -z "$channel_choice" ] && exit 1
 channel_name=$(printf "%s" "$channel_choice" | cut -f1)
 channel_id=$(printf "%s" "$channel_choice" | cut -f2)
-content=$(printf "" | $launcher)
-[ -z "$content" ] && exit 1
 
-curl -H "Authorization: $token" -F 'payload_json={"content":"'"${content}"'"}' "https://discord.com/api/v9/channels/$channel_id/messages"
-notify-send "Discord message" "\"$content\" has been sent to \#$channel_name in $server_name"
+grimblast save area - | curl -H "Authorization: $token" -F "file=@-;filename=screenshot.png;type=image/png" "$base/channels/$channel_id/messages"
+
+notify-send "Discord message" "Screenshot has been sent to \#$channel_name in $server_name"
