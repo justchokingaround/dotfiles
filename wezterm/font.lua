@@ -11,7 +11,7 @@ local font_family = ({
     'ComicCodeLigatures', -- [6]
     'Nouveau IBM', -- [7]
     'IBM Plex Mono' -- [8]
-})[1]
+})[2]
 
 local options = {}
 if bold then options['weight'] = 'Bold' end

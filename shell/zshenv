@@ -1,13 +1,13 @@
 source "/usr/share/fzf/key-bindings.zsh"
 source "/usr/share/fzf/completion.zsh"
 # source "$HOME/.secret_env"
+# source "$HOME/dox/credentials/secret_envs"
 source "$HOME/dotfiles/shell/plugins/forgit/forgit.plugin.zsh"
 source "$HOME/dotfiles/shell/plugins/fzf-tab/fzf-tab.plugin.zsh"
 source "$HOME/dotfiles/shell/fzf.zsh"
 source "$HOME/dotfiles/shell/git.zsh"
 source "$HOME/dotfiles/shell/aliases.zsh"
 source "$HOME/dotfiles/shell/functions.zsh"
-source "$HOME/dox/credentials/secret_envs"
 
 PATH="$HOME/.cargo/bin:$HOME/.local/bin:$HOME/scripts/:$HOME/dotfiles/shell/plugins/fzf-zsh-plugin/bin:$HOME/.luarocks/bin:${PATH}:$HOME/go/bin:$HOME/dotfiles/rofi/scripts/:$HOME/.emacs.d/bin/:$HOME/.config/nvim/bin/"
 export PATH
