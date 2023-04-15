@@ -51,7 +51,7 @@ depends = ["shell"]
 "laptop/kmonad-laptop" = "~/.config/kmonad/"
 
 [media]
-# depends = ["mpv"]
+depends = ["mpv"]
 [media.files]
 # "ncspot" = "~/.config/ncspot/"
 # "newsboat" = "~/.config/newsboat/"
@@ -87,10 +87,10 @@ depends = ["shell"]
 "neofetch" = "~/.config/neofetch/"
 # "macchina" = "~/.config/macchina/"
 
-# [mpv.files]
-# "mpv" = "~/.config/mpv/"
-# "mpv/input.conf" = "~/.config/mpv/input.conf"
-# "mpv/mpv.conf" = "~/.config/mpv/mpv.conf"
-# "mpv/scripts" = "~/.config/mpv/scripts/"
-# "mpv/script-opts" = "~/.config/mpv/script-opts/"
-# "mpv/shaders" = "~/.config/mpv/shaders/"
+[mpv.files]
+"mpv" = "~/.config/mpv/"
+"mpv/input.conf" = "~/.config/mpv/input.conf"
+"mpv/mpv.conf" = "~/.config/mpv/mpv.conf"
+"mpv/scripts" = "~/.config/mpv/scripts/"
+"mpv/script-opts" = "~/.config/mpv/script-opts/"
+"mpv/shaders" = "~/.config/mpv/shaders/"

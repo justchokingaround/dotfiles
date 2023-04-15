@@ -1,9 +1,4 @@
 export FZF_DEFAULT_COMMAND="rg ~ --files --hidden"
-# export FZF_DEFAULT_OPTS="
-#   --color=fg:#ff007c,bg:-1,hl:#03d8f3 --color=fg+:#00ffc8,bg+:,hl+:#03d8f3 
-#   --color=info:#ff0055,prompt:#fcee0c,pointer:#ffb800 --color=marker:#00ffc8,spinner:#ffb800,header:#fcee0c
-#   --reverse --border=rounded
-# "
 
 # Oxocarbon theme
 export FZF_DEFAULT_OPTS=$FZF_DEFAULT_OPTS' --color=fg:#ffffff,bg:-1,hl:#08bdba --color=fg+:#f2f4f8,bg+:-1,hl+:#3ddbd9 --color=info:#78a9ff,prompt:#33b1ff,pointer:#42be65 --color=marker:#ee5396,spinner:#ff7eb6,header:#be95ff
