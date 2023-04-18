@@ -2,7 +2,7 @@ local on_attach = require("plugins.configs.lspconfig").on_attach
 local capabilities = require("plugins.configs.lspconfig").capabilities
 
 local lspconfig = require "lspconfig"
-local servers = { "pyright", "rust_analyzer", "clangd", "bashls" }
+local servers = { "html", "cssls", "clangd", "jsonls", "tsserver", "unocss", "bashls", "pylsp", "kotlin_language_server", "jdtls" }
 
 for _, lsp in ipairs(servers) do
   lspconfig[lsp].setup {
@@ -10,3 +10,9 @@ for _, lsp in ipairs(servers) do
     capabilities = capabilities,
   }
 end
+
+lspconfig.rust_analyzer.setup {
+  on_attach = on_attach,
+  capabilities = capabilities,
+  filetypes = { "rust" },
+}
