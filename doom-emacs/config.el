@@ -10,11 +10,15 @@
 ;; UI Setup
 (setq default-frame-alist '((internal-border-width . 10)))
 (setq initial-frame-alist default-frame-alist)
-(setq doom-font (font-spec :family "IBM Plex Mono" :size 19)
-      doom-big-font (font-spec :family "IBM Plex Mono" :size 19)
-      doom-variable-pitch-font (font-spec :family "IBM Plex Sans" :size 19)
-      doom-unicode-font (font-spec :family "Joypixels")
-      doom-serif-font (font-spec :family "IBM Plex Sans" :size 19 :weight 'medium))
+(setq doom-font (font-spec :family "Liga SFMono Nerd Font" :size 24)
+      doom-big-font (font-spec :family "Liga SFMono Nerd Font" :size 28)
+      doom-variable-pitch-font (font-spec :family "Liga SFMono Nerd Font" :size 24)
+      ;; doom-unicode-font (font-spec :family "Joypixels")
+      doom-serif-font (font-spec :family "Liga SFMono Nerd Font" :size 24 :weight 'medium))
+(require 'whitespace)
+(setq whitespace-line-column 99)
+(setq whitespace-style '(face lines-tail))
+(add-hook 'prog-mode-hook 'whitespace-mode)
 
 (setq redisplay-dont-pause t
   scroll-margin 1
@@ -42,14 +46,14 @@
 
 ;; (after! doom-modeline
 ;;   (setq doom-modeline-persp-name t))
-(after! doom-modeline
-  (setq display-time-string-forms
-        '((propertize (concat " 🕘 " 24-hours ":" minutes))))
-  (display-time-mode 1) ; Enable time in the mode-line
+;; (after! doom-modeline
+;;   (setq display-time-string-forms
+;;         '((propertize (concat " 🕘 " 24-hours ":" minutes))))
+;;   (display-time-mode 1) ; Enable time in the mode-line
 
-  (doom-modeline-def-modeline 'main
-   '(bar workspace-name window-number modals matches follow buffer-info remote-host buffer-position word-count parrot selection-info)
-   '(objed-state misc-info persp-name battery grip irc mu4e gnus github debug repl lsp minor-modes input-method indent-info buffer-encoding major-mode process vcs checker "   ")))
+;;   (doom-modeline-def-modeline 'main
+;;    '(bar workspace-name window-number modals matches follow buffer-info remote-host buffer-position word-count parrot selection-info)
+;;    '(objed-state misc-info persp-name battery grip irc mu4e gnus github debug repl lsp minor-modes input-method indent-info buffer-encoding major-mode process vcs checker "   ")))
 
 (setq global-auto-revert-non-file-buffers t
       auto-save-default t
@@ -128,22 +132,6 @@
 
 (add-hook 'sh-mode-hook 'flymake-shellcheck-load)
 
-(defun my-tab ()
-  (interactive)
-  (or (copilot-accept-completion)
-      (company-indent-or-complete-common nil)))
-
-(use-package! copilot
-  :hook (prog-mode . copilot-mode)
-  :bind (("C-TAB" . 'copilot-accept-completion-by-word)
-         ("C-<tab>" . 'copilot-accept-completion-by-word)
-         :map company-active-map
-         ("<tab>" . 'my-tab)
-         ("TAB" . 'my-tab)
-         :map company-mode-map
-         ("<tab>" . 'my-tab)
-         ("TAB" . 'my-tab)))
-
 (map! :leader
       :desc "Save file" "w" #'save-buffer)
 (map! :i "C-s" #'save-buffer
@@ -158,4 +146,4 @@
 ;; custom theme
 (setq custom-safe-themes t)
 (add-to-list 'custom-theme-load-path "~/.doom.d/themes")
-(load-theme 'doom-horizon)
+(load-theme 'doom-material)

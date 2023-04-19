@@ -52,6 +52,6 @@
 (package! autothemer)
 (package! org-auto-tangle)
 (package! flymake-shellcheck)
-(package! copilot
-  :recipe (:host github :repo "zerolfx/copilot.el" :files ("*.el" "dist")))
+(package! highlight-indent-guides)
+(package! yuck-mode)
 (defvar native-comp-deferred-compilation-deny-list nil)
