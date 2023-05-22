@@ -63,6 +63,7 @@ prompt {
 }
 entry {
     color: @fg;
+    placeholder: "";
 }
 
 // Element

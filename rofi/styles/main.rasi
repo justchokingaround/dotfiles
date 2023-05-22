@@ -58,6 +58,7 @@ listview {
 
 prompt {
     text-color:         @accent-color;
+  
 }
 
 textbox {
