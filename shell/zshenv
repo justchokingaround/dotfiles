@@ -44,4 +44,4 @@ export MANPAGER="sh -c 'col -bx| bat -p -l man -f'"
 export PAGER="bat"
 
 # ani-cli shit
-export ANI_CLI_EXTERNAL_MENU=0
+export ANI_CLI_EXTERNAL_MENU=1

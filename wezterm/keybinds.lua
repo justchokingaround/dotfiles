@@ -5,6 +5,7 @@ local M = {
     -- Ctrl + Shift + x => ActivateCopyMode
     -- Ctrl + Shift + z => TogglePaneZoomState
     -- Ctrl + Shift + space => QuickSelect
+    -- Ctrl + Shift + p => CommandPalette
     keys = {
         {key = 'f', mods = 'CTRL', action = wezterm.action.TogglePaneZoomState},
         {
@@ -13,6 +14,14 @@ local M = {
             action = wezterm.action.SplitHorizontal {
                 domain = 'CurrentPaneDomain'
             }
+        }, {
+            key = 'w',
+            mods = 'CTRL|ALT',
+            action = wezterm.action.ShowLauncherArgs { flags = 'FUZZY|WORKSPACES' },
+        }, {
+            key = 'l',
+            mods = 'CTRL|ALT',
+            action = wezterm.action.ShowLauncherArgs { flags = 'FUZZY|LAUNCH_MENU_ITEMS' },
         }, {
             key = 'n',
             mods = 'SHIFT|ALT',
@@ -58,7 +67,8 @@ local M = {
             mods = 'CTRL',
             action = wezterm.action.SpawnTab 'DefaultDomain'
         }
-    }
+    },
+
 }
 
 return M

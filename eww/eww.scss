@@ -1,0 +1,137 @@
+*{
+	all: unset;
+	font-family: 'LigaSF Mono Nerd Font';
+}
+
+$white:     #ffffff;
+$black:     #161616;
+$grey:      #393939;
+$pink:      #ee5396;
+$blue:      #33b1ff;
+$purple:    #be95ff;
+$cyan:      #82cfff;
+
+.separ {
+    color: $grey;
+    font-weight: bold;
+    font-size: 22px;
+    margin: 0px 8px 0px 8px;
+}
+
+/* WORKSPACES */
+.works {
+    font-size: 22px;
+    font-weight: normal;
+    margin: 10px 0px 0px 10px;
+    background-color: rgba(00, 00, 00, 0.0);
+}
+.0 , .00, .01, .02, .03, .04, .05, .06,
+.000, .011, .022, .033, .044, .055, .066 {
+    margin: 0px 7px 0px 0px;
+}
+
+/* Unoccupied */
+.0 {
+    color: $grey;
+}
+/* Occupied */
+.00, .01, .02, .03, .04, .05, .06, .07, .08, .09 {
+    color: $white;
+}
+/* Focused */
+.000, .011, .022, .033, .044, .055, .066, .077, .088, .099{
+    color: $pink;
+}
+
+/* APPNAMES */
+.app-name {
+    // background-color: $black;
+    padding: 5;
+    border-radius: 10px;
+	color: $white;
+	font-size : 16px;
+	font-weight : bold;
+	margin : 10px 0px 0px 0px;
+}
+.app-icon {
+	margin : 8px 10px 0px 0px;
+}
+
+/* VOLUME */
+.volbar trough highlight {
+    background-image: linear-gradient(to right, #be95ff 30%, #ff7eb6 50%, #ee5396 100% *50);
+    border-radius: 10px;
+}
+.volume_icon {
+    font-size: 18;
+    color: $white;
+    margin: 0px 20px 0px 10px;
+}
+
+/* WIFI */
+.module-wif {
+    font-size: 18;
+    color: $white;
+    margin: 0px 10px 0px 5px;
+}
+.module_essid {
+    font-size: 18;
+    color: $blue;
+    margin: 0px 10px 0px 0px;
+}
+
+/* MEMORY USAGE */
+.mem_module {
+    color: $white;
+    font-size: 18px;
+	border-radius: 12;
+    margin: 0px 10px 0px 3px;
+}
+
+/* DATE AND TIME */
+
+.clock_time_class {
+    font-size: 18;
+    color: $white;
+    margin: 0px 20px 0px 5px;
+}
+
+
+/* CALENDAR */
+.cal {
+    background-color: $black;
+    font-family: LigaSF Mono Nerd Font;
+    font-size: 14px;
+    border-radius: 25px;
+.cal-in {
+    padding: 10px 10px 10px 10px;
+    color: $white;
+.cal {
+     &.highlight {
+          padding: 20px;
+      }
+      padding: 10px 10px 10px 10px;
+      margin-left: 10px;
+    }
+  }
+}
+calendar {
+    color: $white;
+}
+calendar:selected {
+  color: $purple;
+}
+calendar.header {
+color: $purple;
+font-weight: bold;
+}
+calendar.button {
+color: $cyan;
+}
+calendar.highlight {
+color: $blue;
+font-weight: bold;
+}
+calendar:indeterminate {
+color: $black;
+}

@@ -1,0 +1,3 @@
+#!/bin/sh
+
+printf "%s/%s Gb" $(free -h | sed -nE "s@Mem:[[:space:]]*[0-9\.]*Gi[[:space:]]*([0-9\.]*)Gi.*@\1@p") $(free -h | sed -nE "s@Mem:[[:space:]]*([0-9\.]*)Gi[[:space:]]*[0-9\.]*Gi.*@\1@p")

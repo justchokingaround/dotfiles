@@ -1,8 +1,9 @@
 sort=+time
 layer=overlay
 default-timeout=5000
-max-visible=5
-max-history=20
+max-visible=50
+max-history=50
+on-button-left=invoke-default-action
 
 width=300
 height=300
@@ -16,7 +17,7 @@ border-color=#3ddbd9
 border-radius=14
 border-size=3
 
-font=Liga Sf Mono Nerd Font Italic 12
+font=LigaSF Mono Nerd Font Italic 12
 text-alignment=center
 
 [urgency=high]

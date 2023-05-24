@@ -1,0 +1,16 @@
+#!/bin/bash
+
+## Files and cmd
+EWW="eww -c $HOME/.config/eww/"
+
+## Run eww daemon if not running already
+if [[ ! $(pidof eww) ]]; then
+    ${EWW} daemon
+    sleep 1
+fi
+
+## Open widgets
+NB_MONITORS=($(hyprctl monitors -j | jq -r '.[] | .id'))
+for i in "${!NB_MONITORS[@]}"; do
+    ${EWW} open bar$i
+done

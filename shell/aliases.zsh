@@ -73,7 +73,6 @@ alias pip='pip3'
 # alias u="zsh &&    echo -ne '\e[5 q'"
 alias u="zsh"
 alias myip="curl ipinfo.io/ip"
-alias ytfzf="ytfzf -T swayimg-hyprland -t"
 alias ytm="ytfzf -m"
 alias nvf="open_with_nvim nvim"
 alias nvff="open_with_nvim_filetype nvim"

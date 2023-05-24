@@ -1,0 +1,5 @@
+#!/bin/sh
+
+case "$1" in
+get) pamixer --get-volume ;;
+esac

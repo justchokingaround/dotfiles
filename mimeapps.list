@@ -1,4 +1,3 @@
-
 [Default Applications]
 video/quicktime=mpv.desktop
 video/3gpp2=mpv.desktop
@@ -62,5 +61,5 @@ application/pdf=zathura.desktop
 application/epub+zip=epy.desktop
 x-scheme-handler/http=firefox.desktop
 x-scheme-handler/https=firefox.desktop
-
-
+x-scheme-handler/magnet=torrent.desktop
+application/x-bittorrent=torrent.desktop

@@ -1,0 +1,5 @@
+#!/bin/sh
+
+nordvpn c
+wait
+transmission-remote -a "$@" && notify-send "Transmission daemon" "Torrent added" -i "/usr/share/icons/hicolor/48x48/apps/transmission-remote-gtk.png" -h string:x-dunst-stack-tag:vol

@@ -1,0 +1,4 @@
+#!/bin/sh
+
+notify-send "Clearing all torrents" -i /usr/share/icons/hicolor/48x48/apps/transmission-remote-gtk.png -h string:x-dunst-stack-tag:vol
+transmission-remote -l | sed -nE "s@[[:space:]]*([0-9]*)[[:space:]]100%.*@\1@p" | xargs -I {} transmission-remote -t {} --remove

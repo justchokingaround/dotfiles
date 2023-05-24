@@ -1,29 +1,41 @@
 ;;; -*- lexical-binding: t; -*-
-(setq user-full-name "chokerman"
+(setq user-full-name "chomsky"
       user-mail-address "ivanonarch@tutanota.com")
 (setq display-line-numbers-type nil)
 
 ;; If you use `org' and don't want your org files in the default location below,
 ;; change `org-directory'. It must be set before org loads!
-(setq org-directory "~/dox/org/")
+;; (setq org-directory "~/dox/org/")
 
 ;; UI Setup
-(setq default-frame-alist '((internal-border-width . 10)))
-(setq initial-frame-alist default-frame-alist)
-(setq doom-font (font-spec :family "Liga SFMono Nerd Font" :size 24)
-      doom-big-font (font-spec :family "Liga SFMono Nerd Font" :size 28)
-      doom-variable-pitch-font (font-spec :family "Liga SFMono Nerd Font" :size 24)
-      ;; doom-unicode-font (font-spec :family "Joypixels")
-      doom-serif-font (font-spec :family "Liga SFMono Nerd Font" :size 24 :weight 'medium))
+;; Customize the hl-line face
+(custom-set-faces
+ '(hl-line ((t (:background "gray20" :underline nil)))))
+
+(setq doom-font (font-spec :family "Liga SFMono Nerd Font" :size 20)
+      doom-big-font (font-spec :family "Liga SFMono Nerd Font" :size 24)
+      doom-variable-pitch-font (font-spec :family "Liga SFMono Nerd Font" :size 20)
+      doom-serif-font (font-spec :family "Liga SFMono Nerd Font" :size 20 :weight 'medium))
 (require 'whitespace)
 (setq whitespace-line-column 99)
 (setq whitespace-style '(face lines-tail))
 (add-hook 'prog-mode-hook 'whitespace-mode)
 
+;; padding
+(setq-default left-margin-width 5 right-margin-width 5)
+(set-window-buffer nil (current-buffer))
+(modify-frame-parameters nil '((internal-border-width . 20)))
+
+;; bar
+(setq-default frame-title-format nil)
+(tab-bar-mode 1)
+(global-tab-line-mode -1)
+(tab-line-mode -1)
+
 (setq redisplay-dont-pause t
   scroll-margin 1
   scroll-step 1
-  scroll-conservatively 10000
+  scroll-conservatively 101
   scroll-preserve-screen-position 1)
 
 (setq fancy-splash-image (expand-file-name "lain.png" doom-user-dir))
@@ -37,43 +49,12 @@
 (setq-hook! '+doom-dashboard-mode-hook evil-normal-state-cursor (list nil))
 
 (scroll-bar-mode -1)
-(global-visual-line-mode 1)
-(tool-bar-mode -1)
-(menu-bar-mode -1)
-(global-auto-revert-mode 1)
-(window-divider-mode 1)
-(global-subword-mode 1)
-
-;; (after! doom-modeline
-;;   (setq doom-modeline-persp-name t))
-;; (after! doom-modeline
-;;   (setq display-time-string-forms
-;;         '((propertize (concat " 🕘 " 24-hours ":" minutes))))
-;;   (display-time-mode 1) ; Enable time in the mode-line
-
-;;   (doom-modeline-def-modeline 'main
-;;    '(bar workspace-name window-number modals matches follow buffer-info remote-host buffer-position word-count parrot selection-info)
-;;    '(objed-state misc-info persp-name battery grip irc mu4e gnus github debug repl lsp minor-modes input-method indent-info buffer-encoding major-mode process vcs checker "   ")))
 
 (setq global-auto-revert-non-file-buffers t
       auto-save-default t
       x-stretch-cursor t
       hscroll-margin 8
       scroll-margin 8)
-
-;; Org Mode Setup
-(setq org-agenda-files (expand-file-name "agenda.org" org-directory)
-      org-ellipsis " ▼ "
-      org-src-tab-acts-natively t
-      org-superstar-headline-bullets-list '("◉" "●" "○" "◆" "●" "○" "◆"))
-
-(custom-set-faces
-  '(org-level-1 ((t (:inherit outline-1 :height 1.3))))
-  '(org-level-2 ((t (:inherit outline-2 :height 1.2))))
-  '(org-level-3 ((t (:inherit outline-3 :height 1.1))))
-  '(org-level-4 ((t (:inherit outline-4 :height 1.0)))))
-
-(require 'org-auto-tangle)
 
 (add-hook 'org-mode-hook 'org-auto-tangle-mode)
 (add-hook 'org-mode-hook 'parinfer-rust-mode)
@@ -91,6 +72,10 @@
 (defadvice! prompt-for-buffer (&rest _)
   :after '(evil-window-split evil-window-vsplit)
   (consult-buffer))
+
+;; Disable automatic workspace creation
+(after! persp-mode
+  (setq persp-emacsclient-init-frame-behaviour-override "main"))
 
 ;; Completion setup
 (setq which-key-idle-delay 0.4
@@ -144,6 +129,6 @@
       "C-x" #'evil-numbers/dec-at-pt)
 
 ;; custom theme
-(setq custom-safe-themes t)
-(add-to-list 'custom-theme-load-path "~/.doom.d/themes")
-(load-theme 'doom-material)
+;; (setq custom-safe-themes t)
+;; (add-to-list 'custom-theme-load-path "~/.doom.d/themes")
+(load-theme 'doom-horizon t)
