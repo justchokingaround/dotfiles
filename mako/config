@@ -5,19 +5,23 @@ max-visible=50
 max-history=50
 on-button-left=invoke-default-action
 
-width=300
-height=300
 anchor=top-right
-padding=20
+width=350
+height=1000
+padding=12
+outer-margin=50,10,0
+max-icon-size=128
+format=<span foreground='#c49ec4' size='14000' weight='bold'>%s</span>\n%b
 
 # background-color=#00000066
-background-color=#161616
+background-color=#16161680
 # border-color=#ffffff
-border-color=#3ddbd9
+# border-color=#3ddbd9
+border-color=#0f0f0f
 border-radius=14
-border-size=3
+border-size=4
 
-font=LigaSF Mono Nerd Font Italic 12
+font=LigaSF Mono Nerd Font Italic 11
 text-alignment=center
 
 [urgency=high]
