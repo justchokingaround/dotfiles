@@ -1,12 +1,9 @@
 * {
     background-color:               transparent;
-    background:                     #161616;
     text-color:                     #ffffff;
     primary:                        #be95ff;
-    important:                      #ee5496;
     pink:                           #ff7eb6;
     cyan:                           #82cfff;
-    font-title:                     "LigaSF Mono Nerd Font 20";
     fullscreen:                     true;
 }
 
@@ -17,52 +14,43 @@ configuration {
     }
 }
 
+
 mainbox {
-    width:                          200px;
-    expand:                         true;
-    spacing:                        12px;
-    padding:                        5px;
     children:                       [inputbar-box, listview];
 }
 
 listview {
+    spacing:                        20px;
     dynamic:                        true;
-    columns:                        10;
+    columns:                        6;
     scrollbar:                      false;
 }
 
 inputbar-box {
     children:                       [dummy, inputbar, dummy];
     orientation:                    horizontal;
-    expand:                         false;
+    expand:                         true;
 }
 
 inputbar {
-    padding:                        14px;
-    margin:                         10px 10px 14px 10px;
-    background-color:               @background;
+    margin:                         10px 0px 0px 5%;
+    background-color:               transparent;
     text-color:                     @text-color;
-    expand:                         false;
-    position:                       north;
+    expand:                         true;
     children:                       [ entry-wrapper ];
 }
+
 entry {
-    font:                           "Liga SFMono Nerd Font 14";
-    background-color:               @background;
     text-color:                     @text-color;
     expand:                         true;
     vertical-align:                 0.5;
-    horizontal-align:               0;
     blink:                          true;
 }
 
 button {
-    action:                         "ok";
-    str:                            " ";
-    font:                           "Liga SFMono Nerd Font 13";
+    str:                            "";
     expand:                         false;
     text-color:                     @text-color;
-    background-color:               @background;
     vertical-align:                 0.5;
     horizontal-align:               0.5;
 }
@@ -70,43 +58,41 @@ button {
 
 entry-wrapper {
     orientation:                    horizontal;
-    margin:                         0 12px 0 12px;
     spacing:                        24px;
     vertical-align:                 0.5;
-    background-color:               @background;
     children:                       [ button, entry ];
 }
 
 
 element {
     children:                       [element-box];
-    padding:                        0px;
     orientation:                    vertical;
+    border:                         0px 4px solid 0px 4px;
+    border-color:                   transparent;
+    border-radius:                  12;
+}
+
+element selected {
+    border-color:                   @primary;
 }
 
 element-box {
     children:                       [element-icon, element-text];
     orientation:                    vertical;
-    expand:                         false;
-    cursor:                         pointer;
-    background-color:               @background;
+    background-color:               transparent;
 }
 
 element-icon {
     padding:                        10px;
-    size:                           35%;
-    cursor:                         inherit;
+    size:                           40%;
 }
 
 element-text {
     padding:                        10px;
     horizontal-align:               0.5;
-    cursor:                         inherit;
     highlight:                      @pink;
-    font:                           "Liga SFMono Nerd Font 14";
 }
 
 element-text selected {
     text-color:                     @cyan;
 }
-
