@@ -1,0 +1,42 @@
+[mpd]
+mpd_music_dir = "~/music"
+mpd_host = "localhost"
+mpd_port = "6600"
+mpd_crossfade_time = "2"
+
+[visualizer]
+visualizer_type = spectrum
+# TODO oxocarbonize
+visualizer_color = 47, 83, 119, 155, 191, 227, 221, 215, 209, 203, 197, 161
+
+[header]
+header_visibility = "no"
+header_window_color = "default"
+volume_color = "default"
+state_line_color = "black"
+
+[playlist]
+playlist_display_mode = "classic"
+song_list_format = "{{%a - %t}|{%f}}{$R%l}"
+now_playing_prefix = "$b$5"
+now_playing_suffix = "$/b$9"
+
+[statusbar]
+progressbar_look = "─╼ "
+progressbar_color = "black"
+statusbar_visibility = "no"
+statusbar_color = "default"
+song_status_format = "{{%a{ - %t}}|{ - %f}{ - %b{ (%y)}}}"
+
+[library]
+song_library_format = "{{%a - %t}|{%f}}{$R%l}"
+empty_tag_color = "black"
+
+[global]
+user_interface = "alternative"
+colors_enabled = "yes"
+main_window_color = "default"
+centered_cursor = "yes"
+enable_window_title = "yes"
+external_editor = "vim"
+execute_on_song_change = "~/.config/ncmpcpp/song_change.sh"

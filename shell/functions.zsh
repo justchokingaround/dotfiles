@@ -155,7 +155,7 @@ is() {
 
 #nnn -c to activate disables -e
 
-n () {
+nn () {
     # Block nesting of nnn in subshells
     if [ -n $NNNLVL ] && [ "${NNNLVL:-0}" -ge 1 ]; then
         echo "nnn is already running"

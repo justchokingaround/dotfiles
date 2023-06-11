@@ -1,0 +1,12 @@
+#!/bin/sh
+
+get_cover() {
+  path=$(playerctl metadata xesam:url | sed -nE "s@file://(/home/chokerman)(.*)@\1/music\2@p")
+  ffmpegthumbnailer -i "$path" -o /tmp/currently-playing.jpg -s0
+}
+
+case "$1" in
+  get_cover)
+    get_cover
+    ;;
+esac

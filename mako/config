@@ -11,7 +11,7 @@ height=1000
 padding=12
 outer-margin=50,10,0
 max-icon-size=128
-format=<span foreground='#c49ec4' size='14000' weight='bold'>%s</span>\n%b
+format=<span foreground='#DE4E8C' size='14000' weight='bold'>%s</span>\n%b
 
 # background-color=#00000066
 background-color=#16161680

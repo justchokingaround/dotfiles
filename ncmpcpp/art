@@ -1,0 +1,23 @@
+#!/bin/bash 
+function cleanup() {
+    tput cnorm
+}
+trap cleanup EXIT
+tput civis
+
+  while true; do
+  artist=$(mpc -f %artist% | sed -n '1p' | sed 's/ /\-/g')
+	album=$(mpc -f %album% | sed -n '1p' |sed 's/ /\-/g')
+	path=(/home/chokerman/music/balls.jpg)
+	if [ "$oldpath" != "$path" ]; then
+  zellij action move-focus right
+  zellij action move-focus up
+  zellij action page-scroll-down
+  clear
+  img2sixel -h 540 -w 540 $path
+  zellij action page-scroll-up
+  zellij action move-focus down
+  fi
+	oldpath=$path
+  sleep 2 
+done

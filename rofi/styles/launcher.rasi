@@ -7,14 +7,6 @@
     fullscreen:                     true;
 }
 
-configuration {
-    show-icons:                     true;
-    run {
-        fallback-icon:              "package";
-    }
-}
-
-
 mainbox {
     children:                       [inputbar-box, listview];
 }

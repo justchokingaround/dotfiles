@@ -49,6 +49,8 @@ alias -s pdf=mupdf-gl
 alias trackma='trackma -a 1'
 alias mpvq="mpv --no-video"
 alias watchgoodedits='cd "$(fd . "$HOME/videos/good_edits" --max-depth 1 --type d|fzf --cycle)" && mpv *'
+alias n='ncmpcpp'
+alias lf='lfub'
 
 ### yt-dlp aliases
 # don't forget to download ffmpeg :/

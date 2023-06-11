@@ -30,3 +30,5 @@ export PATH="$PNPM_HOME:$PATH"
 # pnpm end
 
 export PATH="$PATH:/home/chokerman/.bin"
+alias music='tmux new-session -s $$ "tmux source-file ~/tsession"'
+_trap_exit() { tmux kill-session -t $$; }
