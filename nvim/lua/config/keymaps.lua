@@ -19,6 +19,38 @@ local function map(mode, lhs, rhs, opts)
   end
 end
 
+-- ===================
+-- QoL and consistency
+-- ===================
+
+-- Navigate tab completion w/ <C-j> and <C-k>
+
+--- Map `key` to `mapped_to` if the nvim-native popup
+--- menu is visible.
+---
+--- @param mode string  Mode shortstring
+--- @param lhs  string  LHS
+--- @param rhs  string  RHS
+--- @param fb   string|nil  Fallback key triggered on popup absence.
+---                         If `nil`, `lhs` is triggered instead.
+---
+--- @see https://vim.fandom.com/wiki/Improve_completion_popup_menu
+local function map_if_pumvisible_else(mode, lhs, rhs, fb)
+  vim.keymap.set(mode, lhs, function()
+    return vim.fn.pumvisible() == 1 and rhs or fb or lhs
+  end, { expr = true, noremap = true })
+end
+
+local function map_if_pumvisible(mode, lhs, rhs)
+  map_if_pumvisible_else(mode, lhs, rhs, nil)
+end
+
+-- Better command-completion mappings
+map_if_pumvisible_else("c", "<C-k>", "<C-p>", "<Up>")
+map_if_pumvisible_else("c", "<C-j>", "<C-n>", "<Down>")
+map_if_pumvisible("c", "<Esc>", "<C-e>")
+map_if_pumvisible("c", "<CR>", "<C-y>")
+
 map("", "<C-d>", "<C-d>zz", { noremap = false, silent = true })
 map("", "<C-u>", "<C-u>zz", { noremap = false, silent = true })
 map("n", "n", "nzzzv", { noremap = false, silent = true })
@@ -106,3 +138,24 @@ map("", "S", "<cmd>lua require'hop'.hint_patterns()<cr>", {})
 map("", "L", "<cmd>lua require'hop'.hint_lines()<cr>", {})
 
 -- Diffview keymaps
+map("n", "<leader>gd", "<cmd>DiffviewOpen<cr>", { desc = "Open diffview" })
+
+-- Octo (github integration) keymaps
+-- General keymap
+map("n", "<leader>go", "<cmd>Octo actions<cr>", { desc = "Open Octo menu" })
+-- Issue keymaps
+map("n", "<leader>il", "<cmd>Octo issue list<cr>", { desc = "List issues" })
+map("n", "<leader>ic", "<cmd>Octo issue close<cr>", { desc = "Close issue" })
+map("n", "<leader>ir", "<cmd>Octo issue reopen<cr>", { desc = "Reopen issue" })
+map("n", "<C-r>", "<cmd>Octo issue reload<cr>", { desc = "Reload issue" })
+map("n", "<C-b>", "<cmd>Octo issue browser<cr>", { desc = "Open issue in browser" })
+map("n", "<C-y>", "<cmd>Octo issue url<cr>", { desc = "Copy issue url" })
+map("n", "<leader>aa", "<cmd>Octo assignee add<cr>", { desc = "Add assignee" })
+map("n", "<leader>ad", "<cmd>Octo assignee remove<cr>", { desc = "Remove assignee" })
+map("n", "<leader>ala", "<cmd>Octo label add<cr>", { desc = "Add label" })
+map("n", "<leader>ald", "<cmd>Octo label remove<cr>", { desc = "Remove label" })
+map("n", "<leader>aca", "<cmd>Octo comment add<cr>", { desc = "Add comment" })
+map("n", "<leader>acd", "<cmd>Octo comment delete<cr>", { desc = "Delete comment" })
+-- PRs keymaps
+map("n", "<leader>pl", "<cmd>Octo pr list<cr>", { desc = "List PRs" })
+-- the rest of the pr keymaps are defined by default

@@ -43,9 +43,12 @@ export BROWSER="firefox"
 export MANPAGER="sh -c 'col -bx| bat -p -l man -f'"
 export PAGER="bat"
 
-# ani-cli shit
+# ani-cli stuff
 export ANI_CLI_EXTERNAL_MENU=0
 export ANI_CLI_PLAYER=debug
 
 export PTII="$HOME/tmp/ptII"
 export MPD_HOST=localhost
+
+# gh cli stuff
+export GH_FORCE_TTY=100% 

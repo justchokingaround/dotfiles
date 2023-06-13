@@ -7,6 +7,12 @@ return {
         require("telescope").load_extension("media")
       end,
     },
+    {
+      "ThePrimeagen/harpoon",
+      config = function()
+        require("telescope").load_extension("harpoon")
+      end,
+    },
   },
   keys = {
     {
@@ -38,7 +44,7 @@ return {
       desc = "Keymaps",
     },
     {
-      "<leader>ft",
+      "<leader>fo",
       function()
         vim.cmd([[ Telescope ]])
       end,
@@ -61,11 +67,11 @@ return {
       desc = "Find Media",
     },
     {
-      "<leader>fo",
+      "<leader>fh",
+      -- :Telescope harpoon marks
       function()
-        require("telescope.builtin").oldfiles()
+        require("telescope").extensions.harpoon.harpoon_marks()
       end,
-      desc = "Recent Files",
     },
   },
   -- change some options

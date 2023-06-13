@@ -3,6 +3,48 @@
 -- Add any additional options here
 local opt = vim.opt
 
+local function list(value, str, sep)
+  sep = sep or ","
+  str = str or ""
+  value = type(value) == "table" and table.concat(value, sep) or value
+  return str ~= "" and table.concat({ value, str }, sep) or value
+end
+
 opt.number = false
 opt.relativenumber = false
-opt.fillchars = opt.fillchars + "diff:╱"
+
+opt.list = true
+opt.listchars = {
+  trail = "·",
+  precedes = "«",
+  extends = "»",
+  -- eol = "↲", -- This is a bit too much
+  tab = "▸ ",
+}
+
+-- opt.listchars = list({
+--   "tab: ──",
+--   "lead:·",
+--   "trail:·",
+--   "nbsp:␣",
+--   -- "eol:↵",
+--   "precedes:«",
+--   "extends:»",
+-- })
+opt.fillchars = list({
+  -- "vert:▏",
+  "vert:│",
+  "diff:╱",
+  "foldclose:",
+  "foldopen:",
+  "fold: ",
+  "msgsep:─",
+})
+
+opt.showbreak = "⤷ "
+opt.concealcursor = "nc"
+opt.writebackup = true
+opt.undofile = true
+opt.isfname:append(":")
+opt.laststatus = 3
+opt.cursorline = false

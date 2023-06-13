@@ -42,6 +42,9 @@ depends = ["shell"]
 [dev.files]
 "doom-emacs" = "~/.doom.d/"
 "nvim" = "~/.config/nvim/"
+"bat" = "~/.config/bat/"
+"lazygit" = "~/.config/lazygit/"
+"gh" = "~/.config/gh/"
 
 [keyboard]
 [keyboard.files]
