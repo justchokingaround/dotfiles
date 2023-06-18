@@ -92,7 +92,7 @@ require("nuke").setup({
 	open = {
 		run_executables = true,
 		custom = {
-			{ extension = "jpg", command = "nsxiv {}" },
+			{ extension = "image/*", command = "swayimg {}" },
 			{ mime = "video/mp4", command = "mpv {}" },
 			{ mime_regex = "^video/.*", command = "mpv {}" },
 			{ mime_regex = "^audio/.*", command = "mpv --audio-display=no {}" },

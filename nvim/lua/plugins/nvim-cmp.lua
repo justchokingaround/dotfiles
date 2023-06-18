@@ -79,6 +79,7 @@ local SYMBOL_MAP = {
   Event = "  ",
   Operator = "  ",
   TypeParameter = "  ",
+  Copilot = "",
 }
 
 M.opts = function(_, _)
@@ -86,6 +87,7 @@ M.opts = function(_, _)
 
   local editorSources = {
     {
+      { name = "copilot" },
       { name = "nvim_lsp", dup = 0 },
       { name = "nvim_lua" },
       { name = "luasnip" },
@@ -160,6 +162,7 @@ M.opts = function(_, _)
   -- cmp plugin
   cmp.setup.filetype("gitcommit", {
     sources = cmp.config.sources({
+      { name = "copilot" },
       { name = "cmp_git" },
       { name = "nvim_lsp" },
       { name = "nvim_lua" },
@@ -174,6 +177,7 @@ M.opts = function(_, _)
   cmp.setup.cmdline({ "/", "?" }, {
     mapping = cmp.mapping.preset.cmdline(),
     sources = {
+      { name = "copilot" },
       { name = "nvim_lsp" },
       { name = "nvim_lsp_document_symbol" },
       { name = "dictionary" },
@@ -188,6 +192,7 @@ M.opts = function(_, _)
     },
     mapping = cmp.mapping.preset.cmdline(),
     sources = cmp.config.sources({
+      { name = "copilot" },
       { name = "cmdline" },
       { name = "path", options = { trailing_slash = true, label_trailing_slash = true } },
       { name = "dictionary" },

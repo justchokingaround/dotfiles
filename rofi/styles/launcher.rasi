@@ -14,7 +14,7 @@ mainbox {
 listview {
     spacing:                        20px;
     dynamic:                        true;
-    columns:                        6;
+    columns:                        4;
     scrollbar:                      false;
 }
 

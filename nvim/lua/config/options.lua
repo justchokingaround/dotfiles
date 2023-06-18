@@ -45,6 +45,6 @@ opt.showbreak = "⤷ "
 opt.concealcursor = "nc"
 opt.writebackup = true
 opt.undofile = true
+opt.undolevels = 10000
 opt.isfname:append(":")
-opt.laststatus = 3
 opt.cursorline = false

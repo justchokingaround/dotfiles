@@ -50,17 +50,6 @@ return {
     config = true,
   },
 
-  -- Escape from insert mode with `jk` or `jj`, without delay or lag when typing
-  {
-    "max397574/better-escape.nvim",
-    opts = {
-      mapping = { "jk", "jj" },
-      timeout = 200,
-      clear_empty_lines = true,
-      keys = "<Esc>",
-    },
-  },
-
   -- >  Treesitter based structural search and replace plugin for Neovim.
   -- Ref: https://www.jetbrains.com/help/idea/structural-search-and-replace.html
   {

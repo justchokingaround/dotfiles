@@ -1,6 +1,6 @@
 local wezterm = require("wezterm")
 
-local font_size = 14
+local font_size = 13
 local stretch = true
 local font_family = ({
 	"BlexMono Nerd Font", -- [1]

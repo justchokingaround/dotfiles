@@ -45,7 +45,7 @@ export PAGER="bat"
 
 # ani-cli stuff
 export ANI_CLI_EXTERNAL_MENU=0
-export ANI_CLI_PLAYER=debug
+export ANI_CLI_PLAYER=mpv
 
 export PTII="$HOME/tmp/ptII"
 export MPD_HOST=localhost

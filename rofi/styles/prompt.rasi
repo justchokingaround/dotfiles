@@ -3,10 +3,6 @@ configuration {
 		modi: "drun,calc,window";
 		show: "drun";
         font: "Liga SFMono Nerd Font";
-        icon-theme: "Papirus-Dark";
-        drun {
-            fallback-icon: "package-x-generic";
-        }
 }
 
 configuration {
@@ -44,8 +40,8 @@ window {
     border-radius: 0;
 }
 window {
-    background-color: #161616;
-    //background-color: @bg;
+    //background-color: #161616;
+    background-color: @transparent;
 }
 mainbox,inputbar,listview,message,textbox,prompt,entry{
     background-color: @transparent;
@@ -58,7 +54,6 @@ inputbar {
 }
 prompt {
     font: "Liga SFMono Nerd Font 16";
-    padding: 0 16px 0 8px;
     color: @fg;
 }
 entry {

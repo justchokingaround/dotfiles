@@ -50,13 +50,6 @@ function M.close_floats()
   end
 end
 
--- Set smart jk navigation
--- Source: https://vim.fandom.com/wiki/Smart_navigation_using_j_and_k
-function M.set_smart_jk_nav()
-  vim.keymap.set("n", "j", "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true })
-  vim.keymap.set("n", "k", "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true })
-end
-
 -- Set options related to wrapping
 ---@param enable boolean
 function M.set_wrap(enable)

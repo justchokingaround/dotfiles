@@ -56,6 +56,8 @@ map("", "<C-u>", "<C-u>zz", { noremap = false, silent = true })
 map("n", "n", "nzzzv", { noremap = false, silent = true })
 map("n", "N", "Nzzzv", { noremap = false, silent = true })
 
+-- Commenting keymaps
+
 -- buffers
 if Util.has("bufferline.nvim") then
   map("n", "<S-Tab>", "<cmd>BufferLineCyclePrev<cr>", { desc = "Prev buffer" })
@@ -147,7 +149,6 @@ map("n", "<leader>go", "<cmd>Octo actions<cr>", { desc = "Open Octo menu" })
 map("n", "<leader>il", "<cmd>Octo issue list<cr>", { desc = "List issues" })
 map("n", "<leader>ic", "<cmd>Octo issue close<cr>", { desc = "Close issue" })
 map("n", "<leader>ir", "<cmd>Octo issue reopen<cr>", { desc = "Reopen issue" })
-map("n", "<C-r>", "<cmd>Octo issue reload<cr>", { desc = "Reload issue" })
 map("n", "<C-b>", "<cmd>Octo issue browser<cr>", { desc = "Open issue in browser" })
 map("n", "<C-y>", "<cmd>Octo issue url<cr>", { desc = "Copy issue url" })
 map("n", "<leader>aa", "<cmd>Octo assignee add<cr>", { desc = "Add assignee" })
@@ -159,3 +160,7 @@ map("n", "<leader>acd", "<cmd>Octo comment delete<cr>", { desc = "Delete comment
 -- PRs keymaps
 map("n", "<leader>pl", "<cmd>Octo pr list<cr>", { desc = "List PRs" })
 -- the rest of the pr keymaps are defined by default
+
+-- use accelerated jk
+vim.api.nvim_set_keymap("n", "j", "<Plug>(accelerated_jk_gj)", {})
+vim.api.nvim_set_keymap("n", "k", "<Plug>(accelerated_jk_gk)", {})
