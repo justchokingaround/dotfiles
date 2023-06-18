@@ -46,12 +46,12 @@ start_recording() {
             -F fps="$fps" \
             -f "$tmp_video_file" &
     else
-        wf-recorder -t \
-            --audio="$audio_device" \
-            -g "$(hyprctl -j activewindow | jq -r '"\(.at[0]),\(.at[1]) \(.size[0])x\(.size[1])"')" \
-            -m mp4 \
-            -F fps="$fps" \
-            -f "$tmp_video_file" &
+        printf "1\n" |
+            wf-recorder -t \
+                --audio="$audio_device" \
+                -m mp4 \
+                -F fps="$fps" \
+                -f "$tmp_video_file" &
     fi
 }
 
@@ -85,7 +85,6 @@ convert_recording() {
     fi
     case "$1" in
         1080p)
-            get_name
             if [ -f "$recordings_dir/$name.mp4" ]; then
                 notify-send "File already exists, please choose another name"
                 get_name
