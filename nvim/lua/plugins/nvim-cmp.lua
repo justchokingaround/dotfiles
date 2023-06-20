@@ -92,6 +92,7 @@ M.opts = function(_, _)
       { name = "nvim_lua" },
       { name = "luasnip" },
       { name = "emoji" },
+      { name = "neorg" },
     },
     {
       { name = "treesitter" },

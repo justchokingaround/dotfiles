@@ -1,5 +1,4 @@
 return {
-  { "NMAC427/guess-indent.nvim", event = "BufReadPre", opts = { auto_cmd = true } },
   {
     -- Only highlight cursorline of the active window
     -- Makes it easier to tell what window is active in the
@@ -25,11 +24,6 @@ return {
         desc = "Delete buffer",
       },
     },
-  },
-  {
-    -- Jump to previous/next *buffer* in the jumplist with <C-p> & <C-n>
-    "kwkarlwang/bufjump.nvim",
-    config = true,
   },
   {
     "echasnovski/mini.indentscope",
@@ -64,6 +58,16 @@ return {
         mode = { "n", "x" },
         desc = "Structural Replace",
       },
+    },
+  },
+
+  { -- indent guides for Neovim
+    "lukas-reineke/indent-blankline.nvim",
+    opts = {
+      char = "▏", -- from lazyvim: "│",
+
+      -- add neorg and org
+      filetype_exclude = { "help", "alpha", "dashboard", "neo-tree", "Trouble", "lazy", "mason", "neorg", "org" },
     },
   },
 }

@@ -12,6 +12,10 @@ end
 
 opt.number = false
 opt.relativenumber = false
+opt.clipboard = ""
+-- <leader>uc to change this, i prefer seeing evertyhing by default, when editing markdown or neorg files
+opt.conceallevel = 0
+vim.g.maplocalleader = ","
 
 opt.list = true
 opt.listchars = {

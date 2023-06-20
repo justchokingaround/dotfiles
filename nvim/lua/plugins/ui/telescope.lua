@@ -70,7 +70,24 @@ return {
       "<leader>fh",
       -- :Telescope harpoon marks
       function()
-        require("telescope").extensions.harpoon.harpoon_marks()
+        require("telescope.builtin").help_tags()
+      end,
+      desc = "Help Tags",
+    },
+    {
+      "<leader>fw",
+      function()
+        require("telescope.builtin").live_grep({ search_dirs = { vim.fn.expand("%:p") } })
+      end,
+      desc = "Live Grep in Current File",
+    },
+    {
+      "<leader>*",
+      function()
+        require("telescope.builtin").grep_string({
+          search = vim.fn.expand("<cword>"),
+          search_dirs = { vim.fn.expand("%:p") },
+        })
       end,
     },
   },

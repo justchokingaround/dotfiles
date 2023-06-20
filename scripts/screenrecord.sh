@@ -35,6 +35,8 @@ get_name() {
 
 start_recording() {
     test -f "$tmp_video_file" && rm $tmp_video_file
+    # audio_choice=$(printf "1. Audio\n2. No Audio" | launcher "Choose audio: ")
+    # [ "$audio_choice" = "2. No Audio" ] && audio_device=""
 
     notify-send "Recording started" -t 100 && sleep 0.3
 
@@ -104,7 +106,7 @@ convert_recording() {
             fi
             notify-send "Recording saved as $name.mp4 in ~/videos/screen-recordings in $1 format"
             ;;
-        "Discord share (upload to oshi.at and copy to clipboard)")
+        "Upload to oshi.at and copy to clipboard")
             notify-send "Converting to 1080p..." -t 1000
             ffmpeg -i "$tmp_video_file" -vf scale=1920:1080 "/tmp/$name.mp4"
             notify-send "Uploading to oshi.at..." -t 1000

@@ -51,10 +51,10 @@ map_if_pumvisible_else("c", "<C-j>", "<C-n>", "<Down>")
 map_if_pumvisible("c", "<Esc>", "<C-e>")
 map_if_pumvisible("c", "<CR>", "<C-y>")
 
-map("", "<C-d>", "<C-d>zz", { noremap = false, silent = true })
-map("", "<C-u>", "<C-u>zz", { noremap = false, silent = true })
-map("n", "n", "nzzzv", { noremap = false, silent = true })
-map("n", "N", "Nzzzv", { noremap = false, silent = true })
+map("", "<C-d>", "<C-d>zz", { noremap = false, silent = true, desc = "Scroll down" })
+map("", "<C-u>", "<C-u>zz", { noremap = false, silent = true, desc = "Scroll up" })
+map("n", "n", "nzzzv", { noremap = false, silent = true, desc = "Move to next search match" })
+map("n", "N", "Nzzzv", { noremap = false, silent = true, desc = "Move to previous search match" })
 
 -- Commenting keymaps
 
@@ -73,17 +73,17 @@ map({ "n", "v", "i", "t" }, "<A-i>", "<cmd>lua require('toggleterm').toggle()<CR
 vim.keymap.del("t", "<C-l>")
 
 -- Resizing panes
-map("n", "<Left>", ":vertical resize +1<CR>")
-map("n", "<Right>", ":vertical resize -1<CR>")
-map("n", "<Up>", ":resize +1<CR>")
-map("n", "<Down>", ":resize -1<CR>")
+map("n", "<Left>", ":vertical resize +1<CR>", { desc = "Resize pane left" })
+map("n", "<Right>", ":vertical resize -1<CR>", { desc = "Resize pane right" })
+map("n", "<Up>", ":resize +1<CR>", { desc = "Resize pane up" })
+map("n", "<Down>", ":resize -1<CR>", { desc = "Resize pane down" })
 
 -- Move selected line / block of text in visual mode
-map("x", "K", ":move '<-2<CR>gv-gv")
-map("x", "J", ":move '>+1<CR>gv-gv")
+map("x", "J", ":move '>+1<CR>gv-gv", { desc = "Move selected lines down" })
+map("x", "K", ":move '<-2<CR>gv-gv", { desc = "Move selected lines up" })
 
 -- Paste over currently selected text without yanking it
-map("v", "p", '"_dP')
+map("v", "p", '"_dP', { desc = "Paste over selected text without yanking it" })
 
 -- Hop keymaps
 map(
@@ -135,32 +135,34 @@ map(
   {}
 )
 -- run :HopAnywhere on `s`
-map("n", "s", "<cmd>lua require'hop'.hint_char1( { current_line_only = false } )<cr>", {})
-map("", "S", "<cmd>lua require'hop'.hint_patterns()<cr>", {})
-map("", "L", "<cmd>lua require'hop'.hint_lines()<cr>", {})
+map("n", "s", "<cmd>lua require'hop'.hint_char1( { current_line_only = false } )<cr>", { desc = "Hop anywhere" })
+map("", "S", "<cmd>lua require'hop'.hint_patterns()<cr>", { desc = "Hop patterns" })
+map("", "L", "<cmd>lua require'hop'.hint_lines()<cr>", { desc = "Hop lines" })
 
 -- Diffview keymaps
-map("n", "<leader>gd", "<cmd>DiffviewOpen<cr>", { desc = "Open diffview" })
+map("n", "<leader>gdo", "<cmd>DiffviewOpen<cr>", { desc = "Open diffview" })
+map("n", "<leader>gdc", "<cmd>DiffviewClose<cr>", { desc = "Close diffview" })
 
--- Octo (github integration) keymaps
--- General keymap
-map("n", "<leader>go", "<cmd>Octo actions<cr>", { desc = "Open Octo menu" })
--- Issue keymaps
-map("n", "<leader>il", "<cmd>Octo issue list<cr>", { desc = "List issues" })
-map("n", "<leader>ic", "<cmd>Octo issue close<cr>", { desc = "Close issue" })
-map("n", "<leader>ir", "<cmd>Octo issue reopen<cr>", { desc = "Reopen issue" })
-map("n", "<C-b>", "<cmd>Octo issue browser<cr>", { desc = "Open issue in browser" })
-map("n", "<C-y>", "<cmd>Octo issue url<cr>", { desc = "Copy issue url" })
-map("n", "<leader>aa", "<cmd>Octo assignee add<cr>", { desc = "Add assignee" })
-map("n", "<leader>ad", "<cmd>Octo assignee remove<cr>", { desc = "Remove assignee" })
-map("n", "<leader>ala", "<cmd>Octo label add<cr>", { desc = "Add label" })
-map("n", "<leader>ald", "<cmd>Octo label remove<cr>", { desc = "Remove label" })
-map("n", "<leader>aca", "<cmd>Octo comment add<cr>", { desc = "Add comment" })
-map("n", "<leader>acd", "<cmd>Octo comment delete<cr>", { desc = "Delete comment" })
--- PRs keymaps
-map("n", "<leader>pl", "<cmd>Octo pr list<cr>", { desc = "List PRs" })
--- the rest of the pr keymaps are defined by default
+-- Open octo actions
+map("n", "<leader>go", "<cmd>Octo actions<cr>", { desc = "Octo actions" })
 
 -- use accelerated jk
-vim.api.nvim_set_keymap("n", "j", "<Plug>(accelerated_jk_gj)", {})
-vim.api.nvim_set_keymap("n", "k", "<Plug>(accelerated_jk_gk)", {})
+map("n", "j", "<Plug>(accelerated_jk_gj)", { desc = "Accelerated j" })
+map("n", "k", "<Plug>(accelerated_jk_gk)", { desc = "Accelerated k" })
+
+-- remap C-BS to C-w
+map("i", "<C-h>", "<C-w>", { noremap = true, desc = "Ctrl Backspace to delete word" })
+
+-- enter in normal mode changes the current word
+map("n", "<cr>", "ciw", { desc = "Change current word" })
+
+-- Ctrl-C to yank whole file
+map("n", "<C-c>", "<cmd>%y+<cr>", { desc = "Yank whole file" })
+
+-- U as redo
+map("n", "U", "<C-r>", { desc = "Redo" })
+
+-- leader y to copy to system clipboard
+map({ "v", "n" }, "<leader>y", '"+y', { desc = "Copy to system clipboard" })
+-- leader P to paste from system clipboard
+map({ "v", "n" }, "<leader>P", '"+p', { desc = "Paste from system clipboard" })
