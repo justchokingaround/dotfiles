@@ -68,7 +68,7 @@ stop_recording() {
 compress_to_25mb() {
     notify-send "File is over 25mb, compressing..."
     notify-send "This may take a while..." -t 2000
-    ffmpeg -i "$tmp_video_file" -vcodec libx264 -crf 24 -maxrate 500k -bufsize 1000k "$2"
+    ffmpeg -i "$tmp_video_file" -vcodec libx264 -crf 24 -maxrate 500k -bufsize 1000k "$1"
     notify-send "Compression complete" -t 1000
 }
 
