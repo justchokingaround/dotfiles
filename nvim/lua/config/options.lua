@@ -12,7 +12,9 @@ end
 
 opt.number = false
 opt.relativenumber = false
-opt.clipboard = ""
+-- opt.clipboard = ""
+opt.clipboard = "unnamedplus"
+
 -- <leader>uc to change this, i prefer seeing evertyhing by default, when editing markdown or neorg files
 opt.conceallevel = 0
 vim.g.maplocalleader = ","

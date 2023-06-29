@@ -123,8 +123,10 @@ convert_recording() {
             notify-send "Gif saved as $name.gif in ~/videos/screen-recordings in $1 format"
             ;;
         "Discord share (choose channel and send the video under 25mb there)")
+            video_file="$tmp_video_file"
             if [ "$(du -m "$tmp_video_file" | cut -f1)" -gt 25 ]; then
-                compress_to_25mb "$tmp_video_file"
+                video_file="/tmp/recording-compressed.mp4"
+                compress_to_25mb "/tmp/recording-compressed.mp4"
                 wait
             fi
             base="https://discord.com/api/v10"
@@ -142,7 +144,7 @@ convert_recording() {
             channel_name=$(printf "%s" "$channel_choice" | cut -f1)
             channel_id=$(printf "%s" "$channel_choice" | cut -f2)
 
-            curl -H "Authorization: $token" -H "Accept: application/json" -H "Content-Type: multipart/form-data" -X POST -F "file=@/tmp/recording.mp4" "${base}/channels/$channel_id/messages"
+            curl -H "Authorization: $token" -H "Accept: application/json" -H "Content-Type: multipart/form-data" -X POST -F "file=@$video_file" "${base}/channels/$channel_id/messages"
             notify-send "$server_name ⚫$channel_name" "Video sent" -t 1000
             ;;
         *) notify-send "No format selected" ;;

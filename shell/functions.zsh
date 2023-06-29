@@ -82,3 +82,28 @@ dots() {
     exa -lah --group-directories-first --icons
   fi
 }
+
+transfer() {
+  if tty -s; then
+    file="$1"
+    file_name=$(basename "$file")
+    
+    if [ ! -e "$file" ]; then
+      echo "$file: No such file or directory" >&2
+      return 1
+    fi
+    
+    if [ -d "$file" ]; then
+      file_name="$file_name.zip"
+      (
+        cd "$file" && zip -r -q - .
+      ) | curl --progress-bar --upload-file "-" "https://transfer.sh/$file_name" | tee /dev/null | grep https | wl-copy
+    else
+      cat "$file" | curl --progress-bar --upload-file "-" "https://transfer.sh/$file_name" | tee /dev/null | grep https | wl-copy
+    fi
+  else
+    file_name=$1
+    curl --progress-bar --upload-file "-" "https://transfer.sh/$file_name" | tee /dev/null | grep https | wl-copy
+  fi
+}
+

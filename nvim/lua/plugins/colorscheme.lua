@@ -11,7 +11,6 @@ local colorschemes = {
 
   "nyoom-engineering/oxocarbon.nvim",
   "sindrets/oxocarbon-lua.nvim",
-  { "ellisonleao/gruvbox.nvim", opts = { palette_overrides = {} } },
 }
 
 return {

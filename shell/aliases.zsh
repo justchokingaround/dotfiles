@@ -29,7 +29,7 @@ alias vg='nvim $(gum filter)'
 alias f="fzf"
 alias ra="ranger"
 alias x="xplr"
-alias gpt="sgpt"
+alias gpt="tgpt"
 alias j=z
 alias jj="cd -"
 alias zj="zellij -s"
@@ -63,8 +63,6 @@ alias ytdlist="yt-dlp -f 'bv*[height=1080]+ba'"
 
 # quickly share a file
 alias share='printf $(curl -# "https://oshi.at" -F "f=@$(fd -t f -d 1|fzf)"|sed -nE "s_DL: (.*)_\1_p")|wl-copy'
-alias fzf-preview='printf "fzf --with-nth 2.. --cycle --preview=\"kitty +kitten icat --clear --transfer-mode file;\
-  kitty +kitten icat --place "190x12@10x10" --scale-up --transfer-mode file {1}\""|wl-copy'
 alias weather="curl -s wttr.in/Heilbronn"
 alias pf='pfetch'
 alias nf='neofetch --sixel pix/lain/thewired.jpg --size 16%'

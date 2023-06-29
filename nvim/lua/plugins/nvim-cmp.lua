@@ -18,6 +18,7 @@ local M = {
   },
 }
 
+local WIN_HIGHLIGHT = "Normal:Normal,FloatBorder:FloatBorder,CursorLine:CursorLine,Search:Search"
 --#region Utilities
 local function has_words_before()
   local line, col = unpack(vim.api.nvim_win_get_cursor(0))
@@ -222,6 +223,9 @@ M.opts = function(_, _)
       max_width = 40,
       col_offset = -3,
       side_padding = 0,
+      completion = require("cmp.config.window").bordered({ winhighlight = WIN_HIGHLIGHT }),
+      documentation = require("cmp.config.window").bordered({ winhighlight = WIN_HIGHLIGHT }),
+      preview = require("cmp.config.window").bordered({ winhighlight = WIN_HIGHLIGHT }),
     },
     formatting = {
       --- @type cmp.ItemField[]

@@ -9,7 +9,25 @@ xplr.config.general.show_hidden = false
 
 xplr.config.general.enable_recover_mode = true
 
-xplr.config.layouts.builtin.default = xplr.config.layouts.builtin.no_help
+xplr.config.layouts.builtin.default = {
+	Horizontal = {
+		config = {
+			margin = 1,
+			horizontal_margin = 2,
+			vertical_margin = 3,
+			constraints = {
+				{ Percentage = 50 },
+				{ Percentage = 50 },
+			},
+		},
+		splits = {
+			"Table",
+			"HelpMenu",
+		},
+	},
+}
+
+-- xplr.config.layouts.builtin.default = xplr.config.layouts.builtin.no_help_no_selection
 
 -- xpm keybind
 key.x = {
@@ -40,7 +58,6 @@ require("xpm").setup({
 		"sayanarijit/zoxide.xplr",
 		"Junker/nuke.xplr",
 		"sayanarijit/dual-pane.xplr",
-		"sayanarijit/trash-cli.xplr",
 		"sayanarijit/preview-tabbed.xplr",
 		"sayanarijit/dragon.xplr",
 		-- ui plugins
@@ -96,7 +113,7 @@ require("nuke").setup({
 			{ mime = "video/mp4", command = "mpv {}" },
 			{ mime_regex = "^video/.*", command = "mpv {}" },
 			{ mime_regex = "^audio/.*", command = "mpv --audio-display=no {}" },
-			{ mime_regex = ".*", command = "xdg-open {}" },
+			{ mime_regex = ".*", command = "nvim {}" },
 		},
 	},
 	view = {
@@ -127,3 +144,7 @@ require("preview-tabbed").setup({
 	fifo_path = "/tmp/xplr.fifo",
 	previewer = os.getenv("HOME") .. "/.config/nnn/plugins/preview-tui",
 })
+
+-- KEYBINDS
+key.L = key["ctrl-i"] -- next visited path
+key.H = key["ctrl-o"] -- prev visited path
