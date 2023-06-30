@@ -4,66 +4,59 @@
 
 [wayland]
 [wayland.files]
-"hypr" = "~/.config/hypr/"
-# "waybar" = "~/.config/waybar/"
-"eww" = "~/.config/eww/"
+"hyprland/hypr" = "~/.config/hypr/"
+# "hyprland/bar/waybar" = "~/.config/waybar/"
+"hyprland/bar/eww" = "~/.config/eww/"
 
 [wayland-laptop]
 [wayland-laptop.files]
-"laptop/hypr-laptop" = "~/.config/hypr/"
-# "waybar-laptop" = "~/.config/waybar/"
-# "laptop/waybar-laptop" = "~/.config/waybar/"
-# "waybar" = "~/.config/waybar/"
-"eww" = "~/.config/eww/"
+"hyprland/laptop/hypr-laptop" = "~/.config/hypr/"
+"hyprland/bar/eww" = "~/.config/eww/"
 
 [terminal]
 depends = ["shell"]
 [terminal.files]
 "terminals/alacritty" = "~/.config/alacritty/"
-# "kitty" = "~/.config/kitty/"
 "terminals/foot" = "~/.config/foot/"
 "terminals/wezterm" = "~/.config/wezterm/"
-"terminal-tools/starship" = "~/.config/starship"
 "terminal-tools/zellij" = "~/.config/zellij"
 
 [shell]
 [shell.files]
 "shell/zshrc" = "~/.zshrc"
 "shell/zshenv" = "~/.zshenv"
-"scripts" = "~/scripts/"
+"shell/scripts" = "~/scripts/"
+"shell/starship" = "~/.config/starship"
 
 [dev]
 [dev.files]
-"nvim" = "~/.config/nvim/"
+"coding/neovim/nvim" = "~/.config/nvim/"
+"coding/neovim/nvchad" = "~/.config/nvchad/"
 "terminal-tools/bat" = "~/.config/bat/"
-"lazygit" = "~/.config/lazygit/"
-"gh" = "~/.config/gh/"
+"git/lazygit" = "~/.config/lazygit/"
+"git/gh" = "~/.config/gh/"
 
 [media]
 depends = ["mpv"]
 [media.files]
 # "newsboat" = "~/.config/newsboat/"
-"mpd" = "~/.config/mpd/"
-"mpDris2" = "~/.config/mpDris2/"
-"ncmpcpp" = { target = "~/.config/ncmpcpp/", type = "symbolic" }
-"spotify-player" = "~/.config/spotify-player"
-"zathura" = "~/.config/zathura/"
+"media/music/mpd" = "~/.config/mpd/"
+"media/music/mpDris2" = "~/.config/mpDris2/"
+"media/music/ncmpcpp" = { target = "~/.config/ncmpcpp/", type = "symbolic" }
+"media/music/spotify-player" = "~/.config/spotify-player"
+"media/zathura" = "~/.config/zathura/"
 
 [filemanager]
 [filemanager.files]
-# "ranger" = "~/.config/ranger/"
 "terminal-tools/xplr" = "~/.config/xplr/"
 
 [launchers]
 [launchers.files]
-"rofi" = "~/.config/rofi/"
-# "wofi" = "~/.config/wofi/"
-# "tofi" = "~/.config/tofi/"
+"launchers/rofi" = "~/.config/rofi/"
 
 [notifications]
 [notifications.files]
-# "dunst" = "~/.config/dunst/"
-"mako" = "~/.config/mako/"
+"notifications/mako" = "~/.config/mako/"
 
 [weeb]
 [weeb.files]
@@ -73,13 +66,11 @@ depends = ["mpv"]
 [other]
 [other.files]
 "terminal-tools/neofetch" = "~/.config/neofetch/"
-"iamb" = "~/.config/iamb/"
-# "macchina" = "~/.config/macchina/"
+"communication/iamb" = "~/.config/iamb/"
 
 [mpv.files]
-"mpv" = "~/.config/mpv/"
-"mpv/input.conf" = "~/.config/mpv/input.conf"
-"mpv/mpv.conf" = "~/.config/mpv/mpv.conf"
-"mpv/scripts" = "~/.config/mpv/scripts/"
-"mpv/script-opts" = "~/.config/mpv/script-opts/"
-# "mpv/shaders" = "~/.config/mpv/shaders/"
+"media/mpv" = "~/.config/mpv/"
+"media/mpv/input.conf" = "~/.config/mpv/input.conf"
+"media/mpv/mpv.conf" = "~/.config/mpv/mpv.conf"
+"media/mpv/scripts" = "~/.config/mpv/scripts/"
+"media/mpv/script-opts" = "~/.config/mpv/script-opts/"
