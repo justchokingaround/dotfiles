@@ -1,0 +1,9 @@
+<application>
+  <component name="EditorSettings">
+    <option name="USE_EDITOR_FONT_IN_INLAYS" value="true" />
+  </component>
+  <component name="TodoConfiguration">
+    <pattern pattern="\btodo\b.*" />
+    <pattern pattern="\bfixme\b.*" />
+  </component>
+</application>

@@ -32,6 +32,8 @@ depends = ["shell"]
 [dev.files]
 "coding/neovim/nvim" = "~/.config/nvim/"
 "coding/neovim/nvchad" = "~/.config/nvchad/"
+"coding/vscode/settings.json" = "~/.config/Code/User/settings.json"
+"coding/vscode/keybindings.json" = "~/.config/Code/User/keybindings.json"
 "terminal-tools/bat" = "~/.config/bat/"
 "git/lazygit" = "~/.config/lazygit/"
 "git/gh" = "~/.config/gh/"
@@ -63,10 +65,18 @@ depends = ["mpv"]
 # "mangal" = "~/.config/mangal/"
 # "jerry" = "~/.config/jerry/"
 
+[ui]
+[ui.files]
+"ui/gtk/gtk-2.0" = "~/.config/gtk-2.0/"
+"ui/gtk/gtk-3.0" = "~/.config/gtk-3.0/"
+"ui/gtk/gtk-4.0" = "~/.config/gtk-4.0/"
+"ui/qt5ct/qt5ct.conf" = "~/.config/qt5ct/qt5ct.conf"
+
 [other]
 [other.files]
 "terminal-tools/neofetch" = "~/.config/neofetch/"
 "communication/iamb" = "~/.config/iamb/"
+"clipboard/copyq/copyq.conf" = "~/.config/copyq/copyq.conf"
 
 [mpv.files]
 "media/mpv" = "~/.config/mpv/"

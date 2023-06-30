@@ -1,4 +1,4 @@
-@import     "/home/chokerman/dotfiles/rofi/styles/colors.rasi"
+@import     "/home/chokerman/.config/rofi/styles/colors.rasi"
 
 configuration {
     font:               "Liga SFMono Nerd Font 13";

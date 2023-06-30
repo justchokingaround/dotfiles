@@ -1,0 +1,214 @@
+{
+  "keyboard.dispatch": "keyCode",
+  "vim.normalModeKeyBindingsNonRecursive": [
+    {
+      "before": [
+        "<C-s>"
+      ],
+      "commands": [
+        "workbench.action.files.save"
+      ]
+    },
+    {
+      "before": [
+        "<C-h>"
+      ],
+      "after": [
+        "<C-w>",
+        "h"
+      ]
+    },
+    {
+      "before": [
+        "<C-j>"
+      ],
+      "after": [
+        "<C-w>",
+        "j"
+      ]
+    },
+    {
+      "before": [
+        "<C-k>"
+      ],
+      "after": [
+        "<C-w>",
+        "k"
+      ]
+    },
+    {
+      "before": [
+        "<C-l>"
+      ],
+      "after": [
+        "<C-w>",
+        "l"
+      ]
+    },
+    {
+      "before": [
+        "<leader>",
+        "t",
+        "t"
+      ],
+      "commands": [
+        ":tabnew"
+      ]
+    },
+    {
+      "before": [
+        "<leader>",
+        "t",
+        "n"
+      ],
+      "commands": [
+        ":tabnext"
+      ]
+    },
+    {
+      "before": [
+        "<leader>",
+        "t",
+        "p"
+      ],
+      "commands": [
+        ":tabprev"
+      ]
+    },
+    {
+      "before": [
+        "<leader>",
+        "t",
+        "o"
+      ],
+      "commands": [
+        ":tabo"
+      ]
+    },
+    {
+      "before": [
+        "<leader>",
+        "x"
+      ],
+      "commands": [
+        ":bd"
+      ]
+    },
+    {
+      "before": [
+        "<leader>",
+        "<leader>"
+      ],
+      "commands": [
+        "workbench.action.quickOpen"
+      ]
+    },
+    {
+      "before": [
+        "<leader>",
+        "p"
+      ],
+      "commands": [
+        "workbench.action.showCommands"
+      ]
+    },
+    {
+      "before": [
+        "<leader>",
+        "t"
+      ],
+      "commands": [
+        "workbench.action.gotoSymbol"
+      ]
+    },
+    {
+      "before": [
+        "<leader>",
+        "Z"
+      ],
+      "commands": [
+        "workbench.action.toggleZenMode"
+      ]
+    },
+    {
+      "before": [
+        "<leader>",
+        "e"
+      ],
+      "commands": [
+        "workbench.files.action.focusFilesExplorer"
+      ]
+    }
+  ],
+  "vim.visualModeKeyBindings": [
+    {
+      "before": [
+        ">"
+      ],
+      "commands": [
+        "editor.action.indentLines"
+      ]
+    },
+    {
+      "before": [
+        "<"
+      ],
+      "commands": [
+        "editor.action.outdentLines"
+      ]
+    }
+  ],
+  "editor.fontFamily": "'Liga SFMono Nerd Font', 'Iosevka Nerd Font', 'JetBrains Mono', 'Illusion Z', 'Droid Sans Mono', 'monospace'",
+  "editor.fontLigatures": true,
+  "workbench.iconTheme": "vscode-icons",
+  "editor.tokenColorCustomizations": {
+    "textMateRules": [
+      {
+        "scope": "comment",
+        "settings": {
+          "fontStyle": "italic"
+        }
+      }
+    ]
+  },
+  "vim.enableNeovim": true,
+  "vim.leader": "space",
+  "vim.useSystemClipboard": true,
+  "vim.useCtrlKeys": true,
+  "editor.wordWrap": "on",
+  "zenMode.centerLayout": false,
+  "zenMode.hideLineNumbers": true,
+  "zenMode.restore": true,
+  "zenMode.fullScreen": true,
+  "window.menuBarVisibility": "hidden",
+  "editor.minimap.enabled": false,
+  "editor.scrollbar.verticalScrollbarSize": 0,
+  "editor.fontSize": 16,
+  "terminal.integrated.enablePersistentSessions": false,
+  "terminal.integrated.fontSize": 12,
+  "terminal.integrated.gpuAcceleration": "on",
+  "workbench.startupEditor": "none",
+  "editor.cursorSurroundingLines": 10,
+  "editor.lineNumbers": "on",
+  "explorer.confirmDelete": false,
+  "files.autoSave": "afterDelay",
+  "editor.formatOnSave": true,
+  "editor.snippetSuggestions": "top",
+  "workbench.colorTheme": "oxocarbon",
+  "redhat.telemetry.enabled": true,
+  "editor.inlineSuggest.enabled": true,
+  "[html]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "git.confirmSync": false,
+  "git.enableSmartCommit": true,
+  "window.zoomLevel": 1,
+  "github.copilot.enable": {
+    "*": true,
+    "plaintext": false,
+    "markdown": true,
+    "scminput": false
+  },
+  "git.autofetch": true,
+  "synthwave84.brightness": 0.6
+}

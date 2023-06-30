@@ -1,0 +1,9 @@
+me.alexjs.theme.darcula-liquid
+com.elliotwaite.cyberpunk_theme
+com.alex.tokyonight
+com.fernandojimenez.mattecarbon.theme
+com.ahmed3elshaer.true-black-theme
+IdeaVIM
+com.github.copilot
+com.mallowigi
+org.sonarlint.idea
