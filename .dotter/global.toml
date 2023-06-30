@@ -34,7 +34,6 @@ depends = ["shell"]
 
 [dev]
 [dev.files]
-"doom-emacs" = "~/.doom.d/"
 "nvim" = "~/.config/nvim/"
 "terminal-tools/bat" = "~/.config/bat/"
 "lazygit" = "~/.config/lazygit/"
