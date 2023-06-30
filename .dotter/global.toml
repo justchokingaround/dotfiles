@@ -16,22 +16,16 @@
 # "waybar" = "~/.config/waybar/"
 "eww" = "~/.config/eww/"
 
-[xorg]
-[xorg.files]
-"bspwm" = "~/.config/bspwm/"
-"polybar" = "~/.config/polybar/"
-"picom" = "~/.config/picom/"
-"sxhkd" = "~/.config/sxhkd/"
-
 [terminal]
 depends = ["shell"]
 [terminal.files]
-"alacritty" = "~/.config/alacritty/"
+"terminals/alacritty" = "~/.config/alacritty/"
 # "kitty" = "~/.config/kitty/"
-"foot" = "~/.config/foot/"
-"wezterm" = "~/.config/wezterm/"
-"starship" = "~/.config/starship"
-"zellij" = "~/.config/zellij"
+"terminals/foot" = "~/.config/foot/"
+"terminals/wezterm" = "~/.config/wezterm/"
+"terminal-tools/starship" = "~/.config/starship"
+"terminal-tools/zellij" = "~/.config/zellij"
+
 [shell]
 [shell.files]
 "shell/zshrc" = "~/.zshrc"
@@ -42,35 +36,24 @@ depends = ["shell"]
 [dev.files]
 "doom-emacs" = "~/.doom.d/"
 "nvim" = "~/.config/nvim/"
-"bat" = "~/.config/bat/"
+"terminal-tools/bat" = "~/.config/bat/"
 "lazygit" = "~/.config/lazygit/"
 "gh" = "~/.config/gh/"
-
-[keyboard]
-[keyboard.files]
-"kmonad" = "~/.config/kmonad/"
-
-[keyboard-laptop]
-[keyboard-laptop.files]
-"laptop/kmonad-laptop" = "~/.config/kmonad/"
 
 [media]
 depends = ["mpv"]
 [media.files]
-# "ncspot" = "~/.config/ncspot/"
 # "newsboat" = "~/.config/newsboat/"
-# "youtube-tui" = "~/.config/youtube-tui/"
 "mpd" = "~/.config/mpd/"
 "mpDris2" = "~/.config/mpDris2/"
 "ncmpcpp" = { target = "~/.config/ncmpcpp/", type = "symbolic" }
-"ytfzf" = "~/.config/ytfzf/"
 "spotify-player" = "~/.config/spotify-player"
 "zathura" = "~/.config/zathura/"
 
 [filemanager]
 [filemanager.files]
 # "ranger" = "~/.config/ranger/"
-"xplr" = "~/.config/xplr/"
+"terminal-tools/xplr" = "~/.config/xplr/"
 
 [launchers]
 [launchers.files]
@@ -86,12 +69,11 @@ depends = ["mpv"]
 [weeb]
 [weeb.files]
 # "mangal" = "~/.config/mangal/"
-# "animdl" = "~/.config/animdl/"
 # "jerry" = "~/.config/jerry/"
 
 [other]
 [other.files]
-"neofetch" = "~/.config/neofetch/"
+"terminal-tools/neofetch" = "~/.config/neofetch/"
 "iamb" = "~/.config/iamb/"
 # "macchina" = "~/.config/macchina/"
 

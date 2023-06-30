@@ -1,0 +1,18 @@
+scan_timeout = 10
+
+format = "$directory$git_branch$git_metrics$nix_shell$package$character"
+add_newline = false
+line_break.disabled = true
+directory.style = "cyan"
+
+[character]
+success_symbol = "[λ](white)"
+error_symbol = "[λ](red)"
+
+[git_branch]
+style = "purple"
+symbol = ""
+[git_metrics]
+disabled = false
+added_style = "bold yellow"
+deleted_style = "bold red"

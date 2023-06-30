@@ -1,7 +1,0 @@
-#!/bin/sh
-get_sort_by () {
-    echo "${1%%${tab_space}*}"
-}
-data_sort_fn () {
-    sort
-}
