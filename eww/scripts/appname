@@ -10,6 +10,7 @@ workspaces() {
         class="${string/,*/}"
         export title=${string/,/ \| }
         [[ $title == " | " ]] && unset title
+        title=$(printf "%s" "$title" | sed -nE "s@.* | (.*)@\1@p")
         export iconpath=$(geticons "$class" -s 24 -c 1 -t "$icontheme" | head -1)
     fi
 }
