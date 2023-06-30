@@ -34,6 +34,7 @@ alias j=z
 alias jj="cd -"
 alias zj="zellij -s"
 alias ze="zellij"
+alias music="zellij --layout=$HOME/.config/ncmpcpp/music.kdl"
 # alias time="hyperfine"
 
 ### Suffix aliases

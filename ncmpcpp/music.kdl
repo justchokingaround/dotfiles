@@ -1,0 +1,11 @@
+// layout_file.kdl
+
+layout {
+    pane split_direction="vertical" {
+        pane split_direction="horizontal" {
+            pane command="$HOME/.config/ncmpcpp/ncmpcpp-wrapper" size="60%"
+            pane command="cava"
+        }
+        pane command="ncmpcpp" size="70%" focus=true
+    }
+}
