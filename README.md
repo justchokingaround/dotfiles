@@ -15,17 +15,17 @@ paru -S hyprland xdg-desktop-portal-hyprland-git wireplumber pipewire qt5-waylan
 
 #### Quality of life packages
 ```sh
-paru -S bat bottom doas exa ffmpegthumbnailer fzf hyprpicker-git lazygit mlocate mpDris2 nautilus nsxiv pavucontrol swappy starship wev zoxide zsh ffmpeg
+paru -S bat bottom doas exa ffmpegthumbnailer fzf hyprpicker-git lazygit mlocate mpdris2 nautilus nsxiv pavucontrol swappy starship wev zoxide zsh ffmpeg
 ```
 
 #### Personal utilities I use
 ```sh
-paru -S discord sidekick-browser-stable-bin grimblast-git mpvpaper git mako mpv socat neovim rofi spotify-player alacritty-sixel wezterm wf-recorder zathura zathura-pdf-mupdf phocus-gtk-theme-git ttf-blex-nerd-font-git xplr
+paru -S discord sidekick-browser-stable-bin grimblast-git mpvpaper git mako mpv socat neovim rofi spotify-player alacritty-sixel-git wezterm wf-recorder zathura zathura-pdf-mupdf phocus-gtk-theme-git ttf-blex-nerd-font-git xplr
 ```
 
 ### Latex stuff, cuz idk
 ```sh
-tectonic-git texinfo texlive-bibtexextra texlive-bin texlive-core texlive-fontsextra texlive-formatsextra texlive-latexextra texlive-pictures texlive-science 
+paru -S tectonic-git texinfo texlive-bibtexextra texlive-bin texlive-core texlive-fontsextra texlive-formatsextra texlive-latexextra texlive-pictures texlive-science 
 ```
 
 ## TODO: 

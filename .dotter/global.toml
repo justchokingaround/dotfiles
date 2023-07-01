@@ -72,7 +72,6 @@ depends = ["mpv"]
 [ui.files]
 "ui/gtk/gtk-2.0" = "~/.config/gtk-2.0/"
 "ui/gtk/gtk-3.0" = "~/.config/gtk-3.0/"
-"ui/gtk/gtk-4.0" = "~/.config/gtk-4.0/"
 "ui/qt5ct/qt5ct.conf" = "~/.config/qt5ct/qt5ct.conf"
 "ui/fonts/" = "~/.local/share/fonts/"
 
