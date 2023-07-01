@@ -75,7 +75,7 @@ dots() {
   search_dir=~/dotfiles/
   preview_cmd="exa -lah --sort=type --icons --no-permissions --no-filesize --no-time --no-user $search_dir/{}"
 
-  target_dir=$(fd . $search_dir --exact-depth=1 --type d --exec printf '{/}\0' | fzf --preview $preview_cmd --exit-0 --read0)
+  target_dir=$(fd . $search_dir --exact-depth=1 --type d --exec printf '{/}\0' | fzf --cycle --preview $preview_cmd --exit-0 --read0)
 
   if [ -n $target_dir ]; then
     cd $search_dir/$target_dir

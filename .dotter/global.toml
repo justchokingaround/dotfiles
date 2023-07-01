@@ -110,6 +110,9 @@ base0F = "82cfff"
 family = "Liga SFMono Nerd Font"
 size = 14
 size_small = 12
+huge=30
 
 [graphics.variables.pictures]
-profile = "/home/chokerman/pix/lain/lain-oxocarbon.png"
+profile = "$HOME/dotfiles/pictures/lain-oxocarbon-transparent.png"
+black = "$HOME/dotfiles/pictures/lain-oxocarbon-black.png"
+

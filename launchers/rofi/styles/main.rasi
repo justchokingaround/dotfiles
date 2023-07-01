@@ -1,75 +1,91 @@
-@import     "/home/chokerman/.config/rofi/styles/colors.rasi"
-
-configuration {
-    show-icons:         false;
-}
+@import "../colors.rasi"
 
 * {
     pink:               @base0C;
-    cyan:               @base0F;
+    magenta:            @base0E;
+    green:              @base0D;
 
     accent-color:       @base06;
     urgent-color:       @base0A;
 
     background-color:   transparent;
     text-color:         @text;
-    margin:             0;
-    padding:            0;
 }
 
 window {
     location:           center;
     anchor:             center;
     fullscreen:         false;
-    y-offset:           -100px;
+    width:              30%;
 
     enabled:            true;
     background-color:   @background;
     cursor:             "default";
 }
 
+// inputbar {
+//     enabled:            true;
+//     background-color:   @prompt;
+//     children:           ["textbox-prompt-colon", "entry"];
+// }
+
+mainbox {
+    background-color:   rgba(0, 0, 0, 0.5);
+}
+
 inputbar {
+    enabled:                     true;
+    spacing:                     10px;
+    padding:                     80px;
+    background-image:            url("~/pix/wallpapers/weathering_with_you_girl.png", width);
+    text-color:                  @prompt;
+    orientation:                 horizontal;
+    children:                    [ "textbox-prompt-colon", "entry" ];
+}
+
+textbox-prompt-colon {
     enabled:            true;
-    background-color:   @prompt;
-    padding:            10px;
-    children:           ["entry"];
+    expand:             false;
+    str:                "";
+    margin:             1em 1em;
+    text-color:         @accent-color;
 }
 
 entry {
     enabled:            true;
-    padding:            0.75em 1.25em;
+    margin:             1em 0;
     cursor:             text;
 }
 
 listview {
     enabled:            true;
     columns:            1;
-    lines:              6;
+    lines:              10;
     cycle:              true;
-    dynamic:            true;
+    dynamic:            false;
     scrollbar:          false;
     layout:             vertical;
     reverse:            false;
-    fixed-height:       true;
+    fixed-height:       false;
     fixed-columns:      true;
-    margin:             0.5em 0 0.75em;
-    cursor:             "default";
+    margin:             0 0 0.75em;
 }
 
 prompt {
     text-color:         @accent-color;
-  
+    padding:            0.75em 1.25em;
 }
 
 textbox {
-    padding:            0.5em 1.5em;
     background-color:   @prompt;
+    text-color:         @green;
+    padding:            0.75em 1.25em;
 }
 
 element {
     enabled:            true;
-    margin:             0 0.75em;
-    padding:            0.5em 1em;
+    margin:             0 2em;
+    padding:            0.1em 0;
     cursor:             pointer;
     orientation:        vertical;
 }
@@ -77,11 +93,8 @@ element {
 element-text {
     highlight:          @pink;
     cursor:             inherit;
-    vertical-align:     0.5;
-    horizontal-align:   0.0;
-    font:               "Liga SFMono Nerd Font 14";
 }
 
 element-text selected {
-    text-color:           @cyan;
+    text-color:           @magenta;
 }
