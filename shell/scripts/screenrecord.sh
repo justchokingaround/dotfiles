@@ -99,7 +99,7 @@ convert_recording() {
             notify-send "Recording saved as $name.mp4 in ~/videos/screen-recordings in $1 format"
             ;;
         "Discord (under 25mb)")
-            if [ "$(du -m "$tmp_video_file" | cut -f1)" -gt 25 ]; then
+            if [ "$(du -m "$tmp_video_file" | cut -f1)" -gt 100 ]; then
                 compress_to_25mb "$recordings_dir/$name.mp4"
             else
                 cp "$tmp_video_file" "$recordings_dir/$name.mp4"

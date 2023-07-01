@@ -37,7 +37,7 @@ inputbar {
     enabled:                     true;
     spacing:                     10px;
     padding:                     80px;
-    background-image:            url("~/pix/wallpapers/weathering_with_you_girl.png", width);
+    background-image:            url("~/dotfiles/pictures/weathering_with_you_girl_blurred.png", width);
     text-color:                  @prompt;
     orientation:                 horizontal;
     children:                    [ "textbox-prompt-colon", "entry" ];
