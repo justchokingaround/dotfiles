@@ -86,3 +86,16 @@ zellij --layout=$HOME/.config/ncmpcpp/music.kdl
 ```
 
 Feel free to contact me, or write an issue if you encounter any trouble with setting this up, I'm always glad to help.
+
+Here is how it should look like in the end:
+In `alacritty` (I'm using the patched version, with sixel support, `alacritty-sixel` in the aur):
+![image](https://github.com/justchokingaround/dotfiles/assets/44473782/015a692e-a7c0-4e20-980d-71b2c64b7486)
+
+In `wezterm`, using sixel:
+![image](https://github.com/justchokingaround/dotfiles/assets/44473782/0a5d1b26-daf2-4036-9e84-40f5abfaeb19)
+
+In `cool-retro-term`, using chafa:
+![image](https://github.com/justchokingaround/dotfiles/assets/44473782/c6f6430c-b087-4d09-b7f6-9dfa9c5f9973)
+
+In `foot`, using sixel:
+![image](https://github.com/justchokingaround/dotfiles/assets/44473782/d5c75694-1782-4296-9f0d-aafe58f9e2da)
