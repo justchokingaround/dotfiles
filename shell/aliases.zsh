@@ -66,7 +66,7 @@ alias ytdlist="yt-dlp -f 'bv*[height=1080]+ba'"
 alias share='printf $(curl -# "https://oshi.at" -F "f=@$(fd -t f -d 1|fzf)"|sed -nE "s_DL: (.*)_\1_p")|wl-copy'
 alias weather="curl -s wttr.in/Heilbronn"
 alias pf='pfetch'
-alias nf='neofetch --sixel pix/lain/thewired.jpg --size 16%'
+alias nf='neofetch'
 alias nft='nitch'
 alias na="navi --cheatsh"
 alias py='python3'

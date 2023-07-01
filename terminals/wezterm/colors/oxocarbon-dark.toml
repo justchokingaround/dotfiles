@@ -1,53 +1,53 @@
 [colors]
-background = '#161616'
-foreground = '#ffffff'
-cursor_bg = '#ffffff'
-cursor_border = '#ffffff'
-cursor_fg = '#161616'
+background = '#{{colors16.base00}}'
+foreground = '#{{colors16.base06}}'
+cursor_bg = '#{{colors16.base06}}'
+cursor_border = '#{{colors16.base06}}'
+cursor_fg = '#{{colors16.base00}}'
 
 ansi = [
-    '#262626',
-    '#ee5396',
-    '#42be65',
-    '#ffe97b',
-    '#33b1ff',
-    '#ff7eb6',
-    '#3ddbd9',
-    '#dde1e6',
+    '#{{colors16.base01}}',
+    '#{{colors16.base0A}}',
+    '#{{colors16.base0D}}',
+    '#{{colors16.base0C}}',
+    '#{{colors16.base0B}}',
+    '#{{colors16.base0C}}',
+    '#{{colors16.base08}}',
+    '#{{colors16.base04}}',
 ]
 brights = [
-    '#393939',
-    '#ee5396',
-    '#42be65',
-    '#ffe97b',
-    '#33b1ff',
-    '#ff7eb6',
-    '#3ddbd9',
-    '#ffffff',
+    '#{{colors16.base02}}',
+    '#{{colors16.base0A}}',
+    '#{{colors16.base0D}}',
+    '#{{colors16.base0C}}',
+    '#{{colors16.base0B}}',
+    '#{{colors16.base0C}}',
+    '#{{colors16.base08}}',
+    '#{{colors16.base06}}',
 ]
 
 [colors.tab_bar]
-background = "#262626"
+background = "#{{colors16.base01}}"
 
 [colors.tab_bar.active_tab]
-bg_color = '#161616'
-fg_color = '#ffffff'
+bg_color = '#{{colors16.base00}}'
+fg_color = '#{{colors16.base06}}'
 intensity = 'Normal'
 italic = false
 strikethrough = false
 underline = 'None'
 
 [colors.tab_bar.inactive_tab]
-bg_color = '#262626'
-fg_color = '#ffffff'
+bg_color = '#{{colors16.base01}}'
+fg_color = '#{{colors16.base06}}'
 intensity = 'Normal'
 italic = false
 strikethrough = false
 underline = 'None'
 
 [colors.tab_bar.new_tab]
-bg_color = '#262626'
-fg_color = '#ffffff'
+bg_color = '#{{colors16.base01}}'
+fg_color = '#{{colors16.base06}}'
 intensity = 'Normal'
 italic = false
 strikethrough = false
@@ -56,4 +56,4 @@ underline = 'None'
 
 [metadata]
 name = 'Oxocarbon Dark'
-origin_url = 'https://github.com/nyoom-engineering/oxocarbon'
+origin_url = 'https://github.com/nyoom-engineering/base16-oxocarbon'

@@ -28,7 +28,8 @@ configuration {
     
     // Colors
     fg: #ffffff;
-    transparent: #00000000;
+    // transparent: #00000000;
+    transparent: #161616;
 }
 window {
     location:   north;
@@ -49,7 +50,7 @@ mainbox,inputbar,listview,message,textbox,prompt,entry{
 
 // Inputbar
 inputbar {
-    padding: 2px;
+    padding: 12px;
     children: [prompt,entry];
 }
 prompt {
