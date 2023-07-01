@@ -1,9 +1,10 @@
-// layout_file.kdl
-
 layout {
     pane split_direction="vertical" {
         pane split_direction="horizontal" {
-            pane command="$HOME/.config/ncmpcpp/ncmpcpp-wrapper" size="60%"
+            // if you have not added the script to path, use the command that's commented out below, instead of the one i'm using
+            // pane command="~/.config/ncmpcpp/art.sh" size="60%"
+            pane command="art" size="60%"
+            // feel free to change this to your desired visualizer
             pane command="cava"
         }
         pane command="ncmpcpp" size="70%" focus=true
