@@ -8,6 +8,45 @@
 
 ![image](https://github.com/justchokingaround/dotfiles/assets/44473782/29e37b2c-ad91-456c-8d12-a08bfcc55e58)
 
+## Global Keybinds
+
+Note: 
+- In my configuration, the `Super` key refers to the `Windows` key.
+- Media keys are omitted, as they are configured to have default behavior.
+
+|        Keybind             |                 Function                        |
+| -------------------------- | ----------------------------------------------- |
+| `Alt + Enter`              | Launch terminal (wezterm)                       |
+| `Super + Space`            | Open app launcher (rofi)                        |
+| `Super + R`                | Open executables/scripts launcher (rofi)        |
+| `Super + E`                | Open file manager (xplr)                        |
+| `Super + B`                | Open browser (sidekick)                         |
+| `Super + Y`                | Open youtube launcher (rofi)                    |
+| `Super + A`                | Open anime launcher (rofi)                      |
+| `Super + T`                | Open gpt launcher (rofi)                        |
+| `Super + M`                | Open movies/tv shows launcher (rofi)            |
+| `Ctrl + Super + V`         | Toggle clipboard history (copyq)                |
+| `PrintScr`                 | Fullscreen screenshot to clipboard (grimblast)  |
+| `Shift +  PrintScr`        | Area screenshot to clipboard (grimblast)        |
+| `Ctrl + Shift +  PrintScr` | Area screenshot + edit to clipboard (grimblast) |
+| `Super + Shift +  PrintScr`| Save screenshot to screenshot dir (grimblast)   |
+| `Break`                    | Start screenrecording (wf-recorder)             |
+| `Shift + Break`            | Stop screenrecording (wf-recorder)              |
+| `Alt + M`                  | Paste clipboard link into mpv (wl-clip + mpv)   |
+| `Ctrl + Super + Alt + M`   | Exit hyprland (exit)                            |
+| `Super + C`                | Close window (hyprland)                         |
+| `Super + V`                | Toggle floating (hyprland)                      |
+| `Super + F`                | Toggle fullscreen (hyprland)                    |
+| `Super + H`                | Focus left window (hyprland)                    |
+| `Super + L`                | Focus right window (hyprland)                   |
+| `Super + J`                | Focus window below (hyprland)                   |
+| `Super + K`                | Focus window above (hyprland)                   |
+| `Super + Tilde`            | Toggle group (hyprland)                         |
+| `Super + Tab`              | Next in group (hyprland)                        |
+| `Shift + Super + N`        | Swap 2 windows (hyprland)                       |
+| `Shift + Super + S`        | Swap 2 workspaces (hyprland + multimonitor)     |
+| `Super + Plus`             | Launch powermenu script (rofi)                  |
+
 ## TODO: 
 - [ ] add documentation for keybinds
 - [ ] add documentation for scripts
