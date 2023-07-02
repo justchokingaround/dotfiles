@@ -47,6 +47,27 @@ Note:
 | `Shift + Super + S`        | Swap 2 workspaces (hyprland + multimonitor)     |
 | `Super + Plus`             | Launch powermenu script (rofi)                  |
 
+## Wezterm Keybinds
+
+|        Keybind             |                 Function                        |
+| -------------------------- | ----------------------------------------------- |
+| `Ctrl + Shift + P`         | Command palette                                 |
+| `Alt + N`                  | Horizontal split                                |
+| `Shift + Alt + N`          | Vertical split                                  |
+| `Shift + Alt + N`          | Vertical split                                  |
+| `Alt + W`                  | Workspaces launcher                             |
+| `Ctrl + T`                 | New tab                                         |
+| `Ctrl + Tab`               | Next tab                                        |
+| `Ctrl + Shift + Tab`       | Previous tab                                    |
+| `Alt + H`                  | Focus left                                      |
+| `Alt + L`                  | Focus right                                     |
+| `Alt + J`                  | Focus below                                     |
+| `Alt + K`                  | Focus above                                     |
+| `Shift + Alt + H`          | Adjust size to the left                         |
+| `Shift + Alt + L`          | Adjust size to the right                        |
+| `Shift + Alt + J`          | Adjust size down                                |
+| `Shift + Alt + K`          | Adjust size up                                  |
+
 ## TODO: 
 - [ ] add documentation for keybinds
 - [ ] add documentation for scripts
