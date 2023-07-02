@@ -1,10 +1,11 @@
 #!/bin/sh
 
-# sudo pacman -S git --needed base-devel --noconfirm
+su -
+# pacman -S git --needed base-devel --noconfirm
 # curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- --default-toolchain none -y
 # . "$HOME/.cargo/env"
 # rustup default stable
-# sudo pacman -S rustup
+# pacman -S rustup
 # git clone https://aur.archlinux.org/paru.git || exit
 # cd paru || exit
 # makepkg -si --noconfirm || exit
@@ -18,10 +19,10 @@ paru -S hyprland neovim xdg-desktop-portal-hyprland-git wireplumber pipewire qt5
     phocus-gtk-theme-git xplr nwg-looks we10x-icon-theme-git copyq geticons swww --noconfirm --nouseask
 
 # setting up doas
-sudo echo "permit nopass :wheel" >>/etc/doas.conf
+echo "permit nopass :wheel" | tee -a /etc/doas.conf
 # changing /bin/sh to dash
-sudo ln -sfT dash /usr/bin/sh
-sudo echo "[Trigger]
+ln -sfT dash /usr/bin/sh
+echo "[Trigger]
 Type = Package
 Operation = Install
 Operation = Upgrade
@@ -33,9 +34,10 @@ When = PostTransaction
 Exec = /usr/bin/ln -sfT dash /usr/bin/sh
 Depends = dash" | tee /usr/share/libalpm/hooks/dashbinsh.hook
 # setting doas as sudo symlink
-sudo ln -sfT /bin/doas /bin/sudo
+ln -sfT /bin/doas /bin/sudo
 
 # changing the default shell of user to zsh
-sudo chsh $USER -s /bin/zsh
+chsh $USER -s /bin/zsh
 # cleanup
-sudo rm $HOME/.bash*
+rm $HOME/.bash*
+su - $USER
