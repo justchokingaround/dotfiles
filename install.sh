@@ -35,6 +35,13 @@ packages = [
 EOF
 }
 
+lobster_config_stuff() {
+    cat <<EOF
+image_config_path="$HOME/.config/rofi/styles/launcher.rasi"
+rofi_prompt_config="$HOME/.config/rofi/styles/prompt.rasi"
+EOF
+}
+
 case "$1" in
     --pre)
         # As chroot, go into /home/$USER
@@ -88,6 +95,6 @@ case "$1" in
         sed 's@version = "0.20.1"@version = "0.21.2"@' -i "$HOME/.config/xplr/init.lua"
         mkdir -p "$HOME/.config/lobster/"
         curl -s "https://raw.githubusercontent.com/justchokingaround/lobster/main/examples/lobster_config.txt" >"$HOME/.config/lobster_config.txt"
-        printf 'image_config_path="$HOME/.config/rofi/styles/launcher.rasi"\nrofi_prompt_config="$HOME/.config/rofi/styles/prompt.rasi\n' >>"$HOME/.config/lobster/lobster_config.txt"
+        lobster_config_stuff >>"$HOME/.config/lobster/lobster_config.txt"
         ;;
 esac
