@@ -8,31 +8,10 @@
 
 ![image](https://github.com/justchokingaround/dotfiles/assets/44473782/29e37b2c-ad91-456c-8d12-a08bfcc55e58)
 
-#### Necessary packages
-```sh
-paru -S hyprland xdg-desktop-portal-hyprland-git wireplumber pipewire qt5-wayland qt6-wayland polkit-gnome playerctl slurp wl-clipboard libsixel pamixer networkmanager eww-wayland neovim
-```
-
-#### Quality of life packages
-```sh
-paru -S bat bottom doas exa ffmpegthumbnailer fzf hyprpicker-git lazygit mlocate mpd mpdris2 nautilus nsxiv pavucontrol swappy starship wev zoxide zsh ffmpeg
-```
-
-#### Personal utilities I use
-```sh
-paru -S discord sidekick-browser-stable-bin grimblast-git mpvpaper git mako mpv socat neovim rofi spotify-player alacritty-sixel-git wezterm wf-recorder zathura zathura-pdf-mupdf phocus-gtk-theme-git xplr nwg-looks we10x-icon-theme-git copyq geticons swww
-```
-
-### Latex stuff, cuz idk
-```sh
-paru -S tectonic texinfo texlive-bibtexextra texlive-bin texlive-core texlive-fontsextra texlive-formatsextra texlive-latexextra texlive-pictures texlive-science 
-```
-
 ## TODO: 
 - [ ] add documentation for keybinds
 - [ ] add documentation for scripts
 - [ ] add documentation for shell setup
-- [ ] add documentation for start-wayland
 - [ ] add install script
 - [ ] merge laptop config with main config using dotter
-- [ ] nnn preview script -> xplr
+- [x] nnn preview script -> xplr
