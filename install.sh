@@ -42,20 +42,16 @@ case "$1" in
         pacman -S git --needed base-devel --noconfirm
         curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- --default-toolchain none -y
         pacman -S rustup --noconfirm
-        # changing the default shell of user to zsh
-        chsh $USER -s /bin/zsh
-        # cleanup
-        rm $HOME/.bash*
         ;;
 
     --post)
         # This part as user
 
-        # . "$HOME/.cargo/env"
-        # rustup default stable
-        # git clone https://aur.archlinux.org/paru.git || exit
-        # cd paru || exit
-        # makepkg -si --noconfirm || exit
+        . "$HOME/.cargo/env"
+        rustup default stable
+        git clone https://aur.archlinux.org/paru.git || exit
+        cd paru || exit
+        makepkg -si --noconfirm || exit
 
         printf "1\n" | paru -S mpdris2 --noconfirm
         printf "1\n" | paru -S mpvpaper --noconfirm
@@ -73,8 +69,12 @@ case "$1" in
         ;;
 
     --dots)
-        # git clone https://github.com/justchokingaround/dotfiles
-        # cd dotfiles || exit
+        git clone https://github.com/justchokingaround/dotfiles
+        cd dotfiles || exit
+        # changing the default shell of user to zsh
+        chsh $USER -s /bin/zsh
+        # cleanup
+        rm $HOME/.bash*
         generate_local_toml >.dotter/local.toml
         ./dotter deploy
         sed "s@source=~/.config/hypr/configs/monitors.conf@@" -i hyprland/hypr/hyprland.conf
