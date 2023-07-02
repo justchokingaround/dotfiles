@@ -12,7 +12,7 @@ test -d "$HOME/.local/share/applications/wallpapers" || mkdir "$HOME/.local/shar
 [ -z "$query" ] && exit 1
 
 cleanup() {
-    # rm -rf "$images_cache_dir"
+    rm -rf "$images_cache_dir"
     rm -rf "$HOME/.local/share/applications/wallpapers/"
 }
 trap cleanup EXIT INT TERM

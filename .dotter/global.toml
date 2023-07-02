@@ -30,7 +30,7 @@ color_rgb = ".dotter/helpers/color_rgb.rhai"
 "shell/zshenv" = "~/.zshenv"
 
 [scripts.files]
-"shell/scripts" = "~/scripts/"
+"scripts" = "~/scripts/"
 
 [starship.files]
 "shell/starship" = "~/.config/starship"
