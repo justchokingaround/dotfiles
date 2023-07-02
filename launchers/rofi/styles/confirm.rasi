@@ -1,0 +1,58 @@
+@import "../colors.rasi"
+
+* {
+    text-color:         @text;
+}
+
+configuration {
+    show-icons:                 false;
+}
+
+window {
+    location:                    center;
+    anchor:                      center;
+    fullscreen:                  false;
+    background-color:            @base00;
+    width:                       20%;
+    border-radius:               20px;
+    cursor:                      "default";
+}
+
+mainbox {
+    background-color:            transparent;
+    children:                    [ "message", "listview" ];
+}
+
+listview {
+    columns:                     2;
+    lines:                       1;
+    cycle:                       true;
+    dynamic:                     true;
+    scrollbar:                   false;
+    layout:                      vertical;
+    reverse:                     false;
+    fixed-height:                true;
+    fixed-columns:               true;
+    
+    spacing:                     30px;
+    background-color:            transparent;
+    cursor:                      "default";
+}
+
+element {
+    padding:                     60px 10px;
+    cursor:                      pointer;
+    background-color:            transparent;
+}
+
+element-text {
+    font:                        "feather 50";
+    vertical-align:              0.5;
+    horizontal-align:            0.5;
+    highlight:                   @base0C;
+    background-color:            transparent;
+}
+
+element-text selected {
+    text-color:                  @base0E;
+  }

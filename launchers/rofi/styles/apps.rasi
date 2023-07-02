@@ -1,113 +1,78 @@
-@import "colors.rasi"
+@import "../colors.rasi"
 
 * {
-    pink:               @base0C;
-    cyan:               @base0F;
-    transparent:        #00000000;
+    fullscreen:                     true;
+    text-color:                     @base06;
 }
 
 window {
-    transparency:       "real";
-    background-color:   @background;
-    text-color:         @text;
-    location:           center;
-    orientation:        vertical;
+    transparency:                   "real";
+    background-color:               transparent;
 }
 
 prompt {
-    enabled:            false;
-}
-
-button {
-    action:             "ok";
-    str:                " ";
-    expand:             false;
-    text-color:         @text;
-    background-color:   @transparent;
-    vertical-align:     0.5;
-    horizontal-align:   0.5;
+    padding: 						            0.30% 1% 0% -0.5%;
+    background-color: 				      transparent;
 }
 
 entry {
-    background-color:   @transparent;
-    text-color:         @text;
-    expand:             true;
-    vertical-align:     0.5;
-    horizontal-align:   0;
-    placeholder:        "Select an option...";
-    blink:              true;
-}
-
-entry-wrapper {
-    orientation:        horizontal;
-    margin:             0 12px 0 12px;
-    spacing:            24px;
-    vertical-align:     0.5;
-    background-color:   @transparent;
-    children:           [ button, entry ];
+    background-color:               transparent;
+    placeholder-color:              @foreground;
+    placeholder:                    "Search";
+    padding:                        0.10% 0% 0% 0%;
+    blink:                          true;
 }
 
 inputbar {
-    padding:            14px;
-    margin:             10px 10px 14px 10px;
-    background-color:   @prompt;
-    text-color:         @text;
-    expand:             false;
-    border-radius:      9px;
-    position:           north;
-    children:           [ entry-wrapper ];
+    children: 						          [ prompt, entry ];
+    background-color:               transparent;
+    expand:                         false;
+    margin:                         0% 35%;
 }
 
 listview {
-    background-color:   @transparent;
-    spacing:            0;
-    cycle:              true;
-    dynamic:            true;
-    scrollbar:          true;
+    background-color:               transparent;
+    columns:                        7;
+    lines:                          4;
+    spacing:                        2%;
+    cycle:                          false;
+    dynamic:                        true;
+    layout:                         vertical;
 }
 
 mainbox {
-    width:              200px;
-    expand:             true;
-    spacing:            12px;
-    padding:            5px;
-    background-color:   @background;
-    children:           [ inputbar, listview ];
-}
-
-scrollbar {
-    handle-width:       0;
-    margin:             0 0 5px 0;
-    border-radius:      9px;
+    background-color:               transparent;
+    children:                       [ inputbar, listview ];
+    spacing:                       	8%;
+    padding:                        10% 8.5% 10% 8.5%;
 }
 
 element {
-    background-color:   @transparent;
-    text-color:         @text;
-    orientation:        horizontal;
-    border:             0;
-    border-radius:      6px;
-    spacing:            24px;
-    margin:             0px 12px 0px 12px;
-    padding:            10px 24px 10px 24px;
+    background-color:               transparent;
+    orientation:                    vertical;
+    padding:                        2.5% 0% 2.5% 0%;
+}
+
+element selected {
+    text-color:                     @base0E;
 }
 
 element-icon {
-    size:               24px;
-    border:             0;
-    border-color:       @transparent;
-    background-color:   transparent;
+    background-color: 				      transparent;
+    horizontal-align:               0.5;
+    vertical-align:                 0.5;
+    size:                           81px;
 }
 
 element-text {
-    highlight:          @pink;
-    expand:             true;
-    horizontal-align:   0;
-    vertical-align:     0.5;
-    color:              @text;
-    background-color:   transparent;
+    background-color: 				      transparent;
+    expand:                         true;
+    horizontal-align:               0.5;
+    vertical-align:                 0.5;
+    margin:                         0.5% 0.5% -0.5% 0.5%;
+    highlight:                      @base0A;
 }
 
 element-text selected {
-  text-color:           @cyan;
+    text-color:                     @base0E;
 }

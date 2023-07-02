@@ -8,22 +8,18 @@ configuration {
   display-combi: "  ";
 	kb-remove-char-back: "BackSpace";
 	kb-remove-to-eol: "Control+Shift+e";
-	kb-accept-entry: "Control+m,Return,KP_Enter";
-	kb-mode-next: "Shift+Right,Control+Tab,Control+l";
-	kb-mode-previous: "Shift+Left,Control+Shift+Tab,Control+h";
+	kb-accept-entry: "Return";
+	kb-mode-next: "Control+Tab,Control+l";
+	kb-mode-previous: "Control+Shift+Tab,Control+h";
 	kb-mode-complete: "Control+p";
-  kb-row-up: "Up,Control+k,Shift+Tab,Shift+ISO_Left_Tab";
+  kb-row-up: "Up,Control+k";
   kb-row-down: "Down,Control+j";
-  timeout {
-      action: "kb-cancel";
-      delay:  0;
-  }
   filebrowser {
       directories-first: true;
       sorting-method:    "name";
   }
   run,drun {
-    fallback-icon:    "application-x-addon";
+    fallback-icon:    "/home/chokerman/dotfiles/pictures/fallback-icon.png";
     matching:         "fuzzy";
   }
 }

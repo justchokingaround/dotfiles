@@ -14,8 +14,8 @@ mainbox {
 listview {
     spacing:                        20px;
     dynamic:                        true;
-    columns:                        4;
-    scrollbar:                      false;
+    columns:                        5;
+    lines:                          2;
 }
 
 inputbar-box {
@@ -25,7 +25,7 @@ inputbar-box {
 }
 
 inputbar {
-    margin:                         10px 0px 0px 5%;
+    margin:                         10%;
     background-color:               transparent;
     text-color:                     @text-color;
     expand:                         true;
@@ -34,7 +34,6 @@ inputbar {
 
 entry {
     text-color:                     @text-color;
-    expand:                         true;
     vertical-align:                 0.5;
     blink:                          true;
 }
@@ -61,7 +60,7 @@ element {
     orientation:                    vertical;
     border:                         0px 4px solid 0px 4px;
     border-color:                   transparent;
-    border-radius:                  12;
+    border-radius:                  20;
 }
 
 element selected {
@@ -75,16 +74,16 @@ element-box {
 }
 
 element-icon {
-    padding:                        10px;
+    padding:                        2%;
     size:                           40%;
 }
 
 element-text {
-    padding:                        10px;
+    padding:                        2%;
     horizontal-align:               0.5;
     highlight:                      @pink;
 }
 
 element-text selected {
-    text-color:                     @cyan;
+    text-color:                     @primary;
 }

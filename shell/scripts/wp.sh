@@ -28,5 +28,6 @@ printf "%s\n" "$wallpapers" | while read -r line; do
 done
 
 choice=$(rofi -show drun -drun-categories wallpapers -show-icons -theme "$HOME/.config/rofi/styles/launcher.rasi" | sed -nE "s@(.*)[[:space:]]\((.*)\)@\1.\2@p")
+cp "$HOME/pix/wallpapers/$choice" "$HOME/dotfiles/pictures/wallpapers/wallpaper.jpg"
 
 swww img "$HOME/pix/wallpapers/$choice" --transition-type simple --transition-step 5
