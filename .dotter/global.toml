@@ -86,11 +86,6 @@ rofi_font_size = 14
 [mako.files]
 "notifications/mako" = "~/.config/mako/"
 
-[gtk.files]
-"ui/gtk/gtk-2.0" = "~/.config/gtk-2.0/"
-"ui/gtk/gtk-3.0" = "~/.config/gtk-3.0/"
-[qt5ct.files]
-"ui/qt5ct/qt5ct.conf" = "~/.config/qt5ct/qt5ct.conf"
 [fonts.files]
 "ui/fonts/" = { target = "~/.local/share/fonts/", type = "symbolic" }
 
@@ -100,6 +95,14 @@ rofi_font_size = 14
 "communication/iamb" = { target = "~/.config/iamb/", type = "symbolic" }
 [copyq.files]
 "clipboard/copyq/copyq.conf" = "~/.config/copyq/copyq.conf"
+
+[multimonitor.variables]
+main_monitor = "DP-2"
+main_monitor_res = "2560x1440"
+main_monitor_refresh = "165.00"
+second_monitor = "HDMI-A-1"
+second_monitor_res = "1920x1080"
+second_monitor_refresh = "144.00"
 
 [graphics.variables.colors16]
 base00 = "161616"

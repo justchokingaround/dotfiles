@@ -42,3 +42,4 @@ alias na="navi --cheatsh"
 alias py='python3'
 alias pip='pip3'
 alias myip="curl ipinfo.io/ip"
+alias p="paru"

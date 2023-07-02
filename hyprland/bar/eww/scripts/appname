@@ -2,7 +2,7 @@
 
 #define icons for workspaces 1-9
 #icontheme=$(geticons -U)
-icontheme=$(grep "gtk-icon-theme-name" "$HOME"/.config/gtk-3.0/settings.ini | cut -d "=" -f2)
+icontheme="Papirus-Dark"
 
 workspaces() {
     if [[ ${1:0:14} == "activewindow>>" ]]; then #set focused workspace

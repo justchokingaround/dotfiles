@@ -19,7 +19,7 @@ run_cmd() {
     exit 0
 }
 
-choice="$(printf "Lock\nSuspend\nReboot\nShutdown" | rofi -dmenu -p "Goodbye ${USER}" -mesg "$uptime")"
+choice="$(printf "Lock\nSuspend\nReboot\nShutdown" | rofi -i -dmenu -p "Goodbye ${USER}" -mesg "$uptime")"
 case ${choice} in
     Shutdown)
         run_cmd --shutdown
