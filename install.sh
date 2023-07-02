@@ -2,7 +2,7 @@
 
 pacman -Syyu --noconfirm
 
-paru -S hyprland xdg-desktop-portal-hyprland-git wireplumber pipewire qt5-wayland \
+paru -S hyprland neovim xdg-desktop-portal-hyprland-git wireplumber pipewire qt5-wayland \
     qt6-wayland polkit-gnome playerctl slurp wl-clipboard libsixel pamixer networkmanager \
     eww-wayland bat bottom doas exa ffmpegthumbnailer fzf hyprpicker-git lazygit mlocate \
     mpd mpdris2 nautilus nsxiv pavucontrol swappy starship wev zoxide zsh ffmpeg \
