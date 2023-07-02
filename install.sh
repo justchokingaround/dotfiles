@@ -66,9 +66,9 @@ case "$1" in
         printf "1\n" | paru -S swww --noconfirm
         paru -S hyprland neovim xdg-desktop-portal xdg-desktop-portal-hyprland wireplumber pipewire qt5-wayland \
             qt6-wayland polkit-gnome playerctl slurp wl-clipboard libsixel pamixer networkmanager \
-            eww-wayland bat bottom doas exa ffmpegthumbnailer fzf hyprpicker-git lazygit mlocate \
-            mpd nautilus nsxiv pavucontrol swappy starship zoxide zsh ffmpeg \
-            discord sidekick-browser-stable-bin grimblast-git git mako mpv socat neovim rofi \
+            eww-wayland bat bottom ffmpegthumbnailer fzf hyprpicker-git lazygit \
+            mpd nautilus swayimg pavucontrol swappy starship zoxide zsh ffmpeg \
+            discord sidekick-browser-stable-bin grimblast-git mako mpv socat rofi \
             alacritty-sixel-git wezterm wf-recorder zathura zathura-pdf-mupdf \
             phocus-gtk-theme-git xplr lobster-git nwg-look-bin we10x-icon-theme-git copyq swww \
             ueberzugpp html-xml-utils luarocks ncmpcpp --noconfirm
