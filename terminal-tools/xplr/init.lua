@@ -10,32 +10,32 @@ xplr.config.general.show_hidden = false
 xplr.config.general.enable_recover_mode = true
 
 xplr.config.layouts.builtin.default = {
-	Horizontal = {
-		config = {
-			margin = 1,
-			horizontal_margin = 2,
-			vertical_margin = 3,
-			constraints = {
-				{ Percentage = 50 },
-				{ Percentage = 50 },
-			},
-		},
-		splits = {
-			"Table",
-			"HelpMenu",
-		},
-	},
+  Horizontal = {
+    config = {
+      margin = 1,
+      horizontal_margin = 2,
+      vertical_margin = 3,
+      constraints = {
+        { Percentage = 50 },
+        { Percentage = 50 },
+      },
+    },
+    splits = {
+      "Table",
+      "HelpMenu",
+    },
+  },
 }
 
 -- xplr.config.layouts.builtin.default = xplr.config.layouts.builtin.no_help_no_selection
 
 -- xpm keybind
 key.x = {
-	help = "xpm",
-	messages = {
-		"PopMode",
-		{ SwitchModeCustom = "xpm" },
-	},
+  help = "xpm",
+  messages = {
+    "PopMode",
+    { SwitchModeCustom = "xpm" },
+  },
 }
 
 -- PLUGINS
@@ -51,98 +51,98 @@ package.path = package.path .. ";" .. xpm_path .. "/?.lua;" .. xpm_path .. "/?/i
 os.execute(string.format("[ -e '%s' ] || git clone '%s' '%s'", xpm_path, xpm_url, xpm_path))
 
 require("xpm").setup({
-	plugins = {
-		"dtomvan/xpm.xplr",
-		"sayanarijit/fzf.xplr",
-		"dtomvan/extra-icons.xplr",
-		"sayanarijit/zoxide.xplr",
-		"Junker/nuke.xplr",
-		"sayanarijit/dual-pane.xplr",
-		"sayanarijit/preview-tabbed.xplr",
-		"sayanarijit/dragon.xplr",
-		-- ui plugins
-		"prncss-xyz/icons.xplr",
-		"sayanarijit/zentable.xplr",
-		{
-			name = "sayanarijit/command-mode.xplr",
-			setup = function()
-				local m = require("command-mode")
+  plugins = {
+    "dtomvan/xpm.xplr",
+    "sayanarijit/fzf.xplr",
+    "dtomvan/extra-icons.xplr",
+    "sayanarijit/zoxide.xplr",
+    "Junker/nuke.xplr",
+    "sayanarijit/dual-pane.xplr",
+    "sayanarijit/preview-tabbed.xplr",
+    "sayanarijit/dragon.xplr",
+    -- ui plugins
+    "prncss-xyz/icons.xplr",
+    "sayanarijit/zentable.xplr",
+    {
+      name = "sayanarijit/command-mode.xplr",
+      setup = function()
+        local m = require("command-mode")
 
-				m.setup()
+        m.setup()
 
-				local help = m.silent_cmd("help", "show global help menu")(
-					m.BashExec([[glow --pager $XPLR_PIPE_GLOBAL_HELP_MENU_OUT]])
-				)
+        local help = m.silent_cmd("help", "show global help menu")(
+          m.BashExec([[glow --pager $XPLR_PIPE_GLOBAL_HELP_MENU_OUT]])
+        )
 
-				local doc = m.silent_cmd("doc", "show docs")(m.BashExec([[glow /usr/share/doc/xplr]]))
+        local doc = m.silent_cmd("doc", "show docs")(m.BashExec([[glow /usr/share/doc/xplr]]))
 
-				-- map `?` to command `help`
-				help.bind("default", "?")
+        -- map `?` to command `help`
+        help.bind("default", "?")
 
-				-- map `ctrl-?` to command `help`
-				doc.bind("default", "ctrl-?")
-			end,
-		},
-	},
-	auto_install = true,
-	auto_cleanup = true,
+        -- map `ctrl-?` to command `help`
+        doc.bind("default", "ctrl-?")
+      end,
+    },
+  },
+  auto_install = true,
+  auto_cleanup = true,
 })
 
 -- plugin configs
 require("fzf").setup({
-	key = "ctrl-f",
-	args = "--preview 'pistol {}'",
+  key = "ctrl-f",
+  args = "--preview 'pistol {}'",
 })
 
 require("zoxide").setup({
-	key = "z",
+  key = "z",
 })
 
 require("extra-icons").setup({
-	after = function()
-		xplr.config.general.table.row.cols[2] = { format = "custom.icons_dtomvan_col_1" }
-	end,
+  after = function()
+    xplr.config.general.table.row.cols[2] = { format = "custom.icons_dtomvan_col_1" }
+  end,
 })
 
 require("nuke").setup({
-	pager = "bat",
-	open = {
-		run_executables = true,
-		custom = {
-			{ extension = "image/*", command = "swayimg {}" },
-			{ mime = "video/mp4", command = "mpv {}" },
-			{ mime_regex = "^video/.*", command = "mpv {}" },
-			{ mime_regex = "^audio/.*", command = "mpv --audio-display=no {}" },
-			{ mime_regex = ".*", command = "nvim {}" },
-		},
-	},
-	view = {
-		show_line_numbers = true,
-	},
-	smart_view = {
-		custom = {
-			{ extension = "so", command = "ldd -r {} | less" },
-		},
-	},
+  pager = "bat",
+  open = {
+    run_executables = true,
+    custom = {
+      { extension = "image/*",    command = "swayimg {}" },
+      { mime = "video/mp4",       command = "mpv {}" },
+      { mime_regex = "^video/.*", command = "mpv {}" },
+      { mime_regex = "^audio/.*", command = "mpv --audio-display=no {}" },
+      { mime_regex = ".*",        command = "nvim {}" },
+    },
+  },
+  view = {
+    show_line_numbers = true,
+  },
+  smart_view = {
+    custom = {
+      { extension = "so", command = "ldd -r {} | less" },
+    },
+  },
 })
 key.v = {
-	help = "nuke",
-	messages = { "PopMode", { SwitchModeCustom = "nuke" } },
+  help = "nuke",
+  messages = { "PopMode", { SwitchModeCustom = "nuke" } },
 }
 key["f3"] = xplr.config.modes.custom.nuke.key_bindings.on_key.v
 key["enter"] = xplr.config.modes.custom.nuke.key_bindings.on_key.o
 
 require("dual-pane").setup({
-	active_pane_width = { Percentage = 70 },
-	inactive_pane_width = { Percentage = 30 },
+  active_pane_width = { Percentage = 70 },
+  inactive_pane_width = { Percentage = 30 },
 })
 
 -- press ; to access "action to"
 require("preview-tabbed").setup({
-	mode = "default",
-	key = "p",
-	fifo_path = "/tmp/xplr.fifo",
-	previewer = os.getenv("HOME") .. "/.config/nnn/plugins/preview-tui",
+  mode = "default",
+  key = "p",
+  fifo_path = "/tmp/xplr.fifo",
+  previewer = os.getenv("HOME") .. "/.config/xplr/preview-tui",
 })
 
 -- KEYBINDS

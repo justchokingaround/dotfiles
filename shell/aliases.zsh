@@ -1,90 +1,44 @@
 ### File managing aliases
-
-alias dl='cd ~/dl'
-alias dox='cd ~/dox'
 alias ..='cd ..'
 alias ../..='cd ../..'
 alias ../../..='cd ../../..'
 alias ../../../..='cd ../../../..'
 alias ../../../../..='cd ../../../../..'
-alias cd..="cd .."
 alias mv="mv -i"
-alias rf="gio trash"
-alias rst="trash-restore"
-alias trash="gio trash --list"
-alias trash-empty="gio trash --empty"
 alias ls='exa'
 alias ll='exa -Fal'
 alias l='exa --long --grid'
 alias lh="exa -a"
 alias tree='exa -T'
 alias grep="grep --color=auto --exclude-dir={.bzr,CVS,.git,.hg,.svn}"
-alias rd='rm -rI "$(exa -D| fzf --height=20% --preview="exa -l {}")"'
-alias cx='chmod +x "$(rg --files -g "*.sh"|fzf -1 --height=20% --preview-window=hidden)"'
-# alias v='neovide'
-# alias nv='neovide'
 alias v='nvim'
 alias nv='nvim'
-alias vg='nvim $(gum filter)'
-alias f="fzf"
-alias ra="ranger"
 alias x="xplr"
-alias gpt="tgpt"
 alias j=z
 alias jj="cd -"
 alias zj="zellij -s"
 alias ze="zellij"
-alias music="zellij --layout=$HOME/.config/ncmpcpp/music.kdl"
-# alias time="hyperfine"
 
-### Suffix aliases
-alias -s md=nvim
-alias -s mp4=mpv
-alias -s mp3=mpv
-alias -s mkv=mpv
-alias -s jpg=open
-alias -s pdf=mupdf-gl
+### Git aliases
+alias gp="git pull"
+alias grhh="git reset --hard HEAD"
+alias lg="lazygit"
 
 ### Media aliases
-
-alias trackma='trackma -a 1'
-alias mpvq="mpv --no-video"
-alias watchgoodedits='cd "$(fd . "$HOME/videos/good_edits" --max-depth 1 --type d|fzf --cycle)" && mpv *'
-alias n='ncmpcpp'
 alias lf='lfub'
+alias mpvq="mpv --no-video"
+alias music="zellij --layout=$HOME/.config/ncmpcpp/music.kdl"
+alias n='ncmpcpp'
 
 ### yt-dlp aliases
-# don't forget to download ffmpeg :/
-
 alias ytdl="yt-dlp -f 'bv*+ba' --embed-thumbnail --embed-subs --merge-output-format mp4"
 alias ytdl-mp3="yt-dlp --embed-metadata --extract-audio --audio-format mp3 --audio-quality 0 --embed-thumbnail"
 alias ytdlist="yt-dlp -f 'bv*[height=1080]+ba'"
 
 ### Other aliases
-
-# quickly share a file
-alias share='printf $(curl -# "https://oshi.at" -F "f=@$(fd -t f -d 1|fzf)"|sed -nE "s_DL: (.*)_\1_p")|wl-copy'
-alias weather="curl -s wttr.in/Heilbronn"
-alias pf='pfetch'
+alias weather="curl -s wttr.in/Stuttgart"
 alias nf='neofetch'
-alias nft='nitch'
 alias na="navi --cheatsh"
 alias py='python3'
 alias pip='pip3'
-# alias u="zsh &&    echo -ne '\e[5 q'"
-alias u="zsh"
 alias myip="curl ipinfo.io/ip"
-alias ytm="ytfzf -m"
-alias nvf="open_with_nvim nvim"
-alias nvff="open_with_nvim_filetype nvim"
-alias sudo="doas"
-alias sudoedit="doas rnano"
-alias hx="helix"
-alias mpf="open_with_mpv"
-alias nb="newsboat"
-alias -g L='| less'
-alias -g C='| pbcopy'
-alias -g S="| sed"
-alias -g F="| fzf"
-alias -g B="| bat"
-alias -g J="| jq"

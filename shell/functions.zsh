@@ -1,5 +1,4 @@
 ### gh cli stuff
-
 checkoutpr() {
   gh pr list | fzf --ansi --preview 'gh pr view {1}' --preview-window down --header-lines 3 | cut -d\  -f1 | xargs gh pr checkout
 }
@@ -10,7 +9,7 @@ myprs(){
 
 # quickly access any alias or function i have
 qa() {
-  eval $( (alias && functions|sed -nE 's@^([^_].*)\(\).*@\1@p')|cut -d"=" -f1|fzf --reverse)
+  eval $( (alias && functions | sed -nE 's@^([^_].*)\(\).*@\1@p') | cut -d"=" -f1 | fzf --reverse)
 }
 
 # get cheat sheet for a command
@@ -19,50 +18,17 @@ chst() {
   curl -s cheat.sh/$cmd|bat --style=plain
 }
 
-# create a directory and enter it
+# create a directory and enter it (i use this daily)
 mkcd() {
   mkdir -p "$1" && cd "$1";
 }
 
-### Other
-
-emoji() {
-  emojis=$(curl -sSL 'https://git.io/JXXO7')
-  selected_emoji=$(printf "%s" $emojis|fzf --preview-window=hidden --cycle)
-  [ -z "$selected_emoji" ] || printf "%s" "$selected_emoji"|cut -d" " -f1|wl-copy
-} 
-
-#nnn -c to activate disables -e
-
-nn () {
-    # Block nesting of nnn in subshells
-    if [ -n $NNNLVL ] && [ "${NNNLVL:-0}" -ge 1 ]; then
-        echo "nnn is already running"
-        return
-    fi
-
-    # The behaviour is set to cd on quit (nnn checks if NNN_TMPFILE is set)
-    # To cd on quit only on ^G, either remove the "export" as in:
-    #    NNN_TMPFILE="${XDG_CONFIG_HOME:-/home/daru/.config}/nnn/.lastd"
-    #    (or, to a custom path: NNN_TMPFILE=/tmp/.lastd)
-    # or, export NNN_TMPFILE after nnn invocation
-    export NNN_TMPFILE="${XDG_CONFIG_HOME:-/home/chokerman/.config}/nnn/.lastd"
-
-    # Unmask ^Q (, ^V etc.) (if required, see stty -a) to Quit nnn
-    # stty start undef
-    # stty stop undef
-    # stty lwrap undef
-    # stty lnext undef
-
-    nnn -cda "$@"
-    #nnn -cdHa "$@" -P v
-
-    if [ -f "$NNN_TMPFILE" ]; then
-            . "$NNN_TMPFILE"
-            rm -f "$NNN_TMPFILE" > /dev/null
-    fi
+# clone a git repo and enter it (i also use this daily)
+gc() {
+  git clone "$1" && cd "$(basename "$1" .git)"
 }
 
+### aur stuff
 addpkg(){
     paru -Ss "$*" | sed -nE 's|^[a-z]*/([^ ]*).*|\1|p' | fzf --preview 'paru -Si {} | bat --language=yaml --color=always -pp' --preview-window right:65%:wrap -m | paru -S -
 }
@@ -71,6 +37,8 @@ rmpkg(){
     paru -Qq | fzf --preview 'paru -Si {} | bat --language=yaml --color=always -pp' --preview-window right:65%:wrap -m | paru -Rcns -
 }
 
+
+### quickly navigate to a dir in my dotfiles
 dots() {
   search_dir=~/dotfiles/
   preview_cmd="exa -lah --sort=type --icons --no-permissions --no-filesize --no-time --no-user $search_dir/{}"

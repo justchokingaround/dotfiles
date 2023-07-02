@@ -1,17 +1,16 @@
 {
-    "profiles": {
-        "main": {
-            "user_id": "@chomkerman:matrix.org",
-            "url": "https://matrix.org"
+  "profiles": {
+    "main": {
+      "user_id": "@chomkerman:matrix.org",
+      "url": "https://matrix.org"
     }
   },
-    "default_profile": "main",
-    "settings": {
-      "default_room": "#gen-ani-cli:matrix.org",
-      "typing_notice_send": false
-    },
-    "dirs": {
-      "downloads": "/home/chokerman/dox/iamb/"
-    }
+  "default_profile": "main",
+  "settings": {
+    "default_room": "#gen-ani-cli:matrix.org",
+    "typing_notice_send": false
+  },
+  "dirs": {
+    "downloads": "~/dox/iamb/"
+  }
 }
-

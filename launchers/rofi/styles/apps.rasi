@@ -27,7 +27,7 @@ inputbar {
     children: 						          [ prompt, entry ];
     background-color:               transparent;
     expand:                         false;
-    margin:                         0% 35%;
+    margin:                         0% 40%;
 }
 
 listview {
@@ -44,7 +44,7 @@ mainbox {
     background-color:               transparent;
     children:                       [ inputbar, listview ];
     spacing:                       	8%;
-    padding:                        10% 8.5% 10% 8.5%;
+    padding:                        10% 7.5% 10% 7.5%;
 }
 
 element {

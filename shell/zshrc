@@ -1,6 +1,5 @@
 bindkey -v
 export KEYTIMEOUT=1
-# echo '\e[5 q'
 
 function precmd {
     print -Pn "\e[ q"
@@ -9,10 +8,14 @@ function precmd {
 autoload -U colors && colors
 HISTSIZE=3000
 SAVEHIST=3000
+test -d ~/.cache/zsh || mkdir ~/.cache/zsh
+test -f ~/.cache/zsh/history || touch ~/.cache/zsh/history
 HISTFILE=~/.cache/zsh/history
 
+# starship stuff
 export STARSHIP_CONFIG=~/.config/starship/starship.toml
 eval "$(starship init zsh)"
+
 autoload -U compinit && compinit -u
 
 eval "$(zoxide init zsh)"
@@ -25,8 +28,5 @@ eval "$(luarocks path --lua-version 5.1)"
 # eval "$(zellij setup --generate-auto-start zsh)"
 
 # pnpm
-export PNPM_HOME="/home/chokerman/.local/share/pnpm"
+export PNPM_HOME="$HOME/.local/share/pnpm"
 export PATH="$PNPM_HOME:$PATH"
-# pnpm end
-
-export PATH="$PATH:/home/chokerman/.bin"

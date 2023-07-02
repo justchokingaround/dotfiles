@@ -1,5 +1,5 @@
 configuration {
-	font: "Liga SFMono Nerd Font 14";
+	font: "{{font.family}} {{rofi_font_size}}";
   show-icons: true;
   icon-theme: "Papirus";
   display-drun: "";
@@ -19,7 +19,7 @@ configuration {
       sorting-method:    "name";
   }
   run,drun {
-    fallback-icon:    "/home/chokerman/dotfiles/pictures/fallback-icon.png";
+    fallback-icon:    "~/dotfiles/pictures/fallback-icon.png";
     matching:         "fuzzy";
   }
 }

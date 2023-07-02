@@ -16,70 +16,48 @@ color_rgb = ".dotter/helpers/color_rgb.rhai"
 "hyprland/laptop/hypr-laptop" = "~/.config/hypr/"
 "hyprland/bar/eww" = "~/.config/eww/"
 
-[terminal]
-depends = ["shell"]
-[terminal.files]
+[alacritty.files]
 "terminals/alacritty" = "~/.config/alacritty/"
+[foot.files]
 "terminals/foot" = "~/.config/foot/"
+[wezterm.files]
 "terminals/wezterm" = "~/.config/wezterm/"
+[zellij.files]
 "terminal-tools/zellij" = "~/.config/zellij"
 
-[shell]
 [shell.files]
 "shell/zshrc" = "~/.zshrc"
 "shell/zshenv" = "~/.zshenv"
+
+[scripts.files]
 "shell/scripts" = "~/scripts/"
+
+[starship.files]
 "shell/starship" = "~/.config/starship"
 
-[dev]
-[dev.files]
+[nvim.files]
 "coding/neovim/nvim" = "~/.config/nvim/"
+[nvchad.files]
 "coding/neovim/nvchad" = "~/.config/nvchad/"
+[vscode.files]
 "coding/vscode/settings.json" = "~/.config/Code/User/settings.json"
 "coding/vscode/keybindings.json" = "~/.config/Code/User/keybindings.json"
+
+[bat.files]
 "terminal-tools/bat" = "~/.config/bat/"
+[lazygit.files]
 "git/lazygit" = "~/.config/lazygit/"
+[gh.files]
 "git/gh" = "~/.config/gh/"
 
-[media]
-depends = ["mpv"]
-[media.files]
-# "newsboat" = "~/.config/newsboat/"
+[mpd.files]
 "media/music/mpd" = "~/.config/mpd/"
+[mpdris2.files]
 "media/music/mpDris2" = "~/.config/mpDris2/"
+[ncmpcpp.files]
 "media/music/ncmpcpp" = { target = "~/.config/ncmpcpp/", type = "symbolic" }
+[spotify-player.files]
 "media/music/spotify-player" = "~/.config/spotify-player"
-"media/zathura" = "~/.config/zathura/"
-
-[filemanager]
-[filemanager.files]
-"terminal-tools/xplr" = "~/.config/xplr/"
-
-[launchers]
-[launchers.files]
-"launchers/rofi" = "~/.config/rofi/"
-
-[notifications]
-[notifications.files]
-"notifications/mako" = "~/.config/mako/"
-
-[weeb]
-[weeb.files]
-# "mangal" = "~/.config/mangal/"
-# "jerry" = "~/.config/jerry/"
-
-[ui]
-[ui.files]
-"ui/gtk/gtk-2.0" = "~/.config/gtk-2.0/"
-"ui/gtk/gtk-3.0" = "~/.config/gtk-3.0/"
-"ui/qt5ct/qt5ct.conf" = "~/.config/qt5ct/qt5ct.conf"
-"ui/fonts/" = "~/.local/share/fonts/"
-
-[other]
-[other.files]
-"terminal-tools/neofetch" = "~/.config/neofetch/"
-"communication/iamb" = "~/.config/iamb/"
-"clipboard/copyq/copyq.conf" = "~/.config/copyq/copyq.conf"
 
 [mpv.files]
 "media/mpv" = "~/.config/mpv/"
@@ -87,6 +65,41 @@ depends = ["mpv"]
 "media/mpv/mpv.conf" = "~/.config/mpv/mpv.conf"
 "media/mpv/scripts" = "~/.config/mpv/scripts/"
 "media/mpv/script-opts" = "~/.config/mpv/script-opts/"
+
+[zathura.files]
+"media/zathura" = "~/.config/zathura/"
+
+[jerry.files]
+# "media/jerry" = "~/.config/jerry/"
+[lobster.files]
+# "media/lobster" = "~/.config/lobster/"
+
+
+[xplr.files]
+"terminal-tools/xplr" = "~/.config/xplr/"
+
+[rofi.files]
+"launchers/rofi" = "~/.config/rofi/"
+[rofi.variables]
+rofi_font_size = 14
+
+[mako.files]
+"notifications/mako" = "~/.config/mako/"
+
+[gtk.files]
+"ui/gtk/gtk-2.0" = "~/.config/gtk-2.0/"
+"ui/gtk/gtk-3.0" = "~/.config/gtk-3.0/"
+[qt5ct.files]
+"ui/qt5ct/qt5ct.conf" = "~/.config/qt5ct/qt5ct.conf"
+[fonts.files]
+"ui/fonts/" = { target = "~/.local/share/fonts/", type = "symbolic" }
+
+[neofetch.files]
+"terminal-tools/neofetch" = "~/.config/neofetch/"
+[iamb.files]
+"communication/iamb" = { target = "~/.config/iamb/", type = "symbolic" }
+[copyq.files]
+"clipboard/copyq/copyq.conf" = "~/.config/copyq/copyq.conf"
 
 [graphics.variables.colors16]
 base00 = "161616"
@@ -115,4 +128,3 @@ huge=30
 [graphics.variables.pictures]
 profile = "$HOME/dotfiles/pictures/lain-oxocarbon-transparent.png"
 black = "$HOME/dotfiles/pictures/lain-oxocarbon-black.png"
-
