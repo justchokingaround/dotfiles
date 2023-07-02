@@ -84,7 +84,7 @@ case "$1" in
         git clone "https://github.com/wfxr/forgit" "$HOME/dotfiles/shell/plugins/forgit"
         mkdir -p "$HOME/.cargo/env"
         fc-cache
-        echo "monitor=,addressed,30,0,0,0" >"$HOME/.config/hypr/hyprland.conf"
+        echo "monitor=,addreserved,30,0,0,0" >>"$HOME/.config/hypr/hyprland.conf"
         sed 's@version = "0.20.1"@version = "0.21.2"@' -i "$HOME/.config/xplr/init.lua"
         mkdir -p "$HOME/.config/lobster/"
         curl -s "https://raw.githubusercontent.com/justchokingaround/lobster/main/examples/lobster_config.txt" >"$HOME/.config/lobster_config.txt"
