@@ -2,7 +2,6 @@
 
 #define icons for workspaces 1-9
 ic=(0 "一" "二" "三" "四" "五" "六" "七" "八" "九")
-ic=(0 "一" "二" "三" "四" "五" "六" "七" "八" "九")
 
 #initial check for occupied workspaces
 for num in $(hyprctl workspaces | sed -nE "s@workspace ID ([0-9-]*) .*@\1@p"); do

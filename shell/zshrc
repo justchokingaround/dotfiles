@@ -8,7 +8,7 @@ function precmd {
 autoload -U colors && colors
 HISTSIZE=3000
 SAVEHIST=3000
-test -d ~/.cache/zsh || mkdir ~/.cache/zsh
+test -d ~/.cache/zsh || mkdir -p ~/.cache/zsh
 test -f ~/.cache/zsh/history || touch ~/.cache/zsh/history
 HISTFILE=~/.cache/zsh/history
 
