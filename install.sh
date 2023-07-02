@@ -47,7 +47,6 @@ case "$1" in
     --post)
         # This part as user
 
-        . "$HOME/.cargo/env"
         rustup default stable
         git clone https://aur.archlinux.org/paru.git || exit
         cd paru || exit
@@ -87,5 +86,8 @@ case "$1" in
         fc-cache
         echo "monitor=,addressed,30,0,0,0" >"$HOME/.config/hypr/hyprland.conf"
         sed 's@version = "0.20.1"@version = "0.21.2"@' -i "$HOME/.config/xplr/init.lua"
+        mkdir -p "$HOME/.config/lobster/"
+        curl -s "https://raw.githubusercontent.com/justchokingaround/lobster/main/examples/lobster_config.txt" >"$HOME/.config/lobster_config.txt"
+        printf 'image_config_path="$HOME/.config/rofi/styles/launcher.rasi"\nrofi_prompt_config="$HOME/.config/rofi/styles/prompt.rasi\n' >>"$HOME/.config/lobster/lobster_config.txt"
         ;;
 esac
