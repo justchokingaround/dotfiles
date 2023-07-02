@@ -15,7 +15,7 @@ paru -S hyprland xdg-desktop-portal-hyprland-git wireplumber pipewire qt5-waylan
 
 #### Quality of life packages
 ```sh
-paru -S bat bottom doas exa ffmpegthumbnailer fzf hyprpicker-git lazygit mlocate mpdris2 nautilus nsxiv pavucontrol swappy starship wev zoxide zsh ffmpeg
+paru -S bat bottom doas exa ffmpegthumbnailer fzf hyprpicker-git lazygit mlocate mpd mpdris2 nautilus nsxiv pavucontrol swappy starship wev zoxide zsh ffmpeg
 ```
 
 #### Personal utilities I use
