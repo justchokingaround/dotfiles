@@ -3,10 +3,11 @@ source "/usr/share/fzf/completion.zsh"
 test -f "$HOME/dox/credentials/secret_envs" && source "$HOME/dox/credentials/secret_envs"
 source "$HOME/dotfiles/shell/plugins/forgit/forgit.plugin.zsh"
 source "$HOME/dotfiles/shell/plugins/fzf-tab/fzf-tab.plugin.zsh"
+source "$HOME/dotfiles/shell/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
 source "$HOME/dotfiles/shell/aliases.zsh"
 source "$HOME/dotfiles/shell/functions.zsh"
 
-PATH="$HOME/.cargo/bin:$HOME/.local/bin:$HOME/scripts/:$HOME/dotfiles/shell/plugins/fzf-zsh-plugin/bin:$HOME/.luarocks/bin:${PATH}:$HOME/go/bin:$HOME/.config/rofi/scripts/:$HOME/.emacs.d/bin/:$HOME/.config/nvim/bin/"
+PATH="$HOME/.cargo/bin:$HOME/.local/bin:$HOME/scripts/:$HOME/dotfiles/shell/plugins/fzf-zsh-plugin/bin:$HOME/.luarocks/bin:${PATH}:$HOME/go/bin:$HOME/.config/rofi/scripts/:$HOME/.emacs.d/bin/:$HOME/.config/nvim/bin/:$HOME/dotfiles/scripts/discord/"
 export PATH
 
 . "$HOME/.cargo/env"
@@ -36,7 +37,7 @@ export FZF_DEFAULT_OPTS=$FZF_DEFAULT_OPTS' --color=fg:#ffffff,bg:-1,hl:#08bdba -
   --reverse --border=rounded '
 
 export FZF_ALT_C_COMMAND="fd -t d -d 1"
-export FZF_ALT_C_OPTS="--preview 'exa -T {}' --height=60%"
+export FZF_ALT_C_OPTS="--preview 'preview {}'"
 
 export FZF_TMUX_HEIGHT=40
 # disable sort when completing `git checkout`
@@ -52,5 +53,5 @@ zstyle ':fzf-tab:*' popup-pad 20 0
 zstyle ':fzf-tab:*' fzf-pad 4
 
 # preview stuff
-zstyle ':fzf-tab:complete:*:*' fzf-preview 'preview $realpath'
+zstyle ':fzf-tab:complete:*:*' fzf-preview 'preview $realpath '
 zstyle ':fzf-tab:*' fzf-min-height 100

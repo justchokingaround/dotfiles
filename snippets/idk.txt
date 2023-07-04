@@ -1,0 +1,2 @@
+jq -r '.[] | [.title, .description] | @tsv'
+sed ':a;N;$!ba;s/\n//g;s/foo/\n/g'

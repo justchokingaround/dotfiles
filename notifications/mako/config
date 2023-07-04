@@ -14,10 +14,10 @@ max-icon-size=128
 format=<span foreground='#{{colors16.base0E}}' size='14000' weight='bold'>%s</span>\n%b
 
 # background-color=#00000066
-background-color=#{{colors16.base00}}80
+background-color=#{{colors16.base00}}
 # border-color=#{{colors16.base06}}
 # border-color=#{{colors16.base08}}
-border-color=#{{colors16.base01}}
+# border-color=#{{colors16.base01}}
 border-radius=14
 border-size=3
 

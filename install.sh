@@ -89,6 +89,8 @@ case "$1" in
         git clone "https://github.com/Aloxaf/fzf-tab" "$HOME/dotfiles/shell/plugins/fzf-tab"
         test -d "$HOME/dotfiles/shell/plugins/forgit" && rm -rf "$HOME/dotfiles/shell/plugins/forgit"
         git clone "https://github.com/wfxr/forgit" "$HOME/dotfiles/shell/plugins/forgit"
+        test -d "$HOME/dotfiles/shell/plugins/zsh-syntax-highlighting/" && rm -rf "$HOME/dotfiles/shell/plugins/zsh-syntax-highlighting/"
+        git clone "https://github.com/zsh-users/zsh-syntax-highlighting.git" "$HOME/dotfiles/shell/plugins/zsh-syntax-highlighting/"
         mkdir -p "$HOME/.cargo/env"
         fc-cache
         echo "monitor=,addreserved,30,0,0,0" >>"$HOME/.config/hypr/hyprland.conf"
