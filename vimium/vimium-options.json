@@ -1,0 +1,26 @@
+{
+  "settingsVersion": "1.67.4",
+  "exclusionRules": [
+    {
+      "pattern": "https?://mail.google.com/*s",
+      "passKeys": ""
+    }
+  ],
+  "filterLinkHints": false,
+  "waitForEnterForFilteredHints": true,
+  "hideHud": true,
+  "keyMappings": "# Insert your preferred key mappings here.",
+  "linkHintCharacters": "sadfjklewcmpgh",
+  "linkHintNumbers": "0123456789",
+  "newTabUrl": "about:newtab",
+  "nextPatterns": "next,more,newer,>,›,→,»,≫,>>",
+  "previousPatterns": "prev,previous,back,older,<,‹,←,«,≪,<<",
+  "regexFindMode": false,
+  "ignoreKeyboardLayout": false,
+  "scrollStepSize": 60,
+  "smoothScroll": true,
+  "grabBackFocus": true,
+  "searchEngines": "g: https://github.com/search?q=%s Github\ny: https://www.youtube.com/results?search_query=%s Youtube\na: https://aur.archlinux.org/packages?O=0&K=%s Aur\ngi: https://www.google.com/search?tbm=isch&q=%s Google Images\nya: https://yandex.ru/search/?text=%s Yandex\nyi: https://yandex.ru/images/search?text=%s Yandex Images\nph: https://www.phind.com/search?q=%s Phind\ntranslate: https://translate.google.com/?source=osdd#auto|auto|%s Google Translator\np: https://www.perplexity.ai/search?q=%s Perplexity",
+  "searchUrl": "https://www.perplexity.ai/search?q=",
+  "userDefinedLinkHintCss": "/* Oxocarbon */\n\n:root {\n  --text: #ffffff;\n  --green: #42be65;\n  --magenta: #be95ff;\n  --pink: #ff7eb6\n  --blue: #33b1ff;\n  --cyan: #82cfff;\n  --grey: #393939;\n  --base: #161616;\n  --mantle: #262626;\n}\n\n#vimiumHintMarkerContainer div.internalVimiumHintMarker, #vimiumHintMarkerContainer div.vimiumHintMarker {\n  padding: 3px 4px;\n  background: var(--base);\n  border: 0;\n}\n\n#vimiumHintMarkerContainer div span {\n  color: var(--magenta);\n  text-shadow: none;\n}\n\n#vimiumHintMarkerContainer div > .matchingCharacter ~ span {\n  color: var(--text);\n}\n\n#vomnibar {\n  background: var(--base);\n  animation: show 200ms cubic-bezier(0, 0, 0.2, 1) forwards;\n  box-shadow: none;\n  border: 0;\n}\n\n@keyframes show {\n  0% {\n    transform: translateY(50px);\n    opacity: 0;\n  }\n  100% {\n    transform: translateY(0);\n    opacity: 1;\n  }\n}\n\n#vomnibar input {\n  color: var(--text);\n  background: var(--blue);\n  border: none;\n  height: unset;\n  padding: 16px 30px;\n  font-family: inherit;\n}\n\n#vomnibar .vomnibarSearchArea {\n  border: none;\n  padding: unset;\n  background: var(--base)\n}\n\n#vomnibar ul {\n  padding: 0;\n  margin: 0;\n  background: var(--base);\n  border-top: 1px solid var(--grey);\n}\n\n#vomnibar li {\n  padding: 15px;\n  border-bottom: 1px solid var(--grey)\n  font-size: 16px;\n}\n\n#vomnibar li .vomnibarTopHalf,\n#vomnibar li .vomnibarBottomHalf {\n  padding: 3px 0;\n}\n\n#vomnibar li .vomnibarSource {\n  color: var(--cyan);\n}\n\n#vomnibar li em,\n#vomnibar li .vomnibarTitle {\n  color: var(--magenta);\n  font-weight: bold;\n}\n\n#vomnibar li .vomnibarUrl {\n  color: var(--text);\n}\n\n#vomnibar li .vomnibarMatch {\n  color: var(--green);\n  font-weight: bold;\n}\n\n#vomnibar li .vomnibarTitle .vomnibarMatch {\n  color: var(--magenta);\n}\n\n#vomnibar li.vomnibarSelected {\n  background-color: var(--mantle);\n}\n\n#vomnibarInput::selection {\n  background-color: var(--grey);\n}\n\n#vomnibar li .vomnibarIcon {\n  vertical-align: inherit;\n}\n\n.vimiumReset,\ndiv.vimiumReset,\nspan.vimiumReset,\ntable.vimiumReset,\na.vimiumReset,\na:visited.vimiumReset,\na:link.vimiumReset,\na:hover.vimiumReset,\ntd.vimiumReset,\ntr.vimiumReset {\n    font-family: inherit;\n}"
+}
