@@ -12,7 +12,7 @@ alias lh="exa -a"
 alias tree='exa -T'
 alias grep="grep --color=auto --exclude-dir={.bzr,CVS,.git,.hg,.svn}"
 alias v='nvim'
-alias nv='nvim'
+alias nv='NVIM_APPNAME=nyoom nvim'
 alias x="xplr"
 alias j=z
 alias jj="cd -"

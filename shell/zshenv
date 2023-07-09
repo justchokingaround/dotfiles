@@ -4,11 +4,15 @@ test -f "$HOME/dox/credentials/secret_envs" && source "$HOME/dox/credentials/sec
 source "$HOME/dotfiles/shell/plugins/forgit/forgit.plugin.zsh"
 source "$HOME/dotfiles/shell/plugins/fzf-tab/fzf-tab.plugin.zsh"
 source "$HOME/dotfiles/shell/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
+source "$HOME/dotfiles/shell/plugins/nix-zsh-completions/nix-zsh-completions.plugin.zsh"
 source "$HOME/dotfiles/shell/aliases.zsh"
 source "$HOME/dotfiles/shell/functions.zsh"
 
-PATH="$HOME/.cargo/bin:$HOME/.local/bin:$HOME/scripts/:$HOME/dotfiles/shell/plugins/fzf-zsh-plugin/bin:$HOME/.luarocks/bin:${PATH}:$HOME/go/bin:$HOME/.config/rofi/scripts/:$HOME/.emacs.d/bin/:$HOME/.config/nvim/bin/:$HOME/dotfiles/scripts/discord/"
+PATH="$HOME/.cargo/bin:$HOME/.local/bin:$HOME/scripts/:$HOME/dotfiles/shell/plugins/fzf-zsh-plugin/bin:$HOME/.luarocks/bin:${PATH}:$HOME/go/bin:$HOME/.config/rofi/scripts/:$HOME/.emacs.d/bin/:$HOME/.config/nvim/bin/:$HOME/dotfiles/scripts/discord/:$HOME/.config/nyoom/bin/"
 export PATH
+
+# for nix desktop files
+export XDG_DATA_DIRS=$HOME/.nix-profile/share:$HOME/.share:"${XDG_DATA_DIRS:-/usr/local/share/:/usr/share/}"
 
 . "$HOME/.cargo/env"
 

@@ -37,6 +37,10 @@ color_rgb = ".dotter/helpers/color_rgb.rhai"
 
 [nvim.files]
 "coding/neovim/nvim" = "~/.config/nvim/"
+[nyoom.files]
+"coding/neovim/nyoom/config.fnl" = "~/.config/nyoom/fnl/config.fnl"
+"coding/neovim/nyoom/modules.fnl" = "~/.config/nyoom/fnl/modules.fnl"
+"coding/neovim/nyoom/packages.fnl" = "~/.config/nyoom/fnl/packages.fnl"
 [nvchad.files]
 "coding/neovim/nvchad" = "~/.config/nvchad/"
 [vscode.files]
