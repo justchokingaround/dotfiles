@@ -11,22 +11,19 @@ height=1000
 padding=12
 outer-margin=50,10,0
 max-icon-size=128
-format=<span foreground='#{{colors16.base0E}}' size='14000' weight='bold'>%s</span>\n%b
+format=<span foreground='#be95ff' size='14000' weight='bold'>%s</span>\n%b
 
-# background-color=#00000066
-background-color=#{{colors16.base00}}
-# border-color=#{{colors16.base06}}
-# border-color=#{{colors16.base08}}
-# border-color=#{{colors16.base01}}
+background-color=#161616
+border-color=#ffffff
 border-radius=14
-border-size=3
+border-size=2
 
-font={{font.family}} Italic {{font.size_small}}
+font=Liga SFMono Nerd Font Italic 12
 text-alignment=center
 
 [urgency=high]
-text-color=#{{colors16.base0C}}
+text-color=#ff7eb6
 
 [urgency=critical]
-text-color=#{{colors16.base0A}}
+text-color=#ee5396
 default-timeout=10000

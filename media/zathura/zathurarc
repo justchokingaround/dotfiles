@@ -35,7 +35,7 @@ set recolor-keephue "true"
 set selection-clipboard "clipboard"
 set statusbar-bg "#{{colors16.base01}}"
 
-# set default-bg "#{{colors16.base00}}"
-# set recolor-lightcolor "#{{colors16.base00}}"
-set default-bg rgba(0,0,0,0.7)
-set recolor-lightcolor rgba(255,255,255,0)
+set default-bg "#{{colors16.base00}}"
+set recolor-lightcolor "#{{colors16.base00}}"
+# set default-bg rgba(0,0,0,0.7)
+# set recolor-lightcolor rgba(255,255,255,0)

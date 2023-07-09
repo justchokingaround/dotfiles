@@ -4,7 +4,7 @@ token=$(cat ~/dox/credentials/discord_token.txt)
 launcher="rofi -dmenu -i -p"
 # launcher="tofi --require-match false --fuzzy-match true --prompt-text > "
 # launcher="fzf"
-base="https://discord.com/api/v10"
+base="https://discord.com/api/v9"
 
 nth() {
     stdin=$(cat)
@@ -20,7 +20,7 @@ trap cleanup EXIT INT TERM
 server_id="871752090467315772"
 
 channel=$(curl -s -H "Authorization: $token" "${base}/guilds/${server_id}/channels" | tr "{|}" "\n" |
-    sed -nE "s@\"id\": \"([0-9]*)\".*\"type\": 0,.*\"name\": \"([^\"]*)\",.*\"position\": ([0-9]*).*@\3) \2\t\1@p" | sort -h | cut -f2 -d' ')
+    sed -nE "s@\"id\":\"([0-9]*)\".*\"type\":0,.*\"name\":\"([^\"]*)\",.*\"position\":([0-9]*).*@\3) \2\t\1@p" | sort -h | cut -f2 -d' ')
 channel_choice=$(printf "%s" "$channel" | tr '-' ' ' | nth "\$1")
 [ -z "$channel_choice" ] && exit 1
 channel_name=$(printf "%s" "$channel_choice" | cut -f1)

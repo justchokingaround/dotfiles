@@ -2,19 +2,15 @@ local M = {
   "hrsh7th/nvim-cmp",
   event = { "InsertEnter", "CmdlineEnter" },
   dependencies = {
-    "hrsh7th/nvim-cmp",
-    "hrsh7th/cmp-nvim-lua",
+    "onsails/lspkind.nvim",
+    "zbirenbaum/copilot-cmp",
+    "hrsh7th/cmp-path",
     "hrsh7th/cmp-buffer",
     "hrsh7th/cmp-cmdline",
+    "hrsh7th/nvim-cmp",
     "hrsh7th/cmp-nvim-lsp",
-    "hrsh7th/cmp-nvim-lsp-document-symbol",
-    "hrsh7th/cmp-path",
-    "hrsh7th/cmp-emoji",
-    "f3fora/cmp-spell",
-    "ray-x/cmp-treesitter",
+    "hrsh7th/cmp-nvim-lsp-signature-help",
     "saadparwaiz1/cmp_luasnip",
-    "uga-rosa/cmp-dictionary",
-    "onsails/lspkind.nvim",
   },
 }
 
@@ -196,7 +192,7 @@ M.opts = function(_, _)
     sources = cmp.config.sources({
       { name = "copilot" },
       { name = "cmdline" },
-      { name = "path", options = { trailing_slash = true, label_trailing_slash = true } },
+      { name = "path",      options = { trailing_slash = true, label_trailing_slash = true } },
       { name = "dictionary" },
       { name = "buffer" },
     }),

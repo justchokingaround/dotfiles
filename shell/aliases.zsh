@@ -22,6 +22,8 @@ alias ze="zellij"
 ### Git aliases
 alias gp="git pull"
 alias grhh="git reset --hard HEAD"
+alias gci="git commit"
+alias gap="git add --patch"
 alias lg="lazygit"
 
 ### Media aliases
