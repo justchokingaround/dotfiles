@@ -3,6 +3,7 @@ set -e
 
 # change this value to your desired width
 width=550
+size=40
 
 while true; do
     title=$(playerctl metadata xesam:url 2>/dev/null | sed -nE "s@.*/(.*)\.(mp3|flac|opus|mkv|m4a)@\1@p")
@@ -13,7 +14,8 @@ while true; do
             zellij action move-focus up
             zellij action page-scroll-down
             tput clear
-            img2sixel -w "$width" "$song_path"
+            # img2sixel -w "$width" "$song_path"
+            chafa -f symbols -s ${size}x${size} "$song_path"
             zellij action page-scroll-up
             zellij action move-focus down
         fi

@@ -17,3 +17,20 @@ themes {
         orange "#82cfff"
     }
 }
+
+keybinds {
+    normal {
+        unbind "Ctrl h"
+        unbind "Ctrl s"
+    }
+}
+
+plugins {
+    tab-bar { path "tab-bar"; }
+    status-bar { path "status-bar"; }
+    strider { path "strider"; }
+    compact-bar { path "compact-bar"; }
+}
+
+simplified_ui true
+default_layout "compact"

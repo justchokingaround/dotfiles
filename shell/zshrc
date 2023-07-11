@@ -25,7 +25,7 @@ fpath=(~/dotfiles/shell/.zsh.d/ $fpath)
 eval "$(luarocks path --lua-version 5.1)"
 
 # autostart zellij on shell creation
-# eval "$(zellij setup --generate-auto-start zsh)"
+eval "$(zellij setup --generate-auto-start zsh)"
 
 # pnpm
 export PNPM_HOME="$HOME/.local/share/pnpm"
