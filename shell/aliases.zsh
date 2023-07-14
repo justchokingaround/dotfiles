@@ -11,8 +11,8 @@ alias l='exa --long --grid'
 alias lh="exa -a"
 alias tree='exa -T'
 alias grep="grep --color=auto --exclude-dir={.bzr,CVS,.git,.hg,.svn}"
-alias v='nvim'
-alias nv='NVIM_APPNAME=nyoom nvim'
+alias v='NVIM_APPNAME=nyoom nvim'
+alias nv='nvim'
 alias x="xplr"
 alias j=z
 alias jj="cd -"
@@ -31,6 +31,7 @@ alias lf='lfub'
 alias mpvq="mpv --no-video"
 alias music="zellij --layout=$HOME/.config/ncmpcpp/music.kdl"
 alias n='ncmpcpp'
+alias y='youtube-tui'
 
 ### yt-dlp aliases
 alias ytdl="yt-dlp -f 'bv*+ba' --embed-thumbnail --embed-subs --merge-output-format mp4"

@@ -20,7 +20,8 @@ export GTK2_RC_FILES="$XDG_CONFIG_HOME"/gtk-2.0/gtkrc
 export EDITOR="nvim"
 export TERMINAL="wezterm"
 export BROWSER="sidekick-browser-stable"
-export MANPAGER="sh -c 'col -bx| bat -p -l man -f'"
+# export MANPAGER="sh -c 'col -bx| bat -p -l man -f'"
+export MANPAGER="bat"
 export PAGER="bat"
 
 # ani-cli stuff

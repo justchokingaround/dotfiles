@@ -126,12 +126,13 @@ convert_recording() {
             video_file="$tmp_video_file"
             if [ "$(du -m "$tmp_video_file" | cut -f1)" -gt 25 ]; then
                 video_file="/tmp/recording-compressed.mp4"
+                test -f "$video_file" && rm "$video_file"
                 compress_to_25mb "/tmp/recording-compressed.mp4"
                 wait
             fi
             base="https://discord.com/api/v10"
             server_choice=$(curl -s -H "Authorization: $token" "${base}/users/@me/guilds" | tr "{|}" "\n" |
-                sed -nE "s@\"id\":\"([0-9]*)\", \"name\":\"([^\"]*)\".*@\1\t\2@p" | nth "\$2")
+                sed -nE "s@\"id\":\"([0-9]*)\",.*\"name\":\"([^\"]*)\".*@\1\t\2@p" | nth "\$2")
 
             [ -z "$server_choice" ] && exit 1
             server_name=$(printf "%s" "$server_choice" | cut -f2)

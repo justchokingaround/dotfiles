@@ -34,3 +34,4 @@ plugins {
 
 simplified_ui true
 default_layout "compact"
+on_force_close "quit"
