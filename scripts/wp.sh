@@ -18,7 +18,7 @@ Categories=wallpapers;
 EOF
 }
 
-wallpapers=$(find ~/pix/wallpapers/ -type f -name '*.jpg' -o -name '*.png')
+wallpapers=$(find ~/pix/wallpapers/ -type f -name '*.jpg' -o -name '*.png' -o -name '*.jpeg')
 
 printf "%s\n" "$wallpapers" | while read -r line; do
     name=$(basename "$line" | cut -d. -f1)
@@ -29,5 +29,6 @@ done
 
 choice=$(rofi -show drun -drun-categories wallpapers -show-icons -theme "$HOME/.config/rofi/styles/launcher.rasi" | sed -nE "s@(.*)[[:space:]]\((.*)\)@\1.\2@p")
 cp "$HOME/pix/wallpapers/$choice" "$HOME/dotfiles/pictures/wallpapers/wallpaper.jpg"
+convert "$HOME/dotfiles/pictures/wallpapers/wallpaper.jpg" "$HOME/dotfiles/pictures/wallpapers/wallpaper.jpg"
 
 swww img "$HOME/pix/wallpapers/$choice" --transition-type simple --transition-step 5

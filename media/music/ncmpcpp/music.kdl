@@ -3,7 +3,7 @@ layout {
         pane split_direction="horizontal" {
             // if you have not added the script to path, use the command that's commented out below, instead of the one i'm using
             // pane command="~/.config/ncmpcpp/art.sh" size="60%"
-            pane command="art" size="60%"
+            pane command="art" size="40%"
             // feel free to change this to your desired visualizer
             pane command="cava"
         }
