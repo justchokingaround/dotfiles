@@ -27,6 +27,7 @@ test -d "$HOME/.cache/ncmpcpp/images/" || mkdir -p "$HOME/.cache/ncmpcpp/images/
 
 song_path=$(playerctl metadata xesam:url | sed -nE "s@file://(/home/.*)@\1@p")
 ffmpegthumbnailer -i "$song_path" -o "$image_path" -s0 2>/dev/null
+convert "$image_path" "$image_path" 2>/dev/null || notify-send "ffmpegthumbnailer failed"
 title=$(playerctl metadata xesam:url | sed -nE "s@.*/(.*)\.(mp3|flac|opus|mkv|m4a)@\1@p")
 # check if a file with the same name already exists
 test -f "$HOME/.cache/ncmpcpp/images/""$title.jpg" || cp "$image_path" "$HOME/.cache/ncmpcpp/images/""$title.jpg"
@@ -43,23 +44,27 @@ Here is the wrapper script (this script can also be found in this repo with the 
 set -e
 
 # change this value to your desired width
-width=550
+size_x=40
+size_y=11
 
 while true; do
     title=$(playerctl metadata xesam:url 2>/dev/null | sed -nE "s@.*/(.*)\.(mp3|flac|opus|mkv|m4a)@\1@p")
     if [ -n "$title" ]; then
         song_path="$HOME/.cache/ncmpcpp/images/""$title.jpg"
         if [ "$oldpath" != "$song_path" ]; then
-            zellij action move-focus right
+            zellij action move-focus left
             zellij action move-focus up
             zellij action page-scroll-down
-            tput clear
-            img2sixel -w "$width" "$song_path"
+            zellij action clear
+
+            chafa -f sixel -s ${size_x}x${size_y} "$song_path" 2>/dev/null || echo "chafa failed"
+            # chafa -f symbols -s ${size}x${size} "$song_path"
+
             zellij action page-scroll-up
-            zellij action move-focus down
+            zellij action move-focus right
         fi
         oldpath=$song_path
-        sleep 2
+        sleep 1
     fi
 done
 ```
@@ -71,7 +76,7 @@ layout {
         pane split_direction="horizontal" {
             // if you have not added the script to path, use the command that's commented out below, instead of the one i'm using
             // pane command="~/.config/ncmpcpp/art.sh" size="60%"
-            pane command="art" size="60%"
+            pane command="art" size="40%"
             // feel free to change this to your desired visualizer
             pane command="cava"
         }

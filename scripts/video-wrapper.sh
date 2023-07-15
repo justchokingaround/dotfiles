@@ -31,6 +31,7 @@ parse_link() {
         youtube "$input" "$1"
     else
         notify-send "Other"
+        youtube "$input" "$1"
     fi
 }
 
