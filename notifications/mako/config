@@ -9,7 +9,6 @@ anchor=top-right
 width=350
 height=1000
 padding=12
-outer-margin=50,10,0
 max-icon-size=128
 format=<span foreground='#be95ff' size='14000' weight='bold'>%s</span>\n%b
 

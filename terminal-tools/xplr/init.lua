@@ -9,25 +9,25 @@ xplr.config.general.show_hidden = false
 
 xplr.config.general.enable_recover_mode = true
 
-xplr.config.layouts.builtin.default = {
-  Horizontal = {
-    config = {
-      margin = 1,
-      horizontal_margin = 2,
-      vertical_margin = 3,
-      constraints = {
-        { Percentage = 50 },
-        { Percentage = 50 },
-      },
-    },
-    splits = {
-      "Table",
-      "HelpMenu",
-    },
-  },
-}
+-- xplr.config.layouts.builtin.default = {
+--   Horizontal = {
+--     config = {
+--       margin = 1,
+--       horizontal_margin = 2,
+--       vertical_margin = 3,
+--       constraints = {
+--         { Percentage = 50 },
+--         { Percentage = 50 },
+--       },
+--     },
+--     splits = {
+--       "Table",
+--       "HelpMenu",
+--     },
+--   },
+-- }
 
--- xplr.config.layouts.builtin.default = xplr.config.layouts.builtin.no_help_no_selection
+xplr.config.layouts.builtin.default = xplr.config.layouts.builtin.no_help_no_selection
 
 -- xpm keybind
 key.x = {
@@ -91,7 +91,6 @@ require("xpm").setup({
 -- plugin configs
 require("fzf").setup({
   key = "ctrl-f",
-  args = "--preview 'pistol {}'",
 })
 
 require("zoxide").setup({
@@ -113,7 +112,8 @@ require("nuke").setup({
       { mime = "video/mp4",       command = "mpv {}" },
       { mime_regex = "^video/.*", command = "mpv {}" },
       { mime_regex = "^audio/.*", command = "mpv --audio-display=no {}" },
-      { mime_regex = ".*",        command = "nvim {}" },
+      { mime_regex = "^text/.*",  command = "neovide {}" },
+      { mime_regex = ".*",        command = "xdg-open {}" },
     },
   },
   view = {

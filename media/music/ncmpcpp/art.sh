@@ -2,8 +2,8 @@
 set -e
 
 # change this value to your desired width
-size_x=40
-size_y=11
+size_x=50
+size_y=9
 
 while true; do
     title=$(playerctl metadata xesam:url 2>/dev/null | sed -nE "s@.*/(.*)\.(mp3|flac|opus|mkv|m4a)@\1@p")

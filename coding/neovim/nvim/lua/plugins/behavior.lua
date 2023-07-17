@@ -185,7 +185,7 @@ return {
         "<leader>fm",
         function()
           require("telescope").extensions.media.media({
-            backend = "ueberzug",
+            backend = "catimg",
           })
         end,
         desc = "Find Media",

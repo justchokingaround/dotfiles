@@ -1,6 +1,6 @@
 *{
 	all: unset;
-	font-family: 'LigaSF Mono Nerd Font';
+	font-family: '{{font.family}}';
 }
 
 $white:     #ffffff;
