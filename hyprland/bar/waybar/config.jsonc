@@ -9,7 +9,6 @@
   ],
   "modules-right": [
     "memory",
-    "network",
     "clock",
     "tray"
   ],

@@ -185,7 +185,14 @@ return {
         "<leader>fm",
         function()
           require("telescope").extensions.media.media({
-            backend = "catimg",
+            backend = "ueberzug",
+            backend_options = {
+              ueberzug = { xmove = -30, ymove = 0 },
+            },
+            cache_path = "/tmp/telescop-media",
+            preview_title = "",
+            results_title = "",
+            prompt_title = "Media",
           })
         end,
         desc = "Find Media",
