@@ -20,7 +20,7 @@ opt.conceallevel = 0
 vim.g.maplocalleader = ","
 
 if vim.g.neovide then
-  vim.g.neovide_transparency = 0.8
+  -- vim.g.neovide_transparency = 0.8
   vim.g.neovide_no_idle = true
   vim.g.neovide_refresh_rate = 165
   vim.g.neovide_padding_top = 40

@@ -1,0 +1,67 @@
+configuration {
+    show-icons: true;
+    display-drun: "";
+}
+ 
+* {
+    background-color: transparent;
+    text-color: #fff;
+}
+ 
+#window {
+    border: 0;
+    border-radius: 10px;
+    padding: 30;
+    transparency: "real";
+}
+ 
+#mainbox {
+    children: [inputbar, listview];
+}
+ 
+ 
+#listview {
+    scrollbar: false;
+    lines: 3;
+    padding: 10px 10px 0px;
+}
+ 
+#element {
+    border-radius: 15px;
+    border-color: red;
+    padding: 10 0 10 4 ;
+    children: [element-box];
+}
+
+#element-box {
+    children: [element-icon, element-text];
+    orientation: horizontal;
+}
+ 
+#element selected {
+    background-color: #262626;
+}
+
+#element-text {
+    highlight: #be95ff;
+    horizontal-align: 0.5;
+    vertical-align: 0.5;
+}
+
+#element-icon {
+    size: 20%;
+    margin: 2px;
+    horizontal-align: 0.5;
+    vertical-align: 0.5;
+}
+
+inputbar {
+    border-radius: 50%;
+    children: [prompt, entry];
+    margin: 5px 20% 5px 20%;
+}
+
+prompt {
+    padding: -1px 20px 0 0;
+    text-color: #fff;
+}

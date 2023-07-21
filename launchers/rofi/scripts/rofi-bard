@@ -1,0 +1,26 @@
+#!/bin/sh
+
+input=$(rofi -dmenu -p "  " -mesg "Enter an input for GPT" -theme ~/.config/rofi/styles/prompt.rasi)
+[ -z "$input" ] && exit 1
+
+zenity --progress --text="Waiting for an answer" --pulsate &
+
+[ $? -eq 1 ] && exit 1
+
+PID=$!
+
+# TODO: fix encoding
+answer=$(bard.sh "$input")
+echo "$answer" >/tmp/gpt-answer
+
+kill $PID
+zenity --info --text="${answer}"
+
+choice=$(printf "Yes\nNo" | rofi -dmenu -mesg "Copy to clipboard?" -i)
+case "$choice" in
+    "Yes")
+        sed -i 's/\\"/"/g' /tmp/gpt-answer
+        wezterm start nvim /tmp/gpt-answer
+        ;;
+    *) exit 0 ;;
+esac

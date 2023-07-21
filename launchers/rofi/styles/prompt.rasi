@@ -9,7 +9,7 @@
 window {
     location:           center;
     fullscreen:         false;
-    width:              30%;
+    width:              50%;
 }
 
 mainbox {
