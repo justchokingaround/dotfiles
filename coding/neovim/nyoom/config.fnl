@@ -76,8 +76,6 @@
 ;;                   {:mappings {:i
 ;;                               {:<C-j> (actions.move_selection_next)
 ;;                                :<C-k> (actions.move_selection_previous)}}}})
-(map! [ni] "<C-j>" "telescope.actions.move_selection_next")
-(map! [ni] "<C-k>" "telescope.actions.move_selection_previous")
 
 ;; Save cursor position
 (vim.api.nvim_create_autocmd

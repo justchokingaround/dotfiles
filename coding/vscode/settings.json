@@ -2,160 +2,74 @@
   "keyboard.dispatch": "keyCode",
   "vim.normalModeKeyBindingsNonRecursive": [
     {
-      "before": [
-        "<C-s>"
-      ],
-      "commands": [
-        "workbench.action.files.save"
-      ]
+      "before": ["<C-s>"],
+      "commands": ["workbench.action.files.save"]
     },
     {
-      "before": [
-        "<C-h>"
-      ],
-      "after": [
-        "<C-w>",
-        "h"
-      ]
+      "before": ["<C-h>"],
+      "after": ["<C-w>", "h"]
     },
     {
-      "before": [
-        "<C-j>"
-      ],
-      "after": [
-        "<C-w>",
-        "j"
-      ]
+      "before": ["<C-j>"],
+      "after": ["<C-w>", "j"]
     },
     {
-      "before": [
-        "<C-k>"
-      ],
-      "after": [
-        "<C-w>",
-        "k"
-      ]
+      "before": ["<C-k>"],
+      "after": ["<C-w>", "k"]
     },
     {
-      "before": [
-        "<C-l>"
-      ],
-      "after": [
-        "<C-w>",
-        "l"
-      ]
+      "before": ["<C-l>"],
+      "after": ["<C-w>", "l"]
     },
     {
-      "before": [
-        "<leader>",
-        "t",
-        "t"
-      ],
-      "commands": [
-        ":tabnew"
-      ]
+      "before": ["<leader>", "t", "t"],
+      "commands": [":tabnew"]
     },
     {
-      "before": [
-        "<leader>",
-        "t",
-        "n"
-      ],
-      "commands": [
-        ":tabnext"
-      ]
+      "before": ["<leader>", "t", "n"],
+      "commands": [":tabnext"]
     },
     {
-      "before": [
-        "<leader>",
-        "t",
-        "p"
-      ],
-      "commands": [
-        ":tabprev"
-      ]
+      "before": ["<leader>", "t", "p"],
+      "commands": [":tabprev"]
     },
     {
-      "before": [
-        "<leader>",
-        "t",
-        "o"
-      ],
-      "commands": [
-        ":tabo"
-      ]
+      "before": ["<leader>", "t", "o"],
+      "commands": [":tabo"]
     },
     {
-      "before": [
-        "<leader>",
-        "x"
-      ],
-      "commands": [
-        ":bd"
-      ]
+      "before": ["<leader>", "x"],
+      "commands": [":bd"]
     },
     {
-      "before": [
-        "<leader>",
-        "<leader>"
-      ],
-      "commands": [
-        "workbench.action.quickOpen"
-      ]
+      "before": ["<leader>", "<leader>"],
+      "commands": ["workbench.action.quickOpen"]
     },
     {
-      "before": [
-        "<leader>",
-        "p"
-      ],
-      "commands": [
-        "workbench.action.showCommands"
-      ]
+      "before": ["<leader>", "p"],
+      "commands": ["workbench.action.showCommands"]
     },
     {
-      "before": [
-        "<leader>",
-        "t"
-      ],
-      "commands": [
-        "workbench.action.gotoSymbol"
-      ]
+      "before": ["<leader>", "t"],
+      "commands": ["workbench.action.gotoSymbol"]
     },
     {
-      "before": [
-        "<leader>",
-        "Z"
-      ],
-      "commands": [
-        "workbench.action.toggleZenMode"
-      ]
+      "before": ["<leader>", "Z"],
+      "commands": ["workbench.action.toggleZenMode"]
     },
     {
-      "before": [
-        "<leader>",
-        "e"
-      ],
-      "commands": [
-        "workbench.files.action.focusFilesExplorer"
-      ]
+      "before": ["<leader>", "e"],
+      "commands": ["workbench.files.action.focusFilesExplorer"]
     }
   ],
   "vim.visualModeKeyBindings": [
     {
-      "before": [
-        ">"
-      ],
-      "commands": [
-        "editor.action.indentLines"
-      ]
+      "before": [">"],
+      "commands": ["editor.action.indentLines"]
     },
     {
-      "before": [
-        "<"
-      ],
-      "commands": [
-        "editor.action.outdentLines"
-      ]
+      "before": ["<"],
+      "commands": ["editor.action.outdentLines"]
     }
   ],
   "editor.fontFamily": "'Liga SFMono Nerd Font', 'Iosevka Nerd Font', 'JetBrains Mono', 'Illusion Z', 'Droid Sans Mono', 'monospace'",
@@ -210,5 +124,8 @@
     "scminput": false
   },
   "git.autofetch": true,
-  "synthwave84.brightness": 0.6
+  "synthwave84.brightness": 0.6,
+  "[python]": {
+    "editor.defaultFormatter": "ms-python.black-formatter"
+  }
 }

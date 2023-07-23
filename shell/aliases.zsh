@@ -11,8 +11,8 @@ alias l='exa --long --grid'
 alias lh="exa -a"
 alias tree='exa -T'
 alias grep="grep --color=auto --exclude-dir={.bzr,CVS,.git,.hg,.svn}"
-alias v='nvim'
-alias nv='neovide'
+alias v='NVIM_APPNAME=nvimdots nvim'
+alias nv='nvim'
 alias x="xplr"
 alias j=z
 alias jj="cd -"

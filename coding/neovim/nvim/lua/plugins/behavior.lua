@@ -268,4 +268,10 @@ return {
       })
     end,
   },
+
+  -- Enhanced macros experience
+  {
+    "chrisgrieser/nvim-recorder",
+    opts = {},
+  },
 }
