@@ -17,9 +17,10 @@ mainbox {
 }
 
 inputbar {
-    padding:                     5%;
-    background-image:            url("~/dotfiles/pictures/wallpapers/wallpaper.jpg", width);
-    children:                    [ "textbox-prompt-colon", "entry" ];
+    padding:           5%;
+    text-color:        @text;
+    background-image:  url("~/dotfiles/pictures/wallpapers/wallpaper.jpg", width);
+    children:          [ "textbox-prompt-colon", "entry" ];
 }
 
 textbox-prompt-colon {
@@ -35,6 +36,7 @@ entry {
     padding:            0.75em 1.25em;
     border-radius:      20px;
     background-color:   @base00;
+    text-color:         @text;
 }
 
 listview {
@@ -42,6 +44,5 @@ listview {
 }
 
 textbox {
-    text-color:         @base0E;
     padding:            1%;
 }

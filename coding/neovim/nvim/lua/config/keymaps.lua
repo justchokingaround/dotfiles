@@ -37,7 +37,7 @@ map("", "<C-u>", "<C-u>zz", { noremap = false, silent = true, desc = "Scroll up"
 map("n", "n", "nzzzv", { noremap = false, silent = true, desc = "Move to next search match" })
 map("n", "N", "Nzzzv", { noremap = false, silent = true, desc = "Move to previous search match" })
 map("n", "<Esc>", "<cmd>noh<cr>", { desc = "Clear highlights" })
-map("n", "<C-s>", "<cmd>w<cr>", { desc = "Save" })
+map({ "n", "i" }, "<C-s>", "<cmd>w<cr>", { desc = "Save" })
 map("v", "<", "<gv", { desc = "Indent left" })
 map("v", ">", ">gv", { desc = "Indent right" })
 if Util.has("bufferline.nvim") then

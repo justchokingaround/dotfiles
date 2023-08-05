@@ -4,7 +4,13 @@ return {
 	{
 		"glepnir/lspsaga.nvim",
 		event = "LspAttach",
-		config = true,
+		config = function()
+			require("lspsaga").setup({
+				ui = {
+					code_action = "",
+				},
+			})
+		end,
 		dependencies = {
 			{ "DaikyXendo/nvim-material-icon" },
 			{ "nvim-treesitter/nvim-treesitter" },

@@ -36,7 +36,7 @@ return {
 				Value = "  ",
 				Enum = "  ",
 				Keyword = "  ",
-				Snippet = "  ",
+				Snippet = "  ",
 				Color = "  ",
 				File = "  ",
 				Reference = "  ",
@@ -89,10 +89,10 @@ return {
 
 			local sources = {
 				{ name = "nvim_lsp", keyword_length = 2, max_item_count = 30 },
+				{ name = "luasnip",  keyword_length = 1, max_item_count = 30 },
 				{ name = "buffer",   keyword_length = 2, max_item_count = 30 },
 				{ name = "path",     keyword_length = 3, max_item_count = 30 },
 				{ name = "nvim_lua", keyword_length = 1, max_item_count = 30 },
-				{ name = "luasnip",  keyword_length = 1, max_item_count = 30 },
 				{ name = "spell",    keyword_length = 2, max_item_count = 30 },
 			}
 
@@ -122,6 +122,7 @@ return {
 	{
 		"nvim-treesitter/nvim-treesitter",
 		enabled = true,
+		build = ':TSUpdate',
 		opts = {
 			incremental_selection = {
 				enable = true,

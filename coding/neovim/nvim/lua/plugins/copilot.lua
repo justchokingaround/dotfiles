@@ -13,6 +13,7 @@ return {
 		config = function()
 			vim.g.copilot_filetypes = {
 				["TelescopePrompt"] = false,
+				rust = false,
 			}
 
 			vim.cmd([[

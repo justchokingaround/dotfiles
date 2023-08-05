@@ -72,7 +72,7 @@
       "commands": ["editor.action.outdentLines"]
     }
   ],
-  "editor.fontFamily": "'Liga SFMono Nerd Font', 'Iosevka Nerd Font', 'JetBrains Mono', 'Illusion Z', 'Droid Sans Mono', 'monospace'",
+  "editor.fontFamily": "'FiraCode Nerd Font', 'Liga SFMono Nerd Font', 'Iosevka Nerd Font', 'JetBrains Mono', 'Illusion Z', 'Droid Sans Mono', 'monospace'",
   "editor.fontLigatures": true,
   "workbench.iconTheme": "vscode-icons",
   "editor.tokenColorCustomizations": {
@@ -94,21 +94,21 @@
   "zenMode.hideLineNumbers": true,
   "zenMode.restore": true,
   "zenMode.fullScreen": true,
-  "window.menuBarVisibility": "hidden",
-  "editor.minimap.enabled": false,
+  // "window.menuBarVisibility": "hidden",
+  // "editor.minimap.enabled": false,
   "editor.scrollbar.verticalScrollbarSize": 0,
   "editor.fontSize": 16,
   "terminal.integrated.enablePersistentSessions": false,
-  "terminal.integrated.fontSize": 12,
+  // "terminal.integrated.fontSize": 12,
   "terminal.integrated.gpuAcceleration": "on",
   "workbench.startupEditor": "none",
   "editor.cursorSurroundingLines": 10,
-  "editor.lineNumbers": "on",
+  "editor.lineNumbers": "off",
   "explorer.confirmDelete": false,
   "files.autoSave": "afterDelay",
   "editor.formatOnSave": true,
   "editor.snippetSuggestions": "top",
-  "workbench.colorTheme": "SynthWave '84",
+  "workbench.colorTheme": "Atom One Dark",
   "redhat.telemetry.enabled": true,
   "editor.inlineSuggest.enabled": true,
   "[html]": {
@@ -116,16 +116,17 @@
   },
   "git.confirmSync": false,
   "git.enableSmartCommit": true,
-  "window.zoomLevel": 1,
   "github.copilot.enable": {
     "*": true,
     "plaintext": false,
     "markdown": true,
-    "scminput": false
+    "scminput": false,
+    "rust": true
   },
   "git.autofetch": true,
   "synthwave84.brightness": 0.6,
   "[python]": {
     "editor.defaultFormatter": "ms-python.black-formatter"
-  }
+  },
+  "window.zoomLevel": 1
 }

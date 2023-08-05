@@ -90,5 +90,6 @@ if vim.g.neovide then
 	vim.g.neovide_padding_bottom = 40
 	vim.g.neovide_padding_left = 40
 	vim.g.neovide_padding_right = 20
-	vim.opt.guifont = { "Liga SFMono Nerd Font", ":h14" }
+	vim.opt.guifont = { "Liga SFMono Nerd Font", ":h20" }
+	-- vim.opt.guifont = { "FiraCode Nerd Font", ":h20" }
 end

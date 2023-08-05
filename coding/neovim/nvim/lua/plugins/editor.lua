@@ -3,7 +3,7 @@ return {
 	{ "echasnovski/mini.ai" },
 	{ "echasnovski/mini.comment" },
 	{ "echasnovski/mini.indentscope" },
-	{ "echasnovski/mini.pairs" },
+	-- { "echasnovski/mini.pairs" },
 	{
 		"famiu/bufdelete.nvim",
 		config = function()

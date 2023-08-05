@@ -6,24 +6,24 @@ cursor_border = '#ffffff'
 cursor_fg = '#161616'
 
 ansi = [
-    '#262626',
-    '#ee5396',
-    '#42be65',
-    '#ffe97b',
-    '#33b1ff',
-    '#ff7eb6',
-    '#3ddbd9',
-    '#dde1e6',
+	'#262626',
+	'#ee5396',
+	'#42be65',
+	'#ffe97b',
+	'#33b1ff',
+	'#ff7eb6',
+	'#3ddbd9',
+	'#dde1e6',
 ]
 brights = [
-    '#393939',
-    '#ee5396',
-    '#42be65',
-    '#ffe97b',
-    '#33b1ff',
-    '#ff7eb6',
-    '#3ddbd9',
-    '#ffffff',
+	'#393939',
+	'#ee5396',
+	'#42be65',
+	'#ffe97b',
+	'#33b1ff',
+	'#ff7eb6',
+	'#3ddbd9',
+	'#ffffff',
 ]
 
 [colors.tab_bar]

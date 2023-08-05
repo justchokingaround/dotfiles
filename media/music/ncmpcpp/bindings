@@ -29,9 +29,9 @@ def_key "l"
 def_key "."
     show_lyrics
 
-def_key "n"
+def_key ">"
     next_found_item
-def_key "N"
+def_key "<"
     previous_found_item
 
 def_key "J"
@@ -90,3 +90,12 @@ def_key "x"
 
 def_key "P"
   show_playlist
+
+def_key " "
+	pause
+
+def_key "n"
+	next
+
+def_key "p"
+	previous
