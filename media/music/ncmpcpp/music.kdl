@@ -5,7 +5,7 @@ layout {
             // pane command="~/.config/ncmpcpp/art.sh" size="60%"
             pane command="art" size="40%"
             // feel free to change this to your desired visualizer
-            pane command="cava"
+            pane command="vis"
         }
         pane command="ncmpcpp" size="70%" focus=true
     }

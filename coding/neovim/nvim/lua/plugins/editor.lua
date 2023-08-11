@@ -306,4 +306,11 @@ return {
 			},
 		},
 	},
+	-- NVIM-RECORDER
+	-- Enhance the usage of macros in Neovim.
+	{
+		"chrisgrieser/nvim-recorder",
+		dependencies = "rcarriga/nvim-notify",
+		opts = {},
+	},
 }

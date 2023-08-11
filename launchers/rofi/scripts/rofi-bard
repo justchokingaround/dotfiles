@@ -16,11 +16,11 @@ echo "$answer" >/tmp/gpt-answer
 kill $PID
 zenity --info --text="${answer}"
 
-choice=$(printf "Yes\nNo" | rofi -dmenu -mesg "Copy to clipboard?" -i)
-case "$choice" in
-    "Yes")
-        sed -i 's/\\"/"/g' /tmp/gpt-answer
-        wezterm start nvim /tmp/gpt-answer
-        ;;
-    *) exit 0 ;;
-esac
+# choice=$(printf "Yes\nNo" | rofi -dmenu -mesg "Copy to clipboard?" -i)
+# case "$choice" in
+#     "Yes")
+#         sed -i 's/\\"/"/g' /tmp/gpt-answer
+#         wezterm start nvim /tmp/gpt-answer
+#         ;;
+#     *) exit 0 ;;
+# esac
