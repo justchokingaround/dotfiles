@@ -1,0 +1,8 @@
+[csgo-vulkan-fix]
+description = "A plugin to fix incorrect mouse offsets on csgo in Vulkan"
+version = "1.0"
+author = "Vaxry"
+
+[csgo-vulkan-fix.build]
+output = "csgo-vulkan-fix/csgo-vulkan-fix.so"
+steps = ["make -C csgo-vulkan-fix all"]

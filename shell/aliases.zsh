@@ -5,11 +5,11 @@ alias ../../..='cd ../../..'
 alias ../../../..='cd ../../../..'
 alias ../../../../..='cd ../../../../..'
 alias mv="mv -i"
-alias ls='exa'
-alias ll='exa -Fal'
-alias l='exa --long --grid'
-alias lh="exa -a"
-alias tree='exa -T'
+alias ls='eza'
+alias ll='eza -Fal'
+alias l='eza --long --grid'
+alias lh="eza -a"
+alias tree='eza -T'
 alias grep="grep --color=auto --exclude-dir={.bzr,CVS,.git,.hg,.svn}"
 alias v='NVIM_APPNAME=nvimdots nvim'
 alias nv='nvim'

@@ -42,5 +42,6 @@ custom-fzf-preview() {
 zle -N custom-fzf-preview
 
 bindkey '^[f' custom-fzf-preview
+bindkey '^[[A' up-line-or-search
 
 export PATH=$PATH:/home/chokerman/.spicetify

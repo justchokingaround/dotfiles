@@ -1,0 +1,38 @@
+#!/usr/bin/bash
+
+test -z "$joshuto_wrap_id" && exit 1
+
+path="$1"   # Full path of the previewed file
+x="$2"      # x coordinate of upper left cell of preview area
+y="$3"      # y coordinate of upper left cell of preview area
+width="$4"  # Width of the preview pane (number of fitting characters)
+height="$5" # Height of the preview pane (number of fitting characters)
+
+# Find out filetype and extension
+filetype=$(file --mime-type -Lb -- "$path")
+# if perl-file-mimeinfo is installed, use that instead
+[ $(command -v mimetype) ] && filetype="$(mimetype --dereference --brief -- "$path")"
+
+extension=$(/bin/echo "${path##*.}" | awk '{print tolower($0)}')
+
+echo $(date +"[%y-%m-%d %I:%M %P]") "Dimensions: $x $y $width $height" >>$jstlog
+echo $(date +"[%y-%m-%d %I:%M %P]") "$path" >>$jstlog
+echo $(date +"[%y-%m-%d %I:%M %P]") $filetype >>$jstlog
+
+case "$filetype" in
+    image/*)
+        echo $(date +"[%y-%m-%d %I:%M %P]") "image detected" "$path" "$x $y $width $height" >>$jstlog
+        show_image "$path" $x $y $width $height
+        ;;
+    video/* | video/webm)
+        ffmpegthumbnailer -s "$(($width * 8))" -i "$path" -o $joshuto_wrap_tmp/videopreview.png 2>>$jstlog
+        show_image $joshuto_wrap_tmp/videopreview.png $x $y $width $height
+        ;;
+    application/vnd.fbx)
+        f3d --input $path --output $joshuto_wrap_tmp/3dpreview.png
+        show_image $joshuto_wrap_tmp/3dpreview.png
+        ;;
+    *)
+        remove_image
+        ;;
+esac

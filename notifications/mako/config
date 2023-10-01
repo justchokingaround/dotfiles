@@ -6,6 +6,7 @@ max-history=50
 on-button-left=invoke-default-action
 
 anchor=top-right
+margin=50,0,0,0
 width=350
 height=1000
 padding=12

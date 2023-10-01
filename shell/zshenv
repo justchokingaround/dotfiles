@@ -38,7 +38,7 @@ export GH_FORCE_TTY=100%
 export FZF_DEFAULT_COMMAND="rg ~ --files --hidden"
 
 # Oxocarbon theme
-export FZF_DEFAULT_OPTS=$FZF_DEFAULT_OPTS' --color=fg:#ffffff,bg:-1,hl:#08bdba --color=fg+:#f2f4f8,bg+:-1,hl+:#3ddbd9 --color=info:#78a9ff,prompt:#33b1ff,pointer:#42be65 --color=marker:#ee5396,spinner:#ff7eb6,header:#be95ff
+export FZF_DEFAULT_OPTS=$FZF_DEFAULT_OPTS' --color=fg:#ffffff,bg:-1,hl:#be95ff --color=fg+:#ffffff,bg+:-1,hl+:#be95ff --color=info:#ee5396,prompt:#ff7eb6,pointer:#42be65 --color=marker:#42be65,spinner:#be95ff,header:#82cfff
   --reverse --border=rounded '
 
 export FZF_ALT_C_COMMAND="fd -t d -d 1"
