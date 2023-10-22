@@ -45,3 +45,5 @@ bindkey '^[f' custom-fzf-preview
 bindkey '^[[A' up-line-or-search
 
 export PATH=$PATH:/home/chokerman/.spicetify
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

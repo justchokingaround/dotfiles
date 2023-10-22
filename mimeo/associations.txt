@@ -1,2 +1,2 @@
 video-wrapper.sh %U "Play video"
-  ^https?://(www.)?(youtu|odysee|instagram)(be)?.(com|be)/.*
+  ^https?://(www.|vm.)?(youtu|odysee|instagram|tiktok)(be)?.(com|be)/.*

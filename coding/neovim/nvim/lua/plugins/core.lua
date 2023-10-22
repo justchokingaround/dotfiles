@@ -15,5 +15,5 @@ return {
 	{ "ggandor/flit.nvim",          enabled = false },
 	{ "catppuccin/nvim",            enabled = false },
 	{ "echasnovski/mini.bufremove", enabled = false },
-	{ "RRethy/vim-illuminate",      enabled = false }
+	{ "RRethy/vim-illuminate",      enabled = false },
 }

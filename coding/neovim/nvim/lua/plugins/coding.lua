@@ -122,7 +122,7 @@ return {
 	{
 		"nvim-treesitter/nvim-treesitter",
 		enabled = true,
-		build = ':TSUpdate',
+		build = ":TSUpdate",
 		opts = {
 			incremental_selection = {
 				enable = true,
@@ -190,19 +190,12 @@ return {
 		},
 	},
 
-	-- TODO: find an alternative to this
-	-- NULL LS
 	{
-		"jose-elias-alvarez/null-ls.nvim",
+		"stevearc/conform.nvim",
 		opts = function()
-			local nls = require("null-ls")
 			return {
-				root_dir = require("null-ls.utils").root_pattern(".null-ls-root", ".neoconf.json", "Makefile", ".git"),
-				sources = {
-					nls.builtins.formatting.shfmt.with({
-						args = { "-i", "4", "-ci" },
-					}),
-				},
+				command = "shfmt",
+				args = { "-i", "4", "-ci" },
 			}
 		end,
 	},
