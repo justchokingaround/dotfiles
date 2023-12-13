@@ -6,7 +6,7 @@ source "$HOME/dotfiles/shell/plugins/nix-zsh-completions/nix-zsh-completions.plu
 source "$HOME/dotfiles/shell/aliases.zsh"
 source "$HOME/dotfiles/shell/functions.zsh"
 
-PATH="$HOME/.cargo/bin:$HOME/.local/bin:$HOME/scripts/:$HOME/dotfiles/shell/plugins/fzf-zsh-plugin/bin:$HOME/.luarocks/bin:${PATH}:$HOME/go/bin:$HOME/.config/rofi/scripts/:$HOME/.emacs.d/bin/:$HOME/.config/nvim/bin/:$HOME/dotfiles/scripts/discord/:$HOME/.config/nyoom/bin/:$HOME/.local/bin/"
+PATH="$HOME/.cargo/bin:$HOME/.local/bin:$HOME/scripts/:$HOME/dotfiles/shell/plugins/fzf-zsh-plugin/bin:$HOME/.luarocks/bin:${PATH}:$HOME/go/bin:$HOME/.config/rofi/scripts/:$HOME/.emacs.d/bin/:$HOME/.config/nvim/bin/:$HOME/dotfiles/scripts/discord/:$HOME/.config/nyoom/bin/:$HOME/.local/bin/:$HOME/.cabal/bin:$HOME/.ghcup/bin:$PATH"
 export PATH
 
 # for nix desktop files

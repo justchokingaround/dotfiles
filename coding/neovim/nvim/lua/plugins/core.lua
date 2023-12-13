@@ -2,7 +2,8 @@ return {
 	{
 		"LazyVim/LazyVim",
 		opts = {
-			colorscheme = "oxocarbon",
+			-- colorscheme = "oxocarbon",
+			colorscheme = "carbonfox",
 			defaults = {
 				keymaps = false,
 			},

@@ -108,7 +108,6 @@
   "files.autoSave": "afterDelay",
   "editor.formatOnSave": true,
   "editor.snippetSuggestions": "top",
-  "workbench.colorTheme": "Atom One Dark",
   "redhat.telemetry.enabled": true,
   "editor.inlineSuggest.enabled": true,
   "[html]": {
@@ -128,5 +127,6 @@
   "[python]": {
     "editor.defaultFormatter": "ms-python.black-formatter"
   },
-  "window.zoomLevel": 1
+  "window.zoomLevel": 1,
+  "workbench.colorTheme": "Atom One Dark"
 }

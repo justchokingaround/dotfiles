@@ -31,7 +31,7 @@ opt.concealcursor = "nc"
 opt.completeopt = { "menu", "menuone", "noselect" }
 opt.cursorline = false
 opt.diffopt:append("linematch:60")
-opt.expandtab = false -- use tabs instead of space
+opt.expandtab = true -- use spaces instead of tabs
 opt.fillchars = fillchars
 -- j: join lines when typing Enter,
 -- c: auto-wrap lines when they get too long,
@@ -57,13 +57,13 @@ opt.relativenumber = false
 opt.scrolloff = 4                                                   -- lines of context
 opt.shiftround = true
 opt.sessionoptions = { "buffers", "curdir", "tabpages", "winsize" } -- options saved when you close a session
-opt.shiftwidth = 2
+opt.shiftwidth = 4
 opt.shortmess:append({ W = true, I = true, c = true, C = true })    -- messages to be shown when making changes to a file
 opt.showbreak = "⤷ "
 opt.showmode = false                                                -- don't show mode (insert, replace, etc), since they're already shown in the statusline
 opt.sidescrolloff = 8                                               -- columns of context
 opt.splitkeep = "screen"                                            -- keep window open when splitting
-opt.tabstop = 2
+opt.tabstop = 4
 opt.undofile = true
 opt.undolevels = 10000
 opt.updatetime = 200

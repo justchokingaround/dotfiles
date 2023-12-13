@@ -15,7 +15,7 @@ window#waybar {
     margin-left: 25px;
 }
 #workspaces button{
-    background-color: #262626 ;
+    background-color: transparent;
     border-radius: 55px;
     margin-right: 10px;
     padding-right: 15px;
@@ -33,7 +33,7 @@ window#waybar {
 #network,
 #tray,
 #mpd {
-    background-color: #262626 ;
+    background-color: transparent;
     padding: 0 15px;
     color: 	#ffffff;
     font-weight : bolder;

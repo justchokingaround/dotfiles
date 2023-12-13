@@ -151,3 +151,4 @@ video/x-theora+ogg=mpv.desktop;
 x-scheme-handler/http=vivaldi-stable.desktop;
 x-scheme-handler/https=vivaldi-stable.desktop;
 x-scheme-handler/magnet=torrent.desktop;
+x-scheme-handler/jetbrains=jetbrains-toolbox.desktop

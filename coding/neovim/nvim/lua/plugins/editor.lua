@@ -29,7 +29,7 @@ return {
 			{
 				"<leader>e",
 				function()
-					require("neo-tree.command").execute({ toggle = true, dir = require("lazyvim.util").get_root() })
+					require("neo-tree.command").execute({ toggle = true, dir = require("lazyvim.util").root.get() })
 				end,
 				desc = "Explorer",
 			},
@@ -308,5 +308,14 @@ return {
 		"chrisgrieser/nvim-recorder",
 		dependencies = "rcarriga/nvim-notify",
 		opts = {},
+	},
+
+	{
+		"rcarriga/nvim-notify",
+		opts = {
+			level = 3,
+			render = "minimal",
+			stages = "static",
+		},
 	},
 }

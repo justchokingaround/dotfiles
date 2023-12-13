@@ -1,26 +1,26 @@
 local Util = require("lazyvim.util")
 
 local function map(mode, lhs, rhs, opts)
-	local keys = require("lazy.core.handler").handlers.keys
-	-- do not create the keymap if a lazy keys handler exists
-	if not keys.active[keys.parse({ lhs, mode = mode }).id] then
-		opts = opts or {}
-		opts.silent = opts.silent ~= false
-		if opts.remap and not vim.g.vscode then
-			opts.remap = nil
-		end
-		vim.keymap.set(mode, lhs, rhs, opts)
-	end
+    local keys = require("lazy.core.handler").handlers.keys
+    -- do not create the keymap if a lazy keys handler exists
+    if not keys.active[keys.parse({ lhs, mode = mode }).id] then
+        opts = opts or {}
+        opts.silent = opts.silent ~= false
+        if opts.remap and not vim.g.vscode then
+            opts.remap = nil
+        end
+        vim.keymap.set(mode, lhs, rhs, opts)
+    end
 end
 
 local function map_if_pumvisible_else(mode, lhs, rhs, fb)
-	vim.keymap.set(mode, lhs, function()
-		return vim.fn.pumvisible() == 1 and rhs or fb or lhs
-	end, { expr = true, noremap = true })
+    vim.keymap.set(mode, lhs, function()
+        return vim.fn.pumvisible() == 1 and rhs or fb or lhs
+    end, { expr = true, noremap = true })
 end
 
 local function map_if_pumvisible(mode, lhs, rhs)
-	map_if_pumvisible_else(mode, lhs, rhs, nil)
+    map_if_pumvisible_else(mode, lhs, rhs, nil)
 end
 
 -- ACCELERATED JK
@@ -41,11 +41,11 @@ map({ "n", "i" }, "<C-s>", "<cmd>w<cr>", { desc = "Save" })
 map("v", "<", "<gv", { desc = "Indent left" })
 map("v", ">", ">gv", { desc = "Indent right" })
 if Util.has("bufferline.nvim") then
-	map("n", "<S-Tab>", "<cmd>BufferLineCyclePrev<cr>", { desc = "Prev buffer" })
-	map("n", "<Tab>", "<cmd>BufferLineCycleNext<cr>", { desc = "Next buffer" })
+    map("n", "<S-Tab>", "<cmd>BufferLineCyclePrev<cr>", { desc = "Prev buffer" })
+    map("n", "<Tab>", "<cmd>BufferLineCycleNext<cr>", { desc = "Next buffer" })
 else
-	map("n", "<S-Tab>", "<cmd>bprevious<cr>", { desc = "Prev buffer" })
-	map("n", "<Tab>", "<cmd>bnext<cr>", { desc = "Next buffer" })
+    map("n", "<S-Tab>", "<cmd>bprevious<cr>", { desc = "Prev buffer" })
+    map("n", "<Tab>", "<cmd>bnext<cr>", { desc = "Next buffer" })
 end
 map("x", "J", ":move '>+1<CR>gv-gv", { desc = "Move selected lines down" })
 map("x", "K", ":move '<-2<CR>gv-gv", { desc = "Move selected lines up" })
@@ -79,7 +79,7 @@ map("n", "<leader>k", "<cmd>HopLine<cr>", { desc = "Hop line" })
 
 -- DIFFVIEW
 map("n", "<leader>do", "<cmd>DiffviewOpen<cr>", { desc = "Open diffview" })
-map("n", "<leader>dc", "<cmd>DiffviewClose<cr>", { desc = "Open diffview" })
+map("n", "<leader>dc", "<cmd>DiffviewClose<cr>", { desc = "Close diffview" })
 
 -- OCTO
 map("n", "<leader>go", "<cmd>Octo actions<cr>", { desc = "Octo actions" })

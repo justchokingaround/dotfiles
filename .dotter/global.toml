@@ -8,8 +8,8 @@ color_rgb = ".dotter/helpers/color_rgb.rhai"
 [wayland]
 [wayland.files]
 "hyprland/hypr" = "~/.config/hypr/"
-# "hyprland/bar/waybar" = "~/.config/waybar/"
-"hyprland/bar/eww" = "~/.config/eww/"
+"hyprland/bar/waybar" = "~/.config/waybar/"
+#"hyprland/bar/eww" = "~/.config/eww/"
 
 [wayland-laptop]
 [wayland-laptop.files]

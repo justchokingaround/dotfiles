@@ -3,6 +3,7 @@
 recordings_dir="$HOME/videos/screen-recordings"
 tmp_video_file="/tmp/recording.mp4"
 audio_device="alsa_output.pci-0000_11_00.4.analog-stereo.monitor"
+# audio_device="alsa_input.usb-Generic_Blue_Microphones_201701110001-00.analog-stereo"
 fps="60"
 # rofi_prompt_config="$HOME/.config/rofi/styles/prompt.rasi"
 token=$(cat ~/dox/credentials/discord_token.txt)

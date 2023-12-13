@@ -38,5 +38,23 @@
     "key": "alt+i",
     "command": "workbench.action.terminal.toggleTerminal",
     "when": "terminal.active"
+  },
+  {
+    "key": "ctrl+alt+r",
+    "command": "editor.action.startFindReplaceAction",
+    "when": "editorFocus || editorIsOpen"
+  },
+  {
+    "key": "ctrl+r",
+    "command": "-editor.action.startFindReplaceAction",
+    "when": "editorFocus || editorIsOpen"
+  },
+  {
+    "key": "ctrl+shift+l",
+    "command": "aichat.newchataction"
+  },
+  {
+    "key": "ctrl+l",
+    "command": "-aichat.newchataction"
   }
 ]

@@ -16,7 +16,7 @@ while true; do
             zellij action clear
 
             chafa -f sixel -s ${size_x}x${size_y} "$song_path" 2>/dev/null || echo "chafa failed"
-            # chafa -f symbols -s ${size}x${size} "$song_path"
+            # chafa -f symbols -s ${size_x}x${size_y} "$song_path"
 
             zellij action page-scroll-up
             zellij action move-focus right

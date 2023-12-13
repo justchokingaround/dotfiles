@@ -3,6 +3,8 @@ return {
 	{
 		"nyoom-engineering/oxocarbon.nvim",
 		"navarasu/onedark.nvim",
+		"EdenEast/nightfox.nvim",
+		"rebelot/kanagawa.nvim",
 		{
 			"baliestri/aura-theme",
 			lazy = false,
