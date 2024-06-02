@@ -1,4 +1,4 @@
-### These dotfiles are WIP atm, please do not blindly copy them. If you have any questions, you can ask me anything, I'll be happy to help you. I'm currently working on documenting everything in the wiki, if you're interested to see the progress feel free to check it out. 
+# I have moved on to NixOS, my new dots can be found at https://github.com/justchokingaround/nude
 
 ![image](https://github.com/justchokingaround/dotfiles/assets/44473782/02395452-dbb4-4a42-a9d0-ec6743004d7c)
 
